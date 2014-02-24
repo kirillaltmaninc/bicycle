@@ -1,0 +1,9 @@
+backed up by backdir.bat 
+ 
+timestamp: 2005Jul18-Mon-200711UTC  
+hostname: dinoch-1 
+user: NORTHAMERICA\dinoch 
+cwd: C:\dinoch\dev\ISAPI\IIRF 
+dir to backup: IonicIsapiRewriter1.0 
+archive: backup-IonicIsapiRewriter1.0-2005Jul18-Mon-200711UTC.zip 
+ 

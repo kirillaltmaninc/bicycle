@@ -1,0 +1,32 @@
+<%@ WebHandler Language="C#" Class="MyNamespace.robotshandler" %>
+
+using System;
+using System.Web;
+
+namespace MyNamespace {
+
+    public class robotshandler: IHttpHandler {
+
+        public void ProcessRequest (HttpContext context) {
+ 
+            context.Response.ContentType = "text/plain";
+            context.Response.Write("User-agent: *\n");
+                
+            if (context.Request.ServerVariables["Https"]=="off"){
+                // HTTP
+                context.Response.Write("Allow: /\n");
+                context.Response.Write("Disallow: /displaycart\n");
+                context.Response.Write("Disallow: /trainers\n");
+                context.Response.Write("User-agent: Googlebot-Image\n");
+                context.Response.Write("Disallow: /\n");
+            } else {
+                // HTTPS
+                context.Response.Write("Disallow: /");
+            }
+        }
+    
+        public bool IsReusable {
+            get {return false;}
+        }
+    }
+}

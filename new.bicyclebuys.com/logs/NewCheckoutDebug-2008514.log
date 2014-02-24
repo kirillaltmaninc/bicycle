@@ -1,0 +1,93 @@
+------------------------------------------------------------
+Name: 5|dd dd
+Address1: 19|165 walt whitman rd
+Address2: 0|
+Company: 0|
+City: 18|huntington station
+StateProvince: 2|NY
+ZipPostal: 5|11746
+Country: 2|US
+Phone: 10|5167662455
+Fax: 0|
+Email: 11|neil@pb.net
+Custom1: 0|
+Custom2: 0|
+Custom3: 2|dd
+Custom4: 0|
+Custom5: 2|dd
+Custom6: 0|
+Custom7: 0|
+Custom8: 0|
+ShipName: 5|dd dd
+ShipAddress1: 19|165 walt whitman rd
+ShipAddress2: 0|
+ShipCompany: 0|
+ShipCity: 18|huntington station
+ShipStateProvince: 2|NY
+ShipZipPostal: 5|11746
+ShipCountry: 2|US
+ShipPhone: 10|5167662455
+ShipFax: 0|
+ShipEmail: 11|neil@pb.net
+ShipCustom1: 0|
+ShipCustom2: 0|
+ShipCustom3: 2|dd
+ShipCustom4: 0|
+ShipCustom5: 2|dd
+ShipCustom6: 0|
+ShipCustom7: 0|
+ShipCustom8: 1|7
+Comments: 0|
+BillingSameAsShipping: 1|0
+Password: 11|xxJuNkYpWxx
+OrderCustom1: 0|
+OrderCustom2: 0|
+OrderCustom3: 0|
+OrderCustom4: 0|
+OrderCustom5: 0|
+OrderCustom6: 0|
+OrderCustom7: 0|
+OrderCustom8: 2|ON
+IsStateResident: 2|-1
+IsCountryResident: 1|0
+CCTYpe: 14|DISCOVER, Visa
+CCNumber: 0|
+CCName: 0|
+CCMonth: 1|0
+CCYear: 1|0
+PaymentType: 8|Fax/Call
+ITEMS    -----------
+ItemID: 10|1601190-90
+Name: 32|3 T More Carbon Road Stem 90mm  
+Description: 112|'3 T Carbon Road Stem w/ Aliminum 1-1/8 Steerer Clamp, Two Bolt Face Plate, Oversized 31.8 mm Handlebar Clamp  '
+Quantity: 1|1
+Price: 6|199.99
+Weight: 1|0
+Custom1: 17|/item/1601190PART
+Custom2: 0|
+Custom3: 0|
+Custom4: 30|Prop=90mm &COMBO;90mm ,100 mm 
+Custom5: 46|PropID=1601190-90&COMBO;1601190-90,1601190-100
+Custom6: 1|0
+Custom7: 1|0
+Custom8: 0|
+Tax: 0
+TaxRate: 
+Adjust: 0
+ItemID: 7|0900236
+Name: 30|Selle Italia Flite TT Saddle  
+Description: 249|'The Flite TT has the classic Flyte Ti shape but much lighter. Tubular Titanium rails reduce overall weight and padding give excellent performance and comfort on and off road.  A very soft comfortable Buffalo Suede leather cover.  Weight 180 gms.  '
+Quantity: 1|1
+Price: 5|99.99
+Weight: 1|0
+Custom1: 13|/item/0900236
+Custom2: 0|
+Custom3: 0|
+Custom4: 0|
+Custom5: 0|
+Custom6: 1|0
+Custom7: 1|0
+Custom8: 0|
+Tax: 0
+TaxRate: 
+Adjust: 0

@@ -1,0 +1,43 @@
+<TR>
+   <TD colspan="2" class="topshopping"><TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
+      <TR>
+         <FORM ACTION="/search" method="post" onsubmit="return search_validator(this)" name="search_form">
+         <TD nowrap>&nbsp;
+           <select name="searchcategorydrop" size="1" class="turnintodropdown" id="search_cat" onchange="MM_jumpMenu('parent',this,0)" style="font-size: 10px;">
+             <option value="">(All products)</option>
+             
+            [%search_options%]
+         
+           </select>
+           &nbsp;</TD>
+         
+         <TD><input name="searchterm" type="text"  class="search" value="[%search_term%]" style="font-size: 10px; width: 100px;" /></TD>
+         <TD width="145"><INPUT NAME="submit" VALUE="SUBMITSEARCH" TYPE="image" SRC="images/search_submit.jpg" width="28" height="25" border="0" alt=""></TD>
+         </FORM>
+
+         <!-- Shop by Brand -->         
+         <TD width="100%" align="right"><!-- <a href="/manufacturer/"><img src="images/buy-by-brands2.gif" border=0 alt="Shop by Brand"></a> -->
+           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             <tr>
+               <td width="88%" align="center">[%cat_display%]</td>
+               <td width="12%"  align="right"><select name="searchcategory" size="1" class="turnintodropdown" id="search_cat" onchange="MM_jumpMenu('parent',this,0)" style="font-size: 10px;">
+               <option value="all">Shop by Brand</option>
+                 
+           
+             
+            [%brand_options%]
+         
+           
+         
+               </select>&nbsp; </td>
+             </tr>
+           </table></TD>
+      </TR>
+      </TABLE></TD>
+</TR>
+
+<!-- end ###content_header### -->
+
+<TR>
+   <TD colspan="2" class="bodycontent" style="background: URL(images/topshadow.gif) #ffffff repeat-x;">&nbsp;</TD>
+</TR>

@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Ionic]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Ionic\Isapi Rewriter 1.0]
+"LogLevel"="0"
+"LogFile"="d:\\root\\new.bicyclebuys.com\\tmp\\Log-Isapi-Rewriter.txt"

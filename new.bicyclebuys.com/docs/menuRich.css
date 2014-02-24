@@ -1,0 +1,53 @@
+.drop {
+	width: 165px;
+    background: URL(images/ShopBycatsImageMiddle.png);
+}
+
+.drop_menu {
+	list-style-type: disc;
+	list-style-position:inside;
+	padding-left: 10px;
+	padding-bottom: 10px;
+    background: URL(images/ShopBycatsImageMiddle.png);
+}
+
+.drop_menu li { float:left; }
+.drop_menu li a {
+	display:block;
+	color:#000;
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+/* Submenu */
+.drop_menu ul {
+	position:absolute;
+	left:-9999px;
+	top:-9999px;
+	list-style-type:none;
+}
+
+.drop_menu li:hover { 
+	position:relative; 
+	text-align:left;
+	background:#fff; 
+}
+
+.drop_menu li:hover ul {
+	left:110px;
+	width: 300px;
+	top:10px;
+	background:#fff;
+	padding:0px;
+}
+
+.drop_menu li:hover ul li a {
+	padding:5px;
+	display:block;
+	width:auto;
+	text-indent:15px;
+	background-color:#fff;
+}
+
+.drop_menu li:hover ul li a:hover { background:#fff; }

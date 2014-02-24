@@ -1,0 +1,598 @@
+'**********************************************************************
+'  Visual Basic ActiveX Script
+'************************************************************************
+
+Dim cPath
+Public topTitle
+Public TopMetaContent
+Public TopMetaKeywords
+Public TopMetaDescription
+Public TopHtml
+Public BottomHtml
+Public conn 'As ADODB.Connection
+Public WriteOtherPages
+Public genTitle
+Public Description
+Public words(1001)
+Public ht, wt
+Function main()
+    WriteOtherPages = True
+     words(1000) = 0
+    Dim rs
+        Set conn = CreateObject("ADODB.Connection")
+   cPath = "\\10.0.1.85\d\JohnR\HTML\"
+  'cPath = "D:\root\docs\HTML\"
+    'conn.Open "DSN=bbc_Prod;UID=ProdUSER;PWD=bbcProduser;APP=Microsoft® Access;DATABASE=BBC_Prod;"
+    conn.Open ("Provider=SQLOLEDB;Password=bbcProduser;Persist Security Info=True;User ID=ProdUSER;Initial Catalog=bbc_prod;Data Source=webserver")
+    'conn.Execute ("exec spJohnWebNavTypeSubCatIDs")
+    Set rs = conn.Execute("select * from HTMLGenerateTopBottom where id=1")
+    If Not rs.EOF Then
+        rs.MoveFirst
+        topTitle = rs.Fields("TopTitle")
+        TopMetaContent = rs.Fields("TopMetaContent")
+        TopMetaKeywords = rs.Fields("TopMetaKeywords")
+        TopMetaDescription = rs.Fields("TopMetaDescription")
+        TopHtml = rs.Fields("TopHtml")
+        BottomHtml = rs.Fields("BottomHtml")
+    End If
+    rs.Close
+    Set rs = Nothing
+
+    cmdCreatePages_Click
+    main = DTSTaskExecResult_Success
+End Function
+
+Private Sub cmdCreatePages_Click()
+    CreateMainPage (LeftBar)
+    'WriteMenuPage
+    WriteWebTypeCatPages (LeftBar)
+    WriteWebTypeSKUPages (LeftBar)
+
+End Sub
+
+
+Function CreateMainPage(ByVal LeftBar)
+
+
+    Dim rs
+    Dim fso
+    Dim f 'As TextStream
+    Dim Content
+
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set rs = conn.Execute("select * from WebNavMenu order by WebDisplay")
+    If WriteOtherPages Then Set f = fso.CreateTextFile(cPath & "Main.htm", True)
+
+    KeyWords = ""
+    body = ""
+    
+    While Not rs.EOF
+        Content = Content & rs.Fields("webDisplay") & ", "
+        'f.WriteLine "<a Href=" & """W" & rs.Fields("webMenuID") & ".htm""" & ">" & rs.Fields("WebDisplay") & "</a><BR>"
+        body = body & "<B>" & rs.Fields("WebDisplay") & "</B><BR>"
+        body = body & WriteMenuPage(rs, KeyWords)
+        rs.MoveNext
+    Wend
+    rs.Close
+    LeftBar = ""
+    
+    
+    genTitle = "Online Bike Shop | Road Bikes | Mountain Bike | Bicycle Trainers | Storage Systems | Bike Parts | Frames | Seats | Aero Bars | Bike Parts "
+    myDescription = "Welcome to Bicyclebuys.com, your online Bike Shop. Our company mission is Great Product at Great Prices with Service to match! We hope you are not disappointed. Please enjoy your shopping experience at our store."
+    myKeywords = "bike bikes bicycle trek velo specialized mtb cycling bicycles kurt cycleops shimano bmx mountain wheel tire manitou rock shox colnago kryptonite cannondale velomax free agent bell niterider answer truvativ raceface avid DK ritchey yeti mongoose iron horse michelin continental fox irc hind rolf pearl izumi cateye sigma vittoria bontrager marin headset aheadset profile designs chris king selle italia selle san marco use sidi vdo velociraptor wildgripper minoura elite ciussi topeak park campagnolo record mavic sun spinergy diadora giordana camelback blackburn rhode gear thule allen racks kestrel cane creek titec kore wtb sugino kooka marzocchi pedros fsa giro chris king polar cycle-ops vistalite sram shimano sdg xtr xt finishline panaracer Bicycles Components Groupkits Pedals Shocks Tirestubes Tools Wheels Clothes Shoes Food Heart Rate Monitors Helmets Hydro Accessories Babyseats Storage Carcarriers Computers Trainers Joggers Locks Lubricants"
+    
+    CreateMainPage = WriteHeader(LeftBar, genTitle, myKeywords, myDescription)
+    body = myDescription & "<BR><BR>" & body
+    CreateMainPage = CreateMainPage & body & "<BR><BR>"
+    CreateMainPage = CreateMainPage & writefooter
+    If WriteOtherPages Then
+        f.Write (CreateMainPage)
+        f.Close
+    End If
+
+
+End Function
+
+
+Function WriteMenuPage(ByVal rs, ByVal KeyWords)
+
+    WriteMenuPage = ""
+    ' Dim rs
+    'Dim fso
+    'Dim f 'As TextStream
+    ' Set set fso = CreateObject("Scripting.FileSystemObject")
+    'Set rs = conn.execute("select * from WebNavMenu")
+    ' While Not rs.EOF
+    'Set f = fso.CreateTextFile(cPath & "W" & rs.Fields("webMenuID") & ".htm", True)
+    ' f.Write WriteHeader
+    'f.WriteLine "<a Href=""" & "main.htm"">" & "Main</a>-->" & InitCaps(rs.Fields("WebDisplay")) & "<BR>" & "<BR>"
+    Set rs2 = conn.Execute("Select * from vwWebNavMenu where webMenuID=" & rs.Fields("webMenuID") & " order by WebDisplayForNavType")
+    While Not rs2.EOF
+        WriteMenuPage = WriteMenuPage & "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a Href=" & """" & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm""" & ">" & InitCaps(rs2.Fields("WebDisplayForNavType")) & "</a><BR>"
+        'f.WriteLine InitCaps(rs2.Fields("NavType")) & "</a><BR>"
+        KeyWords = KeyWords & InitCaps(rs2.Fields("NavType")) & " "
+        rs2.MoveNext
+    Wend
+
+    rs2.Close
+    ' f.Write writefooter
+    'f.Close
+
+    ' rs.MoveNext
+    'Wend
+    'rs.Close
+
+
+End Function
+
+Function WriteNavPages(ByVal rs, ByVal f)
+
+
+    'Dim rs
+    'Dim fso
+    'Dim f 'As TextStream
+    'Set set fso = CreateObject("Scripting.FileSystemObject")
+    ' Set rs = conn.execute("select * from WebNavMenu")
+    ' While Not rs.EOF
+    'Set f = fso.CreateTextFile(cPath & "W" & rs.Fields("webMenuID") & ".htm", True)
+    'f.Write WriteHeader
+    f.writeline ("<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""width: 760;""><TR><TD nowrap><a Href=""" & "main.htm"" class=""Htopnavitem"">" & _
+    "Main</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs.Fields("WebDisplay")) & "</td></tr></table><BR>" & "<BR>")
+    
+    Set rs2 = conn.Execute("Select * from qryWebNavMenu where webMenuID=" & rs.Fields("webMenuID"))
+    While Not rs2.EOF
+        f.writeline ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a Href=" & """" & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm""" & ">" & InitCaps(rs2.Fields("NavType")) & "</a><BR>")
+        rs2.MoveNext
+    Wend
+
+    rs2.Close
+    'f.Write writefooter
+    'f.Close
+
+    ' rs.MoveNext
+    'Wend
+    'rs.Close
+
+
+End Function
+
+
+Function WriteWebTypeCatPages(ByVal LeftBar)
+
+
+    Dim rs
+    Dim fso
+    Dim f 'As TextStream
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set rs = conn.Execute("select * from WebNavMenu")
+    While Not rs.EOF
+
+       Set rs2 = conn.Execute("Select * from vwWebNavMenu where webMenuID=" & rs.Fields("webMenuID"))
+        While Not rs2.EOF
+            'Caption = rs2.Fields("NavType")
+            If NZ(rs2.Fields("sortType"), "") <> "SUBCAT" And 1 = 2 Then
+                Call CreateWebTypePages(rs, rs2, fso, LeftBar)
+            Else
+                Call CreateSubCatPages(rs, rs2, fso, LeftBar)
+            End If
+            rs2.MoveNext
+        Wend
+
+        rs2.Close
+
+        rs.MoveNext
+    Wend
+    rs.Close
+
+
+End Function
+Sub CreateWebTypePages(ByVal rs, ByVal rs2, ByVal fso, ByVal LeftBar)
+
+    KeyWords = ""
+    Content = ""
+    Set rs3 = conn.Execute("Select * from vwWebMenuWebTypes where cast(webTypeID as varchar(100)) in(" & rs2.Fields("webTypes") & ") order by WebTypeWebDisplay for browse")
+    If Not rs3.EOF Then
+        'debug.print cPath & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm"
+        If WriteOtherPages Then Set f = fso.CreateTextFile(cPath & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm", True)
+        body = "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""width: 760;""><TR><TD nowrap><a Href=""" & "main.htm"" class=""Htopnavitem"">" & _
+        "Main</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & """main.htm" & """ class=""Htopnavitem"">" & InitCaps(rs.Fields("WebDisplay")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs2.Fields("NavType")) & "</td></tr></table><BR>" & "<BR>"
+        genTitle = "Main | " & InitCaps(rs.Fields("WebDisplay")) & " | " & InitCaps(rs2.Fields("NavType"))
+        'Content = InitCaps(rs.Fields("WebDisplay")) & "-->" & InitCaps(rs2.Fields("NavType"))
+        KeyWords = InitCaps(rs3.Fields("medaKeywords"))
+        body = body & "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""vertical-align: top;""><TR><TD nowrap class=""Htd"">"
+        While Not rs3.EOF
+            body = body & "<a Href=" & """" & myReplace(rs3.Fields("WebTypeWebDisplay")) & ".htm""" & " class=""H2topnavitem""><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs3.Fields("WebTypeWebDisplay")) & "</a><BR>"
+
+            Content = Content & InitCaps(rs3.Fields("WebTypeWebDisplay")) & ", "
+            rs3.MoveNext
+        Wend
+        body = body & "</td><td class=""Htd2"">" & myDescription & "</td></tr></table>"
+        If WriteOtherPages Then
+            'f.Write (WriteHeader(KeyWords, Content, LeftBar))
+            f.Write (body)
+            f.Write (writefooter)
+            f.Close
+        End If
+    End If
+    rs3.Close
+
+End Sub
+Sub CreateSubCatPages(ByVal rs, ByVal rs2, ByVal fso, ByVal LeftBar)
+    Dim sql
+    KeyWords = ""
+    Content = ""
+    pVendor = ""
+    sql = "Select s.* from vwHTMLStructure s where  s.NavTypeID =" & rs2.Fields("NavTypeID") & " and cnt>0 and exists(select top 1 's' from  tblSchedSubCats sc where sc.subcatid = s.subcatid and sc.navtypeid = s.navtypeid "
+    sql = sql & " and ( "
+    sql = sql & " (datepart(dw,getDate()) = runday or runday = 8)"
+    sql = sql & " and (datediff(d,lastAutomatedRunDate,getDate()) >= Repeat)"
+    sql = sql & "))   Order by s.subcategory"
+    
+    Set rs3 = conn.Execute(sql)
+    If Not rs3.EOF Then
+        'debug.print cPath & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm"
+        If WriteOtherPages Then Set f = fso.CreateTextFile(cPath & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm", True)
+        body = "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""width: 760;""><TR><TD nowrap><a Href=""" & "main.htm"" class=""Htopnavitem"">" & "Main</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & _
+        """main.htm" & """ class=""Htopnavitem"">" & InitCaps(rs.Fields("WebDisplay")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs2.Fields("NavType")) & "</td></tr></table><BR>" & "<BR>"
+        genTitle = InitCaps(rs2.Fields("NavType"))
+        body = body & "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""vertical-align: top;""><TR><TD nowrap class=""Htd"">"
+        While Not rs3.EOF
+            'body = body & "<a Href=" & """" & myReplace(rs3.Fields("Vendor")) & "_" & myReplace(rs3.Fields("WebDisplay")) & ".htm""" & ">" & InitCaps(rs3.Fields("Vendor")) & "-" & InitCaps(rs3.Fields("webDisplay")) & "</a><BR>"
+            body = body & "<a Href=" & """" & InitCaps(rs3.Fields("NavType")) & "_" & myReplace(rs3.Fields("subcategory")) & ".htm""" & " class=""H2topnavitem""><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs3.Fields("subcategory")) & "</a><BR>"
+            If InitCaps(rs3.Fields("subcategory")) <> pVendor Then
+                Content = Content & InitCaps(rs3.Fields("subcategory")) & " "
+            End If
+            KeyWords = KeyWords & InitCaps(rs3.Fields("subcategory")) & " "
+            pVendor = InitCaps(rs3.Fields("subcategory"))
+            rs3.MoveNext
+        Wend
+        myDescription = rs2.Fields("metaDescription")
+        body = body & "</td><td class=""Htd2"">" & myDescription & "</td></tr></table>"
+        KeyWords = rs2.Fields("metaKeywords") & " " & KeyWords
+        
+        myTitle = genTitle & " | " & rs2.Fields("metaTitle")
+        If WriteOtherPages Then
+            f.Write (WriteHeader("", myTitle, KeyWords, myDescription))
+            f.Write (body)
+            f.Write (writefooter)
+            f.Close
+        End If
+    End If
+    rs3.Close
+
+End Sub
+
+
+Function WriteWebTypeSKUPages(ByVal LeftBar)
+
+
+    Dim rs
+    Dim fso
+    Dim f 'As TextStream
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set rs = conn.Execute("WebNavMenu")
+    TopMetaKeywords = Left(TopMetaKeywords, 50)
+    While Not rs.EOF
+
+       Set rs2 = conn.Execute("Select * from vwWebNavMenu where webMenuID=" & rs.Fields("webMenuID"))
+        While Not rs2.EOF
+            'Caption = rs2.Fields("NavType")
+            If NZ(rs2.Fields("sortType"), "") <> "SUBCAT" And 1 = 2 Then
+               conn.Execute ("exec spSchedWebTypes")
+               Set rs3 = conn.Execute("Select count(*) c from vwWebMenuWebTypes where cast(webTypeID as char(100) ) in(" & rs2.Fields("webTypes") & ") ")
+                cn = rs3.Fields("C")
+                rs3.Close
+                Set rs3 = Nothing
+                sql = "Select * from "
+                sql = sql & " tblSchedWebTypes"
+                sql = sql & " where ( "
+                sql = sql & " (datepart(dw,getDate()) = runday or runday = 8)"
+                sql = sql & " and (datediff(d,lastAutomatedRunDate,getDate()) >= Repeat)"
+                sql = sql & ") and cast(webTypeID as char(100)) in(" & rs2.Fields("webTypes")
+                sql = sql & ") order by webTypeWebDisplay"
+                sql = sql & " for browse"
+                Set rs3 = conn.Execute(sql)
+                If Not rs3.EOF Then
+
+                    While Not rs3.EOF
+
+                        KeyWords = ""
+                        Content = ""
+
+                            Set rs4 = conn.Execute("SELECT  * FROM vwWebNavProducts where webtypeid = " & rs3.Fields("webtypeID") & " Order by webtypeWebDisplay,vendor,description")
+                        If cnt = 1 Then
+                            Set f = fso.CreateTextFile(cPath & myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm", True)
+                        Else
+                            Set f = fso.CreateTextFile(cPath & myReplace(rs3.Fields("WebTypeWebDisplay")) & ".htm", True)
+                        End If
+                        body = "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""width: 760;""><TR><TD nowrap><a Href=""" & "main.htm""  class=""Htopnavitem"">" & "Main</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & """main.htm""" & " class=""Htopnavitem"">" & InitCaps(rs.Fields("WebDisplay")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & """" & _
+                            myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm""" & " class=""Htopnavitem"">" & InitCaps(rs2.Fields("NavType")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & InitCaps(rs3.Fields("WebTypeWebDisplay")) & _
+                                "</td></tr></table><BR>" & "<BR>"
+                        genTitle = "Main | " & InitCaps(rs.Fields("WebDisplay")) & " | " & InitCaps(rs2.Fields("NavType")) & " | " & InitCaps(rs3.Fields("WebTypeWebDisplay"))
+                        'Caption = "Main-->" & rs.Fields("WebDisplay") & "-->" & rs2.Fields("NavType") & "-->" & rs3.Fields("WebTypeWebDisplay")
+                        'body = body & "<a href=" & """" & "http://www.bicyclebuys.com/Items01.asp?NavID=" & rs2.Fields("NavType") & """" & " >Click here for Flash Site-->" & InitCaps(rs2.Fields("NavType")) & "</a><BR>"
+                        ' & "&M=0&T=" & rs3.Fields("webTypeID") & """" > ""
+                        body = body & "<table  border=""0"">" & vbNewLine
+                        While Not rs4.EOF
+                            body = body & "<tr class=""HTMLitem""><td class=""HTMLitem"">" & "<BR><img src=""/productimages/" & rs4.Fields("picture") & """ height=""" & CInt(rs4.Fields("height_small") * 0.8) & """ width=""" & CInt(rs4.Fields("width_small") * 0.8) & """border=""0"" alt=""" & rs4.Fields("Description") & """></td><td class=""HTMLitem""><a href=" & """" & "http://www.bicyclebuys.com/" & rs4.Fields("NavType") & "/" & rs4.Fields("SubCategory") & "/" & rs4.Fields("SKU") & """" & ">" & rs4.Fields("Description") & "</a><BR><font size=1>" & rs4.Fields("marketingdescription") & "<BR>" & Replace(NZ(rs4.Fields("marketdescriptwo"), ""), "^", "<li>") & "</font></td><td  class=""HTMLitemR"">$" & rs4.Fields("price") & "<BR><div class=""vendor"">" & rs4.Fields("vendor") & "</div>" & AddToCart(rs4) & "</td></tr>" & vbNewLine           '<TD>" & AddToCart(rs4) & "</td></tr>"
+                            KeyWords = KeyWords & Replace(rs4.Fields("Description"), """", "") & " "
+                            If pVendor <> rs4.Fields("vendor") Then
+                                Content = Content & rs4.Fields("vendor") & ", "
+                            End If
+                            pVendor = rs4.Fields("vendor")
+                            rs4.MoveNext
+                        Wend
+                        f.Write (WriteHeader(LeftBar, myTitle, KeyWords, myDescription))
+                        f.writeline (body)
+                        f.writeline ("</table>")
+                        f.writeline (writefooter)
+                        f.Close
+                        rs4.Close
+                        sql = "Update tblSchedWebTypes"
+                        sql = sql & " Set lastAutomatedRunDate=getDate()"
+                        sql = sql & " where WebTypeID = " & rs3.Fields("WebTypeID")
+                        conn.Execute (sql)
+                        rs3.MoveNext
+                    Wend
+                End If
+                rs3.Close
+            Else
+                'Set rs3 = conn.Execute("Select count(*) c from vwWebMenuWebTypesSubCats where cast(webTypeID as char(100) ) in (" & rs2.Fields("webtypes") & ") and subcatid in (" & rs2.Fields("subCats") & ")  ")
+                conn.Execute ("exec spSchedSubCats")
+                Set rs3 = conn.Execute("Select  count(*) c from  vwHTMLStructure h where NavTypeID =" & rs2.Fields("NavTypeID"))
+                
+                cnt = rs3.Fields("c")
+                rs3.Close
+                Set rs3 = Nothing
+                sql = "Select s.* from "
+                sql = sql & " vwHTMLStructure s inner join tblSchedSubCats sc on sc.subcatid = s.subcatid where  s.NavTypeID =" & rs2.Fields("NavTypeID")
+                sql = sql & " and ( "
+                sql = sql & " (datepart(dw,getDate()) = runday or runday = 8)"
+                sql = sql & " and (datediff(d,lastAutomatedRunDate,getDate()) >= Repeat)"
+                sql = sql & ") "
+                sql = sql & " for browse"
+                
+                Set rs3 = conn.Execute(sql)
+                If Not rs3.EOF Then
+                    'rs3.MoveFirst
+                    While Not rs3.EOF
+                        Content = ""
+                        KeyWords = ""
+                        pVendor = ""
+                        Set rs4 = conn.Execute("SELECT s.* FROM vwWebNavProductsWsubCatCheck  s inner join vwHTMLStructure h on s.subcatid = h.subcatid and  NavTypeID =" & rs2.Fields("NavTypeID") & " and s.subcatid = " & rs3.Fields("subCatiD") & " Order by Vendor,Description")
+                          'Set rs4 = conn.Execute("SELECT * FROM vwWebNavProductsWsubCatCheck where cast(webTypeID as char(100) ) in (" & rs2.Fields("webtypes") & ") and subcatid in (" & rs2.Fields("subCats") & ") and vendid =" & rs3.Fields("vendid") & " and WebDisplay = '" & myReplace2(rs3.Fields("WebDisplay")) & "' Order by Vendor, webDisplay ,description")
+                        'debug.print cPath & myReplace(rs3.Fields("Vendor")) & "_" & myReplace(rs3.Fields("WebDisplay")) & ".htm"
+                        'If cnt = 1 Then
+                            Set f = fso.CreateTextFile(cPath & InitCaps(rs3.Fields("NavType")) & "_" & myReplace(rs3.Fields("subcategory")) & ".htm", True)
+                        'Else
+                        '    Set f = fso.CreateTextFile(cPath & myReplace(rs3.Fields("Vendor")) & "_" & myReplace(rs3.Fields("WebDisplay")) & ".htm", True)
+                        'End If
+                        clearWords
+                        body = "<TABLE BORDER=""0"" CELLPADDING=""0"" CELLSPACING=""0"" style=""width: 760;""><TR><TD nowrap><a Href=""" & "main.htm"" class=""Htopnavitem"">" & "Main</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & """main.htm""" & " class=""Htopnavitem"">" & InitCaps(rs.Fields("WebDisplay")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0""><a Href=" & """" & _
+                        myReplace(rs2.Fields("WebDisplayForNavType")) & ".htm""" & " class=""Htopnavitem"">" & InitCaps(rs2.Fields("NavType")) & "</a><img src=""images/orange-arrow.gif"" alt="">"" width=""12px"" height=""9px"" border=""0"">" & _
+                        rs3.Fields("subcategory") & "</td></tr></table><BR>" & "<BR>"
+                        genTitle = InitCaps(rs3.Fields("subcategory"))
+                        body = body & "<table  border=""0"">"
+                        pVendor = ""
+                        While Not rs4.EOF
+                            Call getMaxH(rs4.Fields("height_small"), rs4.Fields("width_small"))
+                            body = body & "<tr class=""HTMLitem""><td class=""HTMLitem"">" & "<br><img src=""/productimages/" & rs4.Fields("picture") & """ height=""" & CInt(ht) & """ width=""" & CInt(wt) & """ border=""0"" alt=""" & rs4.Fields("Description") & """></td><td class=""HTMLitem""><a href=" & """" & "http://www.bicyclebuys.com/" & rs4.Fields("NavType") & "/" & rs4.Fields("SubCategory") & "/" & rs4.Fields("SKU") & """" & ">" & rs4.Fields("Description") & "</a><BR><font size=1>" & rs4.Fields("marketingdescription") & "<BR>" & Replace(NZ(rs4.Fields("marketdescriptwo"), ""), "^", "<li>") & "</font></td><td  class=""HTMLitemR"">$" & rs4.Fields("price") & "<BR>" & msrp(rs4) & "<div class=""vendor"">" & rs4.Fields("vendor") & "</div>" & AddToCart(rs4) & "</td></tr>" & vbNewLine
+                             myParseWords (Replace(rs4.Fields("Description"), """", ""))
+                            If pVendor <> rs4.Fields("vendor") Then
+                                Content = Content & rs4.Fields("vendor") & "-" & rs3.Fields("WebDisplay") & " "
+                            End If
+                            pVendor = rs4.Fields("vendor")
+                            rs4.MoveNext
+                        Wend
+                        KeyWords = NZ(rs3.Fields("sub_metakeywords"), rs3.Fields("metakeywords")) & " " & getWords
+                        myTitle = NZ(rs3.Fields("sub_metatitle"), genTitle & " | " & rs3.Fields("metatitle"))
+                        myDescription = NZ(rs3.Fields("sub_MetaDescription"), InitCaps(rs3.Fields("subcategory")) & ". " & rs3.Fields("metaDescription"))
+                        
+                        clearWords
+                        f.Write (WriteHeader(LeftBar, myTitle, KeyWords, myDescription))
+                        f.Write (body)
+                        f.writeline ("</table>")
+                        f.writeline (writefooter)
+                        f.Close
+                        rs4.Close
+                        sql = "Update tblSchedSubCats"
+                        sql = sql & " Set lastAutomatedRunDate=getDate()"
+                        'Sql = Sql & " where WebTypeID = " & rs3.fields("WebTypeID")
+                        sql = sql & " where  SubCatID = " & rs3.Fields("SubCatID")
+                        sql = sql & " AND   NavTypeID =" & rs2.Fields("NavTypeID")
+                        conn.Execute (sql)
+                        rs3.MoveNext
+                    Wend
+
+
+                End If
+                rs3.Close
+
+
+            End If
+            rs2.MoveNext
+        Wend
+
+        rs2.Close
+
+        rs.MoveNext
+    Wend
+    rs.Close
+
+
+End Function
+
+Sub getMaxH(h, w)
+    If h = 0 Or w = 0 Or IsNull(w) Or IsNull(h) Then Exit Sub
+    If h > w Then
+        ht = 90
+        wt = 90 * w / h
+    Else
+        wt = 90
+        ht = 90 * h / w
+    End If
+
+End Sub
+
+ 
+
+
+
+Function AddToCart(ByVal ars)
+    AddToCart = ""
+    If ars.Fields("IsChildorParentorItem") <> 0 Then
+        AddToCart = "<a href=""../" & ars.Fields("NavType") & "/" & ars.Fields("SubCategory") & "/" & ars.Fields("SKU") & """ class=""featuringtextR"" style=""text-align: right;"">MORE INFO</a>"
+    Else
+        AddToCart = "<FORM METHOD=" & """" & "post" & """" & " action=" & """" & "/addtocart/" & """" & ">"
+        AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=""ITEMNAME""" & " value=""" & Replace("""", ars.Fields("Description"), "'") & """>"
+        AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "PRICE" & """" & " value=" & """" & ars.Fields("Price") & """" & ">"
+        '    AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "Referer1" & """" & " value=" & """" & "" & """" & ">"
+        '    AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "Referer" & """" & " value=" & """" & "" & """" & ">"
+        '    AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "URL" & """" & " value=" & """" & "" & """" & ">"
+        '    AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "Parent" & """" & " value=" & """" & "1630563" & """" & ">"
+        '    AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " name=" & """" & "PID" & """" & " value=" & """" & "4130" & """" & ">"
+        AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " NAME=" & """" & "FreeFreight" & """" & " VALUE=" & """" & ars.Fields("FreeFreight") & """" & ">"
+        AddToCart = AddToCart & "<INPUT TYPE=" & """" & "hidden" & """" & " NAME=" & """" & "OverWeightFlags" & """" & " VALUE=" & """" & ars.Fields("OverWeight") & """" & ">"
+
+        AddToCart = AddToCart & " <INPUT TYPE=" & """" & "hidden" & """" & " NAME=""ITEMID"" VALUE=""" & ars.Fields("SKU") & """>"
+
+        AddToCart = AddToCart & " <INPUT TYPE=" & """" & "image" & """" & " src=" & """" & "../images/addtocart.jpg" & """" & " alt=" & """" & "Add To Cart" & """" & ">"
+        AddToCart = AddToCart & " <INPUT TYPE=""hidden"" NAME=""mDiscountType"" VALUE=""0"">"
+        AddToCart = AddToCart & " <INPUT TYPE=""hidden"" NAME=""mDiscountAmount"" VALUE=""0"">"
+        AddToCart = AddToCart & " <INPUT TYPE=""hidden"" NAME=""mSpecialPricing"" VALUE="""">"
+        AddToCart = AddToCart & "  </FORM>"
+    End If
+End Function
+
+Function WriteHeader(ByVal LeftBar, myTitle, myKeywords, myDescription)
+    '<meta name="keywords" content= "BicycleBuys.com, Olmo Antares Aluminum Road Bike '01 Online Catalog, Campagnolo, Shimano, bicycle, cycling, mail order, mailorder, catalog, catalogue, Clothing, Helmets, Bicycle, Bike, Component Gruppos, Component Groups, Dura-Ace, Bicycle Kits, Kryptonite Locks, OnGuard Locks, Hyperglide, Niterider, Cateye, Selle Italia, Mavic, Selle San Marco, Flite, Saddles, Sigma Sport, Polar, Heart Rate Monitors, Cardiosport, Computers, Lights, Cycleops, Trainers, Rollers, Selle Italia, Spinergy, Minoura, SRAM, Rohloff, Elite, Kool Stop, Pedro's, Finish Line, Michelin, Continental, Hutchinson, tires, tubes, ErgoBrain, ErgoPower, STI, Ultegra, 105, Record, Chorus, Veloce, Daytona, On-Line Catalog">
+    '<meta name="content" content= "BicycleBuys.com, Olmo Antares Aluminum Road Bike '01 Online Catalog, Campagnolo, Shimano, bicycle, cycling, mail order, mailorder, catalog, catalogue, Clothing, Helmets, Bicycle, Bike, Component Gruppos, Component Groups, Dura-Ace, Bicycle Kits, Kryptonite Locks, OnGuard Locks, Hyperglide, Niterider, Cateye, Selle Italia, Mavic, Selle San Marco, Flite, Saddles, Sigma Sport, Polar, Heart Rate Monitors, Cardiosport, Computers, Lights, Cycleops, Trainers, Rollers, Selle Italia, Spinergy, Minoura, SRAM, Rohloff, Elite, Kool Stop, Pedro's, Finish Line, Michelin, Continental, Hutchinson, tires, tubes, ErgoBrain, ErgoPower, STI, Ultegra, 105, Record, Chorus, Veloce, Daytona, On-Line Catalog">
+
+    WriteHeader = topTitle & myTitle & "</Title>" & vbNewLine
+    WriteHeader = WriteHeader & "<meta name=" & """" & "keywords" & """" & " content=" & """" & myKeywords & """" & ">" & vbNewLine
+    WriteHeader = WriteHeader & "<meta name=" & """" & "description" & """" & " content=" & """" & myDescription & """" & ">" & vbNewLine
+    WriteHeader = WriteHeader & TopHtml & vbNewLine
+    WriteHeader = Replace(WriteHeader, "<!-- ---BEGIN DHL LOGO--- -->", "<!-- ---BEGIN DHL LOGO--- --><table><tr><td>&nbsp;</td><td><font size=-1>" & LeftBar & "</font></td></tr></table><BR><BR>")
+
+End Function
+
+Function writefooter()
+    writefooter = BottomHtml
+
+End Function
+
+Function InitCaps(ByVal astr)
+    If Len(astr) > 1 Then
+        InitCaps = UCase(Left(astr, 1)) & Right(astr, Len(astr) - 1)
+    Else
+        InitCaps = UCase(astr)
+    End If
+
+End Function
+
+Function InitialHeader()
+
+End Function
+
+Function myReplace(ByVal astr)
+    'If aStr = "Components" Then MsgBox "D"
+    'If aStr = "Tires & Tubes" Then MsgBox "S"
+    astr = Replace(astr, "/", "_")
+    astr = Replace(astr, "&", "And")
+    astr = Replace(astr, "'", "")
+    astr = Replace(astr, " ", "")
+    astr = Replace(astr, """", "")
+    myReplace = astr
+
+End Function
+
+Function myReplace2(ByVal astr)
+    'If aStr = "Components" Then MsgBox "D"
+    'If aStr = "Tires & Tubes" Then MsgBox "S"
+    astr = Replace(astr, "'", "''")
+    myReplace2 = astr
+
+End Function
+
+Function findLastComma(ByVal astr)
+    For x = Len(astr) To 1 Step -1
+        If Mid(astr, x, 1) = "," Then
+            Exit For
+        End If
+    Next
+    If x > 0 Then astr = Left(astr, x - 1) & " and" & Right(astr, Len(astr) - x)
+    findLastComma = astr
+End Function
+
+
+Function NZ(ByVal aval, ByVal bval)
+    If IsNull(aval) Or aval = "" Then
+        NZ = bval
+    Else
+        NZ = aval
+    End If
+End Function
+
+Private Sub Command1_Click()
+    main
+End Sub
+
+
+Function myParseWords(str)
+    If words(1000) >= 999 Then Exit Function
+    s = 1
+    e = 1
+    e = InStr(s, str, " ")
+    While e > 0
+        
+        astr = UCase(Mid(str, s, e - s))
+        addWord (astr)
+        s = e + 1
+        e = InStr(s, str, " ")
+    Wend
+    e = Len(str) + 1
+    astr = UCase(Mid(str, s, e - s))
+    addWord (astr)
+End Function
+
+Function clearWords()
+    For x = 0 To words(1000)
+        words(x) = ""
+    Next
+    words(1000) = 0
+End Function
+Function addWord(astr)
+    If words(1000) >= 999 Then Exit Function
+    found = False
+    For x = 0 To words(1000)
+        If words(x) = astr Then
+            found = True
+            Exit For
+        End If
+    Next
+    
+    If Not found Then
+        words(words(1000)) = astr
+        words(1000) = words(1000) + 1
+    End If
+
+End Function
+
+Function getWords()
+    getWords = ""
+    For x = 0 To words(1000)
+        getWords = getWords & words(x) & " "
+    Next
+
+End Function
+
+Function msrp(rs4)
+    If IsNull(rs4.Fields("MSRP")) Or rs4.Fields("MSRP") = 0 Then
+    ElseIf rs4.Fields("MSRP") > rs4.Fields("price") Then
+        msrp = "<font size=""1"">MSRP $" & rs4.Fields("MSRP") & "<BR></font>"
+    Else
+        msrp = ""
+    End If
+End Function
+
+

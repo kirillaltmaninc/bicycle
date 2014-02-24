@@ -1,0 +1,768 @@
+1,Small/Medium
+2,2X
+3,3X
+4,16
+5,17
+6,18
+7,19
+8,20
+9,20.5
+10,21
+11,22
+12,22.5
+13,23
+14,24
+15,Small,Medium, Large, X-Large, XX-Large
+16,Small
+17,Medium
+18,Large
+19,X-Large
+20,XX-Large
+21,700c
+22,26
+23,Jumbo
+24,38
+25,39
+26,40
+27,41
+28,42
+29,43
+30,44
+31,45
+32,46
+33,47
+34,48
+35,10
+36,10.5
+37,11
+38,11.5
+39,12
+40,12.5
+41,13.5
+42,14
+43,7
+44,8
+45,9
+46,9.5
+47,8.5
+48,7.5
+49,33
+50,34
+51,35
+52,36
+53,37
+54,56
+55,50
+56,51
+57,52
+58,53
+59,54
+60,55
+61,57
+62,58
+63,59
+64,60
+65,61
+66,62
+67,63
+68,49
+69,15.5
+70,17.5
+72,19.5
+73,16.5
+74,18.5
+75,21.5
+76,X-Small
+77,1 inch Threaded
+78,1 1-8
+79,65
+80,110mm
+81,120mm
+82,130
+83,100cm x 15mm
+84,90
+85,80
+86,105
+87,115
+88,650cc
+89,L/XL
+90,Lady 16
+91,XXS/XS
+92,S/M
+93,Lady 18
+94,Lady 19
+95,Lady 12
+96,Lady 14.5
+97,Lady 17
+98,Girl 24
+99,BOY 24
+100,M/L
+101,42.5
+102,43.5
+103,44.5
+104,45.5
+105,46.5
+106,47.5
+107,48.5
+108,XS/S
+109,64
+110,Lady 15
+111,Lady 21
+112,Lady Large
+113,Lady Small
+114,Lady Medium
+115,6
+116,6.5
+117,26.8
+118,27.2
+119,Universal Size
+120,9/16
+121,1/2
+122,41.5
+123,12/27
+124,12/25
+125,11/21
+126,12/23
+127,12/21
+128,11/23
+129,2Rear
+130,1Front
+131,Lady13.5
+132,27.2/250mm
+133,27.2/330mm
+134,27.2/410mm
+136,27.0/410mm
+137,30.9/410mm
+138,175mm
+139,170mm
+140,172.5mm
+141,180mm
+142,172.5mm-39x53
+143,172.5mm-42x53
+144,175mm-39x53
+145,Lady 17.5
+146,Lady 15.5
+147,700x20
+148,700x25c
+149,700x23c Foldable
+150,20c
+151,26.8/250mm
+154,30.9/287mm
+156,30.9/367mm
+157,30.9/400mm
+158,31.6/287mm
+159,31.6/367mm
+160,128oz
+161,32oz
+162,12oz
+163,14oz
+164,16oz
+165,2oz
+166,4oz
+167,7oz
+168,8oz
+169,3oz
+170,10oz
+171,30
+172,39.5
+173,40.5
+174,23.5
+175,Lady 14
+176,Campagnolo
+177,Shimano
+178,28.6
+179,31.8
+180,34.9
+181,Braze-on
+182,Short Cage
+183,Medium Cage
+184,Long Cage
+185,1 1/8 Threadless
+186,1 Threaded
+187,Hidden 1 1/8  Threadless
+188,1 inch Threadless
+189,660mm
+190,610mm
+191,580mm
+192,Super Jumbo
+193,2inch Receiver
+194,1 1/4 Receiver
+195,Ball Mount
+196,68x107
+197,68x110
+198,68x113
+199,73x107
+200,73x110
+201,73x113
+202,68x118
+203,11-28
+204,11-30
+205,11-32
+206,11-34
+207,650x23c
+208,700c Wheelset
+209,700c Front
+210,700c Rear
+211,26 Rear
+212,26 Front
+213,Wheelset
+214,26 Wheelset
+215,XX-Small
+216,27.0
+217,Shimano 105
+218,10 sp-Shimano Ultegra
+219,Shimano Dura-Ace 10
+220,Campagnolo Record
+221,Campagnolo Chorus
+222,Campagnolo Centaur
+223,Frame & Fork
+224,350mm - 25.0
+225,350mm - 26.8
+226,350mm - 27.0
+227,350mm - 27.2
+228,350mm - 31.6
+229,420mm - 25.0
+230,420mm - 26.8
+231,420mm - 27.0
+232,420mm - 27.2
+233,270mm - 25.0
+234,270mm - 26.8
+235,270mm - 27.0
+236,270mm - 27.2
+237,270mm - 31.6
+238,MTB
+239,Road
+240,25.0
+241,27x11/4
+242,700x28
+243,33/55
+244,77
+245,88
+246,V100
+247,109.5
+248,118
+249,31.7 - 100mm
+250,Soft Band
+251,Rubber Band
+252,Lady 13.5
+253,68x108
+254,70 x 108
+255,70 x 118
+256,11-23
+257,11-21
+258,11-25
+259,12-21
+260,12-23
+261,12-25
+262,13-30
+263,XXX-Large
+264,26x2.1"
+265,26x2.3"
+266,1.85
+267,2.10
+268,90mm
+269,70x110
+270,102mm
+271,111mm
+272,26x2.5"
+273,26x1.9"
+274,Low Rise
+275,Mid Rise
+276,High Rise
+277,30.9
+278,31.6
+279,26x1.95"
+280,29
+281,26x2.0"
+282,32mm
+283,13-26
+284,1 1/8 Hidden
+285,13-29
+287,28.6 Triple
+288,Braze-on Triple
+289,31.8 Triple
+290,Oversize (31.8) 42
+291,42-Oversized
+292,44-Oversized
+293,160mm
+294,165mm
+295,185mm
+296,107
+297,700x35
+298,31.6/350mm
+299,9sp Shimano Ultegra
+304,700C Xaero Wheels
+305,700C Stealth Wheels
+306,700C Volos Ti Wheels
+307,700C Ksyrium Elite Wheels
+308,700C Aerohead Crono Wheels
+309,700C Ksyrium Equipe Wheels
+310,700C Circuit Comp Wheels
+311,700C Elan Wheels
+312,700C Reynolds Alta Race Wheels
+313,700C Shimano 7800 Wheels
+314,100mm
+315,130mm
+316,270mm - 31.8
+317,250mm - 31.8
+318,340mm
+319,360mm
+320,320mm
+321,390mm
+322,34.9 Triple
+323,1" Threadless
+324,1 1/8"-Bosses
+325,1 1/8"-No Bosses
+326,140mm
+327,120mm 31.9 Oversized
+328,26x2.2"
+329,250mm - 27.2
+330,31.7 - 110mm
+331,31.7 - 120mm
+332,31.7 - 130mm
+333,Lady 13
+334,Wheelset - Shimano
+335,Shimano Wheelset
+336,Campagnolo Wheelset
+337,Brushed S
+338,90mm x 10 degrees
+339,100mm x 10 Degrees
+340,110mm x 10 Degrees
+341,120mm x 10 Degrees
+343,700x23c
+344,100mm x 5 degrees
+345,110mm x 5 Degrees
+346,120mm x 5 Degrees
+347,90mm x 5 Degrees
+348,32
+349,100mm x 17 degrees
+350,120mm x 17 Degrees
+351,110mm x 17 Degrees
+352,90mm x 15 degrees
+353,11-26
+354,12-26
+355,100cm x 20mm
+356,170mm Compact
+357,172.5mm Compact
+358,175mm Compact
+359,185cm X 20mm
+362,27.2/300mm
+363,27.2/400mm
+364,31.6/300mm
+369,10mm
+370,5.5
+371,700x40
+372,73x118
+373,90cm
+374,31.6/400mm
+375,37.5
+376,38.5
+377,27.0/330mm
+378,2.25
+379,2.0
+380,27.2/350mm
+381,26.8/350mm
+382,35mm
+383,75cm
+384,500ml
+385,27.2/240mm
+386,Youth
+387,Adult
+388,19mm rise
+389,38mm rise
+390,50mm
+391,65mm
+392,80mm
+393,20mm
+398,26x2.4"
+399,Rear
+400,700x32C
+401,290mm - 31.8
+402,30.8/410mm
+408,30.8 410mm
+409,20oz
+410,6" Roundagon
+411,6" Cleen Sweep
+412,8" Roundagon
+413,Lady
+414,Thin
+415,Thick
+416,36.5
+417,13-27
+418,230mm - 31.8
+419,75mm
+420,105mm
+421,Lady's Wrist
+422,men
+423,60mm x 25 Degrees
+424,80mm x 40 Degrees
+425,100mm x 25 Degrees
+426,presta
+427,schraeder
+428,199mm
+429,39/40
+430,41/42
+431,43/44
+432,45/46
+433,47-48
+434,52mm
+435,36mm
+436,60mm
+437,Full
+438,48mm
+439,42mm
+443,11-27
+444,petite
+445,1 liter
+446,5 liter
+447,90mm x 40 Degrees
+448,36-38
+449,39-41
+450,42-45
+451,46-48
+452,2.2
+453,49-51
+455,12-34
+457,Lady Fit
+459,700x37C
+461,31.8 x 660mm
+463,25.4 x 660mm
+465,31.8 x 685mm
+467,29x2.2"
+469,29x2.4"
+471,4
+473,28
+475,3
+477,1
+479,67
+481,left
+483,right
+485,26x2.35"
+487,40mm
+489,635mm
+491,Front & Rear
+493,Front
+499,m/xxl
+501,1.90
+503,Schrader
+505,organic
+507,sintered
+509,70
+511,100
+513,51mm
+515,45oz
+517,50oz
+519,70oz
+521,72oz
+523,100oz
+525,90mm x 25 degrees
+527,4 Degrees
+529,8 Degrees
+531,700x25c Foldable
+533,26x175
+535,26x2.25"
+537,3'-3"
+539,5'-6"
+541,2'-3"
+543,4'-3"
+545,5'
+547,3'
+549,5mm
+559,1 1/4 & 2 inch
+561,Sram
+563,10sp Shimano
+565,Sram/ Shimano 9 Speed
+567,12-28
+569,12-32
+571,700x47c
+573,2inch Extended Receiver
+575,12-36
+577,100mm x 40 Degrees
+579,110mm x 40 Degrees
+581,110mm x 25 Degrees
+583,80mm x 25 Degrees
+585,120mm x 40 Degrees
+587,High Direct Mount
+589,Low Direct Mount
+591,38.2
+593,25.4
+595,55mm
+597,70mm
+599,85mm
+613,115mm
+615,BB30
+617,PF30
+619,GXP
+621,Press Fit GXP
+627,203mm
+629,2x10
+631,3x10
+633,11-36
+635,34.9 High Clamp
+637,34.9 Low Clamp
+639,38.2 high clamp
+641,31.8 High Clamp
+643,38.2 Low Clamp
+647,31.8 Low Clamp
+649,31.8/34.9 High Clamp
+651,31.8/34.9 Low Clamp
+653,34.9/38.2 Low Clamp
+655,6 oz Spray
+657,12oz Spray
+659,4oz Drip
+661,30.0
+665,700x24
+667,2.5
+669,1.8
+671,16Nm
+673,12Nm
+675,130BCD
+677,110BCD
+679,104BCD
+681,94BCD
+683,Metal
+685,Resin
+687,F:100x9QR
+689,F:100x15
+691,F:110x20
+693,F:15
+695,F:9QR
+697,F:20
+699,Race Double
+701,Trail Triple
+703,24x1.95
+705,28.6/31.8
+707,167.5mm
+709,0mm
+715,Clincher Shimano
+717,Clincher Campagnolo
+719,Tubular Shimano
+725,Tubular Campagnolo
+727,Track/Single Speed
+729,Happy Face
+731,Dice
+733,Skull
+735,Spike
+737,Skull & Crossbones
+739,8-Ball
+741,Iron Cross
+743,Crown
+745,Clincher
+747,Tubular
+749,Tubular Single Speed
+751,Spade
+753,MULE
+755,177.5mm
+763,27mm
+765,33mm
+769,74mm
+771,98mm
+773,650c
+779,MTN-1
+781,MTN-2
+783,3/8"
+785,15mm
+787,3/8" & 15mm
+789,3/8x15mm
+791,Smoke White Gloss
+793,13
+795,27.2 to 28.6
+797,25.0 to 27.2
+799,25.0 to 27.0
+807,1600mm
+809,1 1/8" Threaded
+811,Single
+813,Pair
+815,Dollar Sign
+817,CenterLock
+819,6 Bolt International
+821,Rosebloom/Coffee
+823,Micro 25ci
+825,Small 35ci
+827,Large 50ci
+829,4mm
+831,8mm
+833,12mm
+835,30mm
+843,150mm
+845,36-37
+847,38-39
+849,40-41
+851,42-43
+853,44-45
+855,46-47
+857,48-49
+859,Men's
+861,Women's
+863,Shimano/Sram
+865,34.9/350mm
+877,34.9/400mm
+879,30.9/350mm
+881,41-42.5
+883,43-44.5
+885,45-46-5
+887,47-48.5
+889,45-46.5
+891,39-40.5
+893,1oz drip
+895,4oz Spray
+897,26x1.85
+899,Red LED
+901,White LED
+903,15mm Front Axle
+905,12mm Rear Axle
+907,Quick Release
+909,15mm/12mm axle
+911,-5 Degree Rise
+913,+6 Degree Rise
+915,Semi-Metallic
+917,Semi-Metallic Aluminum
+919,1lb. Tub
+921,3.5 oz
+923,Organic Aluminum
+925,Super Record 11 Speed
+927,Record 11 Speed
+929,Centaur 10 Speed
+931,Super Record Carbon
+933,Record Aluminum
+935,160mm Front
+937,160mm Rear
+939,180mm Front
+941,180mm Rear
+943,200mm Front
+945,200mm Rear
+947,200mm
+949,Soft Touch
+961,Relaxed
+963,Moderate
+965,Athletic
+967,Snake
+969,Chameleon
+971,Bull
+973,Compact
+975,Long
+977,700x45
+979,26x45
+981,37/38
+983,24oz
+985,700x22
+987,Kit
+989,2 Keys
+991,4 Keys
+993,6 Keys
+995,8 Keys
+997,1500mm
+999,9-11
+1001,26x2.35" UST
+1003,26x2.35" DTC
+1005,2.5mm
+1007,3.5mm
+1009,Inner
+1011,Outer
+1013,29x2.0"
+1021,4.5
+1023,5
+1037,8" Clean Sweep
+1039,91mm
+1043,41mm
+1051,Wildberry/Pomegranate
+1053,Goji/Blueberry
+1055,Strawberry/Dragonfruit
+1057,Concord Grape/Apple
+1059,Citrus
+1061,Tropical Fruit
+1063,6 oz Drip
+1065,OSFA
+1067,12-30
+1069,SS
+1071,GS
+1073,SGS
+1075,29x2.15
+1077,29x2.35
+1079,29x1.90
+1081,26x1.5
+1101,31.8 Direct Mount Bottom pull
+1103,34.9 Direct Mount Bottom pull
+1105,ED11
+1107,Direct Mount 26x39
+1109,Direct Mount 28x42
+1111,Direct Mount S1 39x26
+1113,Direct Mount S2 39x26
+1115,Direct Mount S3 39x26
+1117,Direct Mount S1
+1119,Direct Mount S1 28x42
+1121,Direct Mount S2 28x42
+1123,Direct Mount S3 28x42
+1129,3.2
+1131,110mm x -15 Degrees
+1133,100mm x -15 Degree Rise
+1135,90mm x -15 Degree Rise
+1137,100mm x -5 Degree Rise
+1139,110mm x -5 Degree Rise
+1141,110mm x 6 Degree Rise
+1143,120mm x 6 Degree Rise
+1145,90mm x -5 Degree Rise
+1147,100mm X 6 Degree Rise
+1149,2.4
+1155,1700mm
+1161,24T
+1163,162.5
+1165,29x2.1
+1167,29x2.25
+1169,20.75
+1171,Green Alien
+1173,Front 950mm
+1175,Rear 1800mm
+1177,6 Bolt
+1179,1 Gallon
+1181,600mm
+1183,680mm
+1185,720mm
+1187,700mm
+1189,780mm
+1191,15
+1193,68x122
+1195,700x18c
+1197,26x2.30-2.85
+1199,26x1.70-2.35
+1207,700x20-25
+1209,25T
+1211,5.5"
+1213,7.5"
+1215,8"
+1217,8.25"
+1219,19mm
+1221,22mm
+1223,18oz Trigger Spray
+1225,Small/Medium Ankle
+1227,Large/X-Large Ankle
+1229,27.5x2.25
+1231,27.5x2.35
+1233,420mm
+1235,440mm
+1237,400mm
+1239,270mm
+1241,290mm
+1243,27
+1245,Standard
+1247,BMC-Large
+1249,BMC-Medium
+1251,BMC-Small
+1253,Front Load
+1255,Top Load
+1257,Rear Shimano 10 and 11 Speed
+1259,Front and Rear Shimano 10 and 11 Speed
+1261,27.5
+1263,Front 15x100mm
+1265,Front 9x100mm
+1267,Rear 12x142mm
+1269,Rear 10x135mm
+1271,Rear 10x135mm/12x142mm
+1273,Set 15mm Front 135/142 Rear
+1275,Set 9mm Front 135/142 Rear
+1277,Set 9mm Front 142 Rear
+1279,Set 15mm Front 142 Rear
+1281,Set 9mm Front 135 Rear
+1283,Set 15mm Front 135 Rear
+1285,750mm
+1287,800mm

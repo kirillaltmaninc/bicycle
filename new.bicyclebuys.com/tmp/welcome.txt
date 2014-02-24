@@ -1,0 +1,4 @@
+Welcome 1|Welcome to Bicyclebuys.com.  We hope your shopping experience will be a Great one!||_self
+New items available!|Check out the Daily changes on our New Items page. Always new items at Low, Low prices!||_self
+Holiday Freight Policy|Orders Shipped out by Thursday East of the Mississippi will arrive as secduled with UPS ground service||_self
+Thanks|Thak you for shopping at Bicyclebuys.com.  Let us know if you did not find all you wanted|mailto:info@bicyclebuys.com|_self

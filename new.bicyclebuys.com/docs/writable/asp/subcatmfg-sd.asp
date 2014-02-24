@@ -1,0 +1,23 @@
+<% Dim vSubcatMFGSD
+Set vSubcatMFGSD = Server.CreateObject("Scripting.Dictionary")
+vSubCatMFGSD.Item("43") = "45,58,97,150,60,483,64"
+vSubCatMFGSD.Item("45") = "64,58,150,97,60,151"
+vSubCatMFGSD.Item("46") = "64,60"
+vSubCatMFGSD.Item("50") = "150,403,58,552"
+vSubCatMFGSD.Item("51") = "403,150,60,58,552"
+vSubCatMFGSD.Item("54") = "45,434,51,58,60,312,75,405,151,64,76,410,46"
+vSubCatMFGSD.Item("95") = "64,150,60"
+vSubCatMFGSD.Item("96") = "60,150"
+vSubCatMFGSD.Item("97") = "73,74,95,91,70"
+vSubCatMFGSD.Item("98") = "73,74,95,91,70"
+vSubCatMFGSD.Item("99") = "73,74,95,91,70"
+vSubCatMFGSD.Item("100") = "73,74,95,91,70"
+vSubCatMFGSD.Item("101") = "73,74,95,91,70"
+vSubCatMFGSD.Item("102") = "432,49,119,463,465,377,63,83,143,84"
+vSubCatMFGSD.Item("103") = "432,49,119,463,465,377,63,83,143,84"
+vSubCatMFGSD.Item("104") = "426"
+vSubCatMFGSD.Item("105") = "60"
+vSubCatMFGSD.Item("200") = "548"
+vSubCatMFGSD.Item("203") = "102"
+vSubCatMFGSD.Item("210") = "446,637,639"
+%>

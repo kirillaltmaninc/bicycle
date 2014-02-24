@@ -1,0 +1,1966 @@
+1,Green/Black
+2,Red
+3,Blue
+4,Yellow
+5,Green
+6,Grey
+7,Silver
+8,Black
+9,Burgundy
+10,Gold
+11,Blue/Silver
+12,xxxx
+13,Graffitee
+14,Orange
+15,Colnago
+16,xxxxxx
+17,Purple
+18,Black/Navy/Red
+19,Black/Navy/Forest
+20,Red/Blue/Grey
+21,Red/Navy/Green
+22,Brown/Black
+23,Black/Green
+24,Black/Silver
+25,Purple/Black
+26,Red/Blue
+27,Red/Blue/Black
+28,Black/Grey
+29,White
+30,Mango
+31,Titanium
+32,Pink
+33,Blackened Green
+34,Blackberry
+35,Wildberry
+36,Purple/Green
+37,Tan
+38,Brown Root
+40,Green/Brown
+41,Black/White
+42,Coin/Navy
+43,Santa Fe
+44,Champagne
+45,Brown/Blue
+47,Blue ATV Pigs
+48,Red/Brown
+49,Grey/Blue
+50,Carbon
+51,Chrome Plate
+52,Polished
+53,Orange/Polished/Orange, Polisled, Black
+54,Flame Orange/Black/Polished
+55,Magic Yellow/Polished/Magic Yellow
+56,Magic Yellow, Polished
+57,Speed Blue
+58,Polished CNC Finished
+59,Brush Polish
+60,Teal
+61,Magenta
+62,Silver/Red
+63,Silver/Black
+64,Plum
+65,Khaki
+66,Sand
+67,Silver/Blue
+68,Pewter
+69,Tangerine
+70,USA
+71,Canada
+72,Chrome
+73,Carbon Fiber
+74,Black,Red
+75,Yellow/Black
+76,White/Red
+77,White/Green
+78,Yellow/Silver
+79,Green/Polished
+80,Grey/Silver
+81,Dark Blue/Light Blue
+82,Red/White
+83,Silver/White
+84,Yellow/Blue
+85,Black/Blue
+86,Black/Red
+87,Matte Gunmetal
+88,Blue/Red
+89,Pewter/Blue
+90,Yellow/Red
+92,Pistachio
+93,Violet/White
+94,White/Black
+95,Red/Silver/Black
+97,White/Blue
+98,Charcoal
+99,Oyster Spruce
+100,Merlot
+101,Turquoise
+102,Blue/Platinum
+103,Platinum
+104,Blue/Yellow
+105,Red/Black
+106,Silver/Orange
+107,Silver/Grey
+108,Silver,Grey
+109,Khaki/White
+110,Sand/Black
+111,Black/Khaki
+112,Black/Yellow
+114,Black/Sand
+115,Blue/Black
+116,Purple/Silver
+117,Pink/Green
+118,Red/Yellow/Violet
+119,Silver/Red/Purple
+120,White/Red/Black
+121,Purple/Pink
+122,Orange/Titanium
+123,Gold/Red
+124,Green/Black/Yellow
+125,US Poastal Service
+126,Black/violet
+127,Gloss Black
+129,Matte Black
+130,Matte Slate
+131,Raw
+133,Navy
+134,Grey/Yellow
+135,Blue/Grey
+136,Rabobank
+137,Once
+138,Silver/Green
+139,Black Chrome
+140,Blue Cammo
+141,Pink Cammo
+142,Team Mercury
+143,White/Magenta
+144,Grey/Purple
+145,Burgundy/Black
+146,Yellow/White
+147,Platinum/Blue
+148,Gold/Graphite
+149,Silver/Graphite
+150,Silver/Turquoise
+151,Turquoise/Silver
+152,Burgundy/Silver
+153,Navy/Gold
+155,Green/Grey
+157,Green/Champagne
+158,Flame
+159,Matte Platinum
+160,Matte Blue
+161,Black/Bronze
+162,Grey/Red
+163,Yellow/Trans
+165,Grey/Black
+166,Black/Black
+167,Black/Anthracite
+168,Beige
+169,Orange/Gray
+170,Gold/Black
+171,Bronze
+172,Punjab/Spark
+173,Green/Turquoise
+174,Lilac/Green
+175,Whiskey
+176,Green/white
+177,Trek/VW
+178,Army Green
+179,Titanium/Yellow
+180,Charcoal/Black
+181,Blue Flame
+182,Black Flames
+183,Pink Flowers
+184,Blue Flowers
+185,Violet
+186,Midnight Blue
+187,Pearl White
+188,Ibanesto Team
+189,Credit Agricole
+190,Grey Anodized
+191,Orange Bongos
+192,Gunmetal/Black
+193,Red Stripes
+194,Blue Stripes
+195,Moto Blue/Silver
+196,Matte Titanium
+199,White/Silver
+200,Black/Titanium
+201,Matte Red/Matte Grey
+202,Blue Lux Reflective Stripe
+203,Blue/Violet
+204,Italian Colors
+205,Black/White/Grey
+206,Black/White/Grey/Purple
+207,Black/White/Pink
+208,American Flag
+209,Yellow Lux Reflective Stripe
+210,Yellow/Red/Blue
+211,Bourdeaux
+212,Black/White Stripe
+213,Blue/White Stripe
+214,Clear
+215,Cofidis
+216,Team Banesto
+217,Lone Star
+218,Matte Charcoal
+219,Gloss Red
+220,Gloss Blue
+221,Gloss Pearl White
+222,Matte Anthracite Brown
+223,Gloss Silver
+224,Silver/Sand
+225,Matte Grey
+226,Matte Navy
+227,Matte Silver
+228,Pewter/Black
+229,Polished/Blue
+230,Aqua/Polished
+231,Anthracite
+232,Painted Chrome/Black
+233,Anthracite/Black
+234,Red/Yellow
+235,Candy Chrome
+241,Campagnolo
+242,Shimano
+243,Mavic Ksyrium SL
+244,Bontrager Race X-Lite
+245,Cane Creek Aerohead Ti
+246,Shimano 7800 Dura-Ace
+247,Mavic Open Pro
+248,Spinergy SR-X
+249,Spinergy Xaero
+250,Velomax Orion II
+251,Velomax Tempest
+252,Bontrager Race Lite
+253,Spinergy SR-3
+254,Velomax Ascent II
+255,Velomax Circuit Comp
+256,Mavic Ksyrium Elite
+257,Campagnolo Zonda
+258,Campagnolo Proton
+259,Black/Burgundy
+260,Sand/Grey
+261,Silver/Slate Blue
+262,Black/Blue/Silver
+263,Burgundy/Champagne
+264,Carbon/White
+265,Carbon/Red
+266,High Rise
+267,Low Rise
+268,550 Shimano Wheels
+269,Mavic CXP 21
+270,Campagnolo Eurus
+271,Rolf Sestriere
+272,Front
+273,Rear
+274,Grey/White
+275,Silver/Burgundy
+276,Gunmetal
+277,Garnet
+278,Yellow/Grey
+279,Red/Grey
+280,Oak
+281,Set
+282,No Wheels
+283,Royal Blue
+284,Standard Cable
+285,Long Cable
+286,Wireless
+287,Yellow/Green
+288,Le Tour
+289,Cinelli
+290,Syncros
+291,Columbus
+292,WTB
+293,Pedro's
+294,Italian
+295,English
+296,Red/Yellow/Blue
+297,Brick/Green/Blue
+298,Silver/Blue/Red
+299,Black/Brick/Grey
+300,Blue/Orange
+301,Taupe/Brown
+302,Red/Silver
+303,Orange/Black
+304,Black/Blue/Yellow
+305,Blue/Chrome
+306,Red/Chrome
+307,Black/Chrome
+308,Candy Blue
+309,Pink/White
+310,Blue/Light Blue
+311,Shimano Octalink
+312,ISIS Drive
+313,CSC Team
+314,Team RLX Blue/Yellow
+315,Silver/Titanium
+316,White/Charcoal
+317,Stars and Stripes
+321,Stars & Stripes
+322,Moto Red/Silver
+323,Brown Skulls
+324,Black Heart
+325,Mustard Shrine
+326,Flat Gray
+327,Flat Red
+328,Black Stars
+329,Red Eagle
+330,Mirra Black
+331,Mirra Signature White
+332,Caribbean Blue
+333,Ice Green Mint
+334,White Flowers
+335,Ice Violet
+336,Blue Race
+337,Red Flash
+338,Pink Dog Show
+339,Blue Tiki
+340,Orange Bear Picnic
+341,Pink Strawberries
+342,Blue Monkeytown
+343,Pink Flames
+344,Pink Leopard
+345,Magnesium
+347,Blue/Pewter
+348,Blue/Titanium
+349,Burnt Gold
+350,Carbon/Black
+351,Red/Titanium
+352,Red Flames
+353,Carbon/Magnesium
+354,Titanium/Red
+355,Ice Blue
+356,Frost Blue
+357,Pink Stars
+358,Lavender Flames
+359,Lavender Unicorn
+360,ABC's
+361,Blue Animals
+362,White Butterflies
+363,Purple Dragonflies
+364,Blue Robots
+365,Blue Mike & Bike
+366,Red/Charcoal
+367,Charcoal/Silver
+368,Navy/Azzuro
+369,Ash
+370,T-Mobile
+371,Navigators
+372,Screaming Yellow
+373,Storm Blue
+374,Congo Green
+375,Corona
+376,Black/Black/Carbon
+377,Storm Blue/Black/Carbon
+378,White/Royal
+379,Delivery Truck
+380,Fire Truck
+381,Police Car
+382,Street Rod
+383,Taxi Car
+384,Tow Truck
+385,Galvanized
+386,Dark Red
+387,Cactus Green
+388,Dark Blue
+389,Titanium Silver
+390,Bright Silver
+391,Metallic Slate
+392,Black/White/Black
+393,Electric Blue
+394,Red Ruby
+396,Fast Orange
+397,Tricolor
+398,Sprinter
+399,Alien Blue
+400,Jettison
+401,Oval Titanium
+402,Alien Green
+403,Antracite Gold
+404,Oval Yellow
+405,Zabel
+406,Ice Red
+407,Ice Magenta
+408,Gaz Blue
+409,Ice Yellow
+410,Yellow Jeans
+411,Red Jeans
+412,Panther Blue
+413,Silver/Purple
+414,Black/Mirror
+415,Black/Smoke
+416,Translucent Grey/White
+417,Translucent Grey/Smoke
+418,Gloss Black/Smoke
+419,Matte Black/Mirror
+420,Spinergy Tilium Carbon SS
+421,Campagnolo Scirocco
+422,Black/Purple
+423,Pebble
+424,SunShine
+425,Nite
+426,Eddy Merckx
+427,Pinarello
+428,Titanium/Black
+429,Diadora
+430,LST Contrast Gold
+431,LST Trail Silver Gradient
+432,Grey-Silver Gradient
+433,Crystal-Silver Gradient
+434,Brown Havanna
+435,Bronze/Marine
+436,Pewter/LST Trail Silver Gradient
+437,Pewter/Grey
+438,Orange-Silver Gradient
+439,Yellow-Silver Gradient
+440,Sunburst Orange
+441,Graphite
+442,Jalabert
+443,Standard Tires
+444,UST Tires
+445,29" Standard Tires
+446,Bianchi
+447,Pink/Silver
+448,Padlock
+449,Chain
+450,Yeti Enduro Kit
+451,Lavender/White
+452,Black Camouflage
+453,Olive
+454,Mint Blue
+455,31.8 Oversize
+456,Skulls
+457,Titanium/Grey
+462,Black/Gold
+463,Lavender
+464,Lime
+465,Ritchey
+466,Copper
+467,Triple
+468,Double
+469,Bosses
+470,No Bosses
+471,Discovery
+472,Spinergy Stealth PBO
+476,sky titanium
+477,Black/Carbon
+478,Light Blue
+479,Sky Blue
+480,Lilac
+481,Lavender Flowers
+482,Matte Aluminum
+483,Pink Hearts
+484,Red/Pewter
+485,Blue Space Men
+486,Olive/Titanium
+487,Blue Tunnel Animals
+488,Blue Fireflies
+489,Gunmetal Chad Kagy
+490,Sparkle Silver
+491,Elecrtic Blue
+492,Dark Brown Allan Cooke
+493,Sparkle Magenta
+494,Metallic Red Jamie Bestwick
+495,Blue Ryan Nyquist
+496,Sparkle Black McCann
+497,Aluminum/White
+498,Black/Pewter
+499,Silver/Chalk
+500,White/Gold
+501,chalk
+502,Red Cars
+503,Red/Carbon
+504,Slate/Blue
+506,Giordana
+507,Britain
+508,Italy
+509,Peppers
+510,Hot Wheels
+511,Brooklyn
+512,Glacier
+513,Weave
+514,Talon
+515,airfoil
+516,Gloss Smoke
+517,Gloss Polish
+518,Gloss Gunmetal
+519,Paris
+520,Gunmetal Matte
+521,Brushed Grey
+522,Brushed Steel Grey
+523,Mercury Gloss
+524,Orange/White
+525,Orange/Grey
+526,White/Light Purple
+527,Light Purple
+528,Stone/Black
+529,Oscar
+530,Bert & Ernie
+531,Cookie Monster
+532,Orange/Silver
+533,Lavender/Black
+534,Yellow/Mango
+535,King Of The Mountain
+538,Skull
+539,Flower Power White
+540,Sunbright
+541,Cream
+542,Matte Steel
+543,Gloss Pewter
+544,Matte Coal
+545,Amethyst
+546,Red Ducks
+547,Yellow Chicks
+548,Blue Hot Rod Flames
+549,Lavender Butterflies
+550,Red Butterflies
+551,White/Titanium
+553,Alloy/Silver
+554,Black/Pink
+555,Olive/Chalk
+556,Olive/Orange
+557,Titanium/Green
+558,Matte Sepia
+559,Red Poodles
+560,Black Hot Rod Skunks
+561,Pink Animals
+562,Red Elephant Baseball
+563,Silver/Cranberry
+564,Slate/Titanium
+565,Sepia Camo
+566,Red/Chalk
+567,Matte Primer Ryan Nyquist
+568,Red Hawk
+569,Matte Granite McCann
+570,Matte White Bestwick
+571,Matte Khaki Wade
+573,Matte Black Hawk
+574,Matte Green Cooke
+575,Opera
+576,Pegoretti
+577,Lilac/White
+578,Campagnolo-Black
+579,Campagnolo Silver
+580,Shimano Silver
+581,Shimano Black
+582,Chocolate
+583,Super Grover
+584,Tatoo
+585,Fireball
+588,Spades
+589,Tattoo
+590,Dragon
+591,Irish
+592,Rock On
+593,Las Vegas
+594,Daisy
+595,Blossom
+596,Butteryfly Black
+597,Blue Stitch
+610,Grey Stitch
+611,Red Stitch
+615,Coral
+616,Black/Coral
+617,White/Grey
+618,Stone
+619,Chrome/Silver
+620,Red/Graphite
+621,Blue/Graphite
+622,Black/Charcoal
+623,Black/Graphite
+624,Orange/Graphite
+625,Orange/Charcoal
+626,Left
+627,Right
+628,Fire Red
+629,Tour de France
+630,Matte Black/Red
+631,Matte Black/Titanium
+632,7.5 WT
+633,5 WT
+634,10 WT
+635,15WT
+636,Titanium/Carbon
+637,Orange/Blue
+638,Blue/Blue
+639,Blue/White Flowers
+640,Gloss Sand
+641,White/Sky Flowers
+642,White/Pink Flowers
+643,Matte Smoke
+644,Gloss Denim
+645,Crystal Blue/White
+646,Brush Silver
+647,Matte Polish
+648,Gloss Granite
+649,Gloss Shadow
+650,Matte Gold/Bronze
+651,Red Creep
+652,Brown Cowan
+653,Matte White Paul B
+654,Matte Magnesium/Titanium
+655,Taupe
+656,Mint
+657,Yellow/Titanium
+658,Bronze/Orange
+659,Matte Olive Skull Camo
+660,Matte Brown Skull Camo
+661,Matte Pink Skull Camo
+662,Matte Primer
+663,Silver/Pink
+664,Aluminum Koi Fish
+665,Charcoal Fabric SE
+666,White/Lime Green
+667,Matte Sepia Crest
+668,White/Pink Flames
+669,Gold/Black Flames
+670,Lime Green/Titanium Goo
+671,Black/Orange
+672,White Camo
+673,Matte Olive
+674,Mint/White
+675,Silver Dots
+676,Pewter Dots
+677,Magnesium Dots
+678,Ice Blue Dots
+679,Lavender Poodles
+680,Green/Titanium
+692,Batman
+693,Superman
+694,Wonder Woman
+695,Green Lantern
+696,The Flash
+697,Silver/Blue Flames
+698,Green/Graphite
+699,Dark Cheddar/Charcoal
+700,Coyote/Graphite
+701,Peach
+702,Pink Butterflies
+703,Blue/Charcoal
+704,Brindle/Charcoal
+705,Blue/Stone
+706,Coyote/Charcoal
+707,Coyote/Khaki
+708,Brindle/Silver
+709,Black Diamond (Lady)
+710,Silver/Anthracite
+711,Naked
+712,Urban
+713,Desert
+714,Circus Red
+727,Pom Girl
+739,Matte Olive/Black
+740,Black/White Crest
+741,matte olive/black crest
+742,moonlight
+743,shadow grey
+744,sea foam blue
+746,I Like My Bike - Boys
+747,I Like My Bike - Girls
+748,beijing
+749,viper red
+750,viper black
+751,psycho
+752,Light Yellow
+753,Light Green
+754,sangria
+755,fountain blue
+756,blue sky
+757,Mica Matte
+758,Brushed Silver
+759,Granite Gloss
+760,Navy Gloss
+761,Flash Yellow
+762,Brick Gloss
+763,Grey/Green
+764,Black/Raspberry
+765,Matte Black/Rose Silver
+766,White/Brown Bronze
+767,Striped Tort/Brown
+768,Bronze Fade/BrownBronze
+769,Black/Grey Polarized
+770,Matte Olive Green/Rose Silver
+771,Matte Black/Clear Silver
+772,Matte Olive Green/Green Grey
+773,Bronze Fade/Brown
+774,Fatigue Green
+775,Dark Stone
+776,White Carbon
+777,Black Carbon
+778,Forest Night/Black
+779,bolts and bones
+780,Coyote/Tan
+781,Clear/Blue
+782,Clear/Black
+783,Clear/Red
+784,Translucent
+785,Lavender Glitter Flames
+786,navy blue
+787,Pink/Purple
+788,Matte Clay
+789,Matte Brown
+790,Matte Gold
+791,Pink/Titanium
+792,Matte Sepia/Copper
+793,Teal/Magenta
+794,Gunmetal/Titanium
+795,Pink/Rose Silver
+796,Gold Brown/Bronze
+798,Smoke/White
+799,Hi Viz/Graphite
+800,Black/Barberry
+801,Teak/Green Grey
+802,Frost/Charcoal
+803,White LED
+804,Red LED
+805,Citronelle/Charcoal
+806,Barberry/Graphite
+807,Black/Hi Viz
+808,Black/Red/White
+809,Cedric Gracia Green/White
+810,Brian Lopes White/Red
+811,Lime Green/Silver
+812,Matte Pewter
+813,Matte Brown Camo
+814,Matte Olive Camo
+815,Black/Gold Lines
+816,White/Black Lines
+817,Matte Olive Plaid
+818,Matte White Plaid
+819,Matte Black Skulls
+820,Matte White Hawk
+821,Matte Bronze Bat
+822,Matte Khaki
+823,White/Ice Blue
+824,Red/Gunmetal
+825,Matte Sepia/Orange
+826,Matte Black/Green
+827,Matte Brown/Teal
+828,Silver/Ice Blue Flowers
+829,Navy/Light Blue
+830,Magenta/Black
+831,Grey/Tree Camo
+832,Olive/Tree Camo
+833,Ice Blue/White
+834,Matte White
+835,Silver Waves
+836,Matte Titanium Skulls
+837,Neon Green Robot
+838,Lime Green/White
+839,Matte Black/White
+840,Black/Magenta
+841,Brown Fabric
+842,Matte Brown/Gold
+843,Lime/White
+844,Blue/White
+845,Silver/Ice Blue
+846,Pink Princess
+847,Lucille & The Wheel
+848,Amber
+850,Black/Grey/Rose
+852,White/Grey/Silver
+854,White/Grey/Clear
+856,Red/Grey/Rose
+858,Silver/Rose/Clear
+860,Black White/Grey
+862,Cola Tort/Brown
+864,BBQ
+866,Black Fade/Grey Fade
+868,Clear Pink/Rose Fade
+870,White Blue/Grey/Orange
+872,Khaki/Red
+874,Berry
+876,Argyle Black
+878,Argyle Rose
+880,Argyle Sunset
+882,Columbine Pacific
+884,Maui Flamingo
+886,Swirls Pacific
+888,Swirls Rose
+890,plaid pacific
+892,plaid flamingo
+894,Rasberry/Silver
+896,Double Espresso
+898,Mountain Berry
+900,Margarita
+902,Cran-Razz
+904,Lemon-Lime
+906,Black Cherry
+908,Strawberry
+910,Chocolate Chip
+912,Chocolate Brownie
+914,Black Chery Almond
+916,Banana Nut Bread
+918,Cool Mint Chocolate
+920,Cashew/Coconut Chocalate Chip
+922,Almond Raisin
+924,Crushed Violets
+926,Charcoal/Barberry
+928,Brass
+930,50x34
+932,53x39
+934,Granite Grey
+940,Chrome/White
+942,Black/Grey with Flash
+944,Red/Brown with Flash
+946,Grey/Brown with Flash
+954,Silver/Grey with Blue Revo
+956,Matte Black/Grey
+958,Aluminum Black/Orange
+960,Gloss Black/Brown
+962,Graphite/Yellow
+964,Blue/Grey with Flash
+966,Metallic Grey/Grey
+968,Caramel/Brown
+970,Metallic Silver/Grey
+972,Metallic Silver/Orange
+974,Hot Grey/Brown
+976,Hot Blue Fade/Grey
+980,Hot Orange Fade/Brown
+982,Grahpite/Grey
+984,Graphite/Grey
+986,Pearl Grey/Grey with Flash
+988,Gloss Black/Orange
+990,Pearl Brown/Brown
+992,Grey/Orange
+994,Brown/Grey
+996,Spray
+998,Vanilla
+1000,Mocha
+1002,Mandarin Orange
+1004,Unflavored
+1006,Honey Graham
+1008,Blueberry Crisp
+1010,Top Pull
+1012,Melon
+1014,White Chocoalte Macadamia
+1016,Cool Citrus
+1018,Orange Tangerine
+1020,Tropical Fruit
+1022,Black/Light Blue
+1024,Vista Blue/Charcoal
+1026,Oatmeal Raisin Walnut
+1038,Yellow/Black/Grey
+1040,Koala Bear
+1042,Sumo Wrestler
+1044,Lady Bug
+1046,Parrot
+1048,Turtle
+1050,Black/brown
+1052,peanut butter
+1054,chocolate chip cookie dough
+1056,Bright Yellow
+1058,Rose/Silver
+1060,Coffee
+1062,Ginger Red
+1064,Royal Blue/Grey
+1066,Matte Teal/Red Plaid
+1068,Yellow Safety
+1070,Glow In The Dark/Titanium
+1072,Brown Leather
+1074,Black/Teal Manic
+1076,Matte Black/Red Brandana
+1078,Grey/Blue Jimbo Phillips Choke
+1080,Matte Primer/Blue Skeleton Choke
+1082,Matte Sea Foam
+1084,Matte Brown Scurvy Camo
+1086,Matte Red Demon
+1088,Matte Black/White Skull
+1090,Matte Charcoal/Black Wallpaper
+1094,White/Red Flowers
+1096,White Critters
+1098,White/Pink
+1100,Gunmetal/Gray
+1102,Light Blue/Green Flowers
+1104,Matte Gold/Brown
+1106,Matte White/Silver Plaid
+1108,Matte Bronze/Chalk Jimbo Phillips Wallpaper
+1110,Matte Titanium Jimbo Phillips Wallpaper
+1112,Matte Brown/Gold Blocks
+1114,Matte White/Black Jimbo Phillips Eye Balls
+1116,Matte Olive/Neon Green Lines
+1118,Matte Titanium Jimbo Phillips eye Balls
+1120,Matte White/Magenta Lines
+1122,cranberry
+1124,White/Pastel Hearts
+1126,Pink Carousel Princess
+1128,Red Moto GP Flames
+1130,White/Purple Flowers
+1132,Light Blue Stars
+1134,Blue Sports
+1136,Black Hot Rod Racing Skunks
+1138,Semi Gloss Black/Grey
+1140,Black Tort/Grey
+1142,Crystal Smoke/Brown
+1144,Linear Tort/Brown
+1146,Black Tort/Grey Fade
+1148,Striped Tort/Brown/Clear
+1150,Matte Black/Grey/Yellow
+1152,Matte Titanium/Orange
+1154,Silver/Rose Silver/Orange
+1156,Dark Titanium/Ice Blue Flowers
+1158,Matte Silver/Rose Silver
+1160,Matte Black/Yellow
+1162,Matte Silver/Orange
+1164,Matte Silver/Rose/Clear
+1166,Bronze Fade/Brown Polarized
+1168,Red/Black Dragon Flames
+1170,Blue Afterburner Flames
+1172,White/Red Eleanor Lady Bugs
+1176,Matte Black/Yellow Shards
+1178,Matte Brown/Gold Shards
+1180,Matte White/Silver Shards
+1182,Matte Titanium Fabric
+1184,Matte/Gloss Black Pop Art
+1194,Titanium/Emerald Flowers
+1200,Black/Gold Flowers
+1202,Sepia/Gold Eleanor Birds
+1204,Silver/Teal Eleanor Birds
+1206,White/Green Zombies
+1208,Black/Yellow Shards
+1210,Matte Titanium Shards
+1212,Blue/Black Flames
+1214,Matte White/Pink Flames
+1216,Matte Black/Red Flames
+1220,Grey/Grey
+1222,Black/Red Flames
+1224,Matte White/Gold Flames
+1230,White/Gold Eleanor Butterflies
+1232,Matte Titanium/Silver
+1234,Cops and Robbers
+1236,Pink Mermaids
+1240,Orange Construction
+1242,Lavender Bunnies
+1244,Green Camouflage
+1246,Pearl Grey/Brown
+1248,Moonlight Blue
+1250,Steel Grey
+1252,Slate Blue
+1254,Smoke/Red
+1256,Frost/Carbon
+1258,Clear/Carbon
+1260,Baltic/Eggshell
+1262,Cheddar
+1264,Lime Punch
+1266,White/Graphite
+1268,Graphite/Red
+1270,Graphite/Blue
+1272,Black/Lime
+1274,Matte Black/Orange
+1276,Matte Titanium/Cyan Blue Collage
+1278,Matte White/Lime Green Collage
+1280,Matte Black/White Weathered Camo
+1282,Matte Chalk/White Weathered Camo
+1284,Fabric Khaki Cross Bombs
+1286,Silver/Charcoal
+1288,Red/Marshmallow
+1290,Estate Blue/Dark Cheddar
+1292,Rasberry/White
+1294,Black/Molten Lava
+1296,City Flyby Pattern
+1298,Methyl Blue/Racing Red
+1300,Saffron Stix Pattern
+1302,Lime Punch/Graphite
+1304,Dark Cheddar/Graphite
+1306,Imola Blue
+1308,Race Edition
+1310,Smoke/Racing Red
+1316,Matte Yellow
+1318,Blue Paul B
+1320,Matte Transparent Hand
+1324,Matte Gold Transparent
+1326,Light Blue Flowers
+1330,Matte Red
+1332,Easton EA 50-A
+1334,Easton EA 50SL
+1336,Easton EC90 Aero
+1338,Easton EC90 SL
+1340,Crocodile
+1342,Dinosaur
+1344,Smiling Frog
+1346,Slate Black
+1348,Top Swing
+1350,Tour Edition
+1352,India Ink
+1354,India Ink Print
+1356,India Ink Checker
+1358,Jetstream Blue
+1360,Dark Pink
+1362,Cranberry Apple Cherry
+1364,Apricot
+1366,Chocolate Almond Fudge
+1368,Chocolate Chip Peanut Crunch
+1370,cola
+1372,carrot cake
+1374,maple nut
+1376,Apple Cinnamon
+1378,Banana
+1380,Montana Huckleberry
+1382,Tropical
+1384,Espresso
+1386,Sea Spray
+1388,Rasberry
+1390,Concrete
+1392,Gray Talus
+1394,Tan Beach
+1396,Tan Sand
+1398,Midnight Black
+1400,Aqua Blue
+1402,Red/Blue/White
+1404,Group Only
+1406,Shimano R550
+1410,Shimano R7800
+1412,25.4 Standard
+1414,60 TPI
+1416,120 TPI
+1418,Clown Shoe
+1420,Police Shoe
+1422,Pig
+1424,Hippo
+1426,Penguin
+1428,Whale
+1430,Sram
+1432,Brick Red
+1434,Mount only
+1436,W/ bottle
+1438,W/ Cage
+1440,Dark Grey
+1442,Red/Purple
+1444,Silver/Clear
+1446,Neon Pink/Smoke
+1448,Gloss Black/Grey Gradient
+1450,Purple/Brown Gradient
+1452,Pink/Rose
+1454,Blue/Clear
+1456,Pink/Pink
+1458,Purple/Brown
+1460,Black/Brown with Flash
+1462,White/Grey with Flash
+1464,White/Clear with Flash
+1466,Purple/Grey with Flash
+1470,Orange/Clear
+1472,Satin White/Brown with Flash
+1474,Red/Dot Fade
+1476,Black/Gold Checkers
+1478,Clear Red
+1480,Clear Purple
+1484,Clear Blue
+1486,Clear Black
+1488,Fuji/Servetto
+1490,Liquigas/Cannondale
+1492,Katiowa/Itera
+1494,Bouygues/Time
+1496,Euskaltel/Orbea
+1498,French National Lotto
+1500,Matte Black Crowd
+1502,Lion
+1504,Dalmation
+1506,Panda Bear
+1508,Cow
+1510,Cat
+1512,Dolphin
+1514,Cannondale
+1516,Bike Love
+1518,Big Ring
+1520,Matte Black/Charcoal
+1522,Metallic Orange/Black
+1524,Matte White/Cyan Blue Plaid
+1526,Matte Black Lines Logo
+1528,Matte Brown Lines Logo
+1530,Matte Cyan Blue Lines Logo
+1532,Matte Green/Black Lines logo
+1534,Matte Yellow/Black Lance Armstrong Collection
+1536,Matte Red/Titanium Lance Armstrong Collection
+1538,Matte Black/Yellow Livestrong
+1540,Matte Black/White Crowd
+1542,Rhone/White Flowers
+1544,Raspberry
+1546,Big Bear
+1548,True Red/Black
+1550,True Blue/White
+1552,Screaming Yellow/Black
+1556,Shadow
+1558,Jetstream/Sea Blue
+1560,Black/True Red
+1566,High Clamp
+1568,Low Clamp
+1570,Bottom Pull
+1572,Pink/Red Flowers
+1574,Cyan Blue/White
+1576,Fuschia/Gold Leopard
+1578,Black/Pink Butterflies
+1580,Blue Dinosaurs
+1582,Matte Light Blue/Julius Leopard
+1584,Brown/Gold Pinlines
+1586,White/Crystal Blue Flowers
+1588,Yellow Flowers
+1590,Matte Black/Cyan Blue Shattered
+1592,Neon Green Demons
+1594,Pink Paul Frank Julius Milkshakes
+1596,Blue Paul Frank B Boy Julius
+1598,Matte Olive Gray/Neon Green
+1600,Orange/Sepia
+1602,Titanium/Cyan Blue
+1604,Black/Lime Green Flowers
+1610,Green Nursury Rhymes
+1612,Blue Super Heroes
+1614,Silver Ice Cream
+1616,Pale Green/Light Blue Butterflies
+1618,Black/Blue Pirates
+1620,Matte White/Gold Flowers
+1624,Pink/White Flowers
+1626,Black/Red Brandana
+1632,Black/Cyan Blue Shattered
+1634,White/Silver Shattered
+1638,Ice Blue/Blue Leopard
+1640,Black/Gold Leopard
+1646,Matte Red/Black BMC LE
+1648,Matte White/Black Jimbo Phillips Eyeballs
+1650,Titanium/Silver
+1652,Black/Yellow Livestrong
+1654,Black/Charcoal Icons
+1656,Blue/Black Icons
+1658,Red/Black Icons
+1660,Matte Titanium Icons
+1662,Blue Mike & the Bike
+1664,Black/Yellow Livestrong Flames
+1666,Pink Lucille the Wheel
+1668,Matte White/Red Demons
+1670,Neon Green Phoenix
+1672,Black/Cyan/Lime Lines
+1674,White Transparent Eleanor Circles
+1676,Matte Titanium Elevation
+1678,Matte Teal/Red Elevation
+1680,Matte Transparent/Green Creatures
+1684,Wine/Teal Paisley
+1686,Ice Blue/White Eleanor Birds
+1688,Black/Gold Paisley
+1690,White/Lime Paisley
+1692,Black/Red Eleanor Birds
+1694,Atolla Blue
+1696,Royal Blue/White
+1698,Black/African Violet
+1700,Blue Monster Trucks
+1702,Pink Unicorns
+1704,Matte Black/Lime Green
+1706,Ice Blue/Blue Eleanor Flowers
+1708,Neon Green/Black Cityscape Icons
+1712,Magenta/Black Cityscape Icons
+1714,Cyan Blue/White Icons
+1718,Matte Neon Green/Titanium Bars
+1720,Matte Black/Grey Bars
+1722,Matte White/Grey Bars
+1724,Matte Metallic Brown/Orange Bars
+1726,Metallic Orange/Blue/Yellow Lines
+1728,Safety Yellow
+1730,Matte White/Gray Weathered
+1732,White/Teal Flowers
+1734,Black/Purple Flowers
+1736,Metallic Brown/Gold Zebra
+1738,White/Silver Zebra
+1744,Carbon Phoenix
+1746,White/Gold Collage
+1748,Neon Green/Cyan Creatures
+1752,Matte Red/Lines Logo
+1754,Matte Wine Paisley
+1756,Ice Blue/Gold Pearl Eleanor Birds
+1758,Black Leather/Black Plaid Fabric
+1760,Beige/Black Hounds Tooth Fabric
+1762,Brown Flowers
+1764,Matte White/Silver Eleanor Spring Blossoms
+1766,Mag
+1768,0d
+1770,Team Bahati
+1772,Team Canada
+1774,Ocean Depths
+1776,Dual Pull
+1790,Pale Aqua
+1792,Midnight
+1794,Jetstream
+1796,Berzerker Green
+1798,300mm
+1800,400mm
+1802,350mm
+1804,Chocolate Cherry
+1808,Citrus
+1810,Brown
+1812,Long
+1814,Standard
+1816,Peanute Toffee Buzz
+1818,43T
+1820,42T
+1822,41T
+1824,39T
+1826,38T
+1828,36T
+1830,34T
+1832,32T
+1834,R:135x10QR
+1836,R:142/135x12
+1838,R:10QR
+1840,R:12
+1842,Tomato Puree
+1844,Amparo Blue
+1846,Aurora Yellow
+1848,Cannondale/Liquigas Team
+1850,3x10
+1852,2x10
+1854,Sram/Shimano
+1856,Ski-tip
+1858,Chicane
+1860,Straight
+1862,Vuka R2C
+1864,Short & Shallow
+1866,Traditional Bend
+1868,Chaussers Pink
+1872,Black N White/Green
+1874,Black N White/Pink
+1880,Canadian National
+1882,Team Rwanda
+1884,Chaussers Red
+1886,White/Yellow
+1888,Quad
+1890,Gray/Purple
+1892,Matte Dark Gray/Lime
+1894,Glass Grey/Purple
+1896,Glass Red/Cyan
+1898,Matte Lime
+1900,Matte Dark Grey/Lime
+1902,Gloss White
+1906,Cyan
+1908,Lime/Grey
+1914,Light Grey
+1916,Nickel
+1918,Gum Rubber
+1920,Black Robot
+1922,Racing Red Paint Drop
+1924,Lime Green/ Peacock Blue
+1926,Centerlock
+1928,Chili Red
+1930,Flower Burst
+1932,Pink Plaid
+1934,Red Plaid
+1936,Quality Star
+1938,Quality Cross
+1940,Smoke
+1942,Smoke White Gloss
+1944,Graphite Grey Gloss
+1946,White Tusk
+1948,Baby Blue
+1950,Metallic White/Grey with Flash
+1952,Neon Pink/Pink with Flash
+1954,Blue/Blue with Flash
+1956,Brown/Red
+1958,Black Flowers
+1960,Black/Crème
+1962,Maroon
+1964,Prism
+1966,Sage
+1968,Charcoal/Blue
+1970,Houndstooth
+1972,Brown Plaid
+1974,Cyan Plaid
+1976,Cyan/Black
+1978,White/Lime
+1980,Denim/Black
+1984,Denim/Buck
+1986,Rhone/Black
+1988,Emerald/Charcoal
+1990,White/Rhone
+1992,Rosebloom/Coffee
+1994,Shale
+1998,Annata Blue
+2000,Wings of Rock White
+2002,Nippon Black
+2004,Pink Racer
+2006,Blue Racer
+2010,Black Spyro
+2012,Black/Black Streak
+2014,Team Pearl White
+2016,Wings of Rock Black
+2018,Black Sprint
+2020,White/Shadow Grey
+2022,Fuschia/Silver
+2024,20mm Setback
+2026,Grey Stripe
+2028,White Stripe
+2030,Black Stripe
+2032,Black Vert
+2034,Red Vert
+2036,Script Grey
+2038,Script Red
+2040,Script Black
+2042,Metallic Red
+2044,Metallic Blue
+2046,Metallic Green
+2048,White/Smoke
+2050,Driftwood
+2052,-5 Degree Rise
+2054,Team Garneau Quebec
+2056,Blue/Green
+2058,Garmin Team Edition
+2060,Rabobank Team Edition
+2062,Garmin World Champion Edition
+2064,Charcoal/Orange
+2066,Orange Fade w/ Grey
+2068,Gloss Black w/ Clear
+2070,Black w/ Orange
+2072,Black InterX
+2074,Camo InterX
+2076,Black w/ Brown Photo
+2078,Black w/ Orange Photo
+2080,Black w/ Grey
+2082,Black w/ Clear
+2090,Red/Brown Photo
+2092,Black/Grey Photo
+2094,Clear/Imola Blue
+2096,Carob Brown
+2098,CFR Team Issue Black/Green
+2100,Green Flash/Black
+2102,Limestone
+2104,Flash Green
+2110,Flash Green/Black
+2112,Alien
+2114,Shark
+2122,Tyrannosaurus
+2124,Apple Krate
+2126,Orange Krate
+2128,Grey Ghost
+2130,Tomatillo
+2132,Super Nova
+2134,Olympian
+2136,Gloss Pink
+2138,Europcar Green
+2140,Chaussers Norton Rose
+2142,Ride Pink
+2144,Matte White/Yellow/Seafoam
+2146,Matte White/Silver Logos
+2148,Matte Titanium/Black Line
+2150,Matte Black/Bright Green Line
+2152,Matte Brown/Orange Line
+2154,Navy/Titanium
+2156,Bright Green
+2158,Matte Black/Red 13th Floor
+2160,Matte Titanium Jimbo Phillips Knock Out
+2162,Black/White Line
+2164,Green Shattered
+2166,Cyan Blue/Black Vibe
+2168,Skratch Custom
+2170,Matte Brown/Orange Linear
+2172,White/Red Paul Frank Drops
+2174,Matte Black/White Paul Frank Drums
+2176,Teal/Titanium Wavy Lines
+2178,Matte Titanium Jimbo Phillips Strangle
+2182,Matte Blue/Black
+2184,Sunbright Yellow/White
+2186,Emerald Green/White
+2188,Lipstick
+2190,Purple/Black Swirl
+2196,Fuschia
+2198,Matte Brown/Bronze Weathered
+2200,Hi-Vis Green
+2202,Matte Titanium/Peach Wavy Lines
+2204,Titanium/Blue
+2206,Yellow/Black Geometric
+2208,Matte White/Teal Line Change
+2210,Matte Titanium/Black Line Change
+2212,White/Silver Line Change
+2214,Gloss Black/Matte Black
+2216,Highlight Yellow
+2218,Black/Turquoise
+2220,Red Explosion
+2222,Livestrong
+2224,Black/Rhone Flowers
+2226,Black/Gold Swirls
+2228,Pink Dandelion Wishes
+2230,White/Silver Swirls
+2232,White/Silver Linear
+2234,Matte Black/Titanium Linear
+2236,Matte Titanium Linear
+2238,Hi-Vis Green/Black Linear
+2240,White/Magenta Linear
+2242,Pink/Magenta Butterfly Flowers
+2244,White/Orange Butterfly Flowers
+2246,Titanium/Blue Line Change
+2248,Teal/Pink Hearts
+2250,Pink/Blue Hearts
+2252,Blue/Navy
+2254,Bright Green/Silver
+2256,White/Turquoise
+2260,Bright Green Evil/Carbon Fade
+2262,Matte Black/Gloss Carbon Fade
+2270,Process Blue/Bright Yellow Cloud Nine
+2272,Matte Cool Grey
+2276,Bright Green/Black
+2278,Matte White/Silver
+2280,Matte Brown Cloud Nine
+2282,Highlight Yellow/Bright Green Lines
+2284,Matte Titanium Evil
+2324,Matte White Lines
+2326,Matte White/Turquoise
+2328,Green Paul Frank Lightning Bolts
+2330,Purple Paul Frank Hearts and Julius
+2332,Silver Sea Creatures
+2336,Matte Titanium/Red Jimbo Phillips Octopus
+2338,Black/Red Line Change
+2340,Green Sea Creatures
+2344,Blue Dragon
+2350,Teal/Magenta Hearts
+2352,Clear/Cyan Lines
+2354,Deep Teal
+2356,Matte Olive Evil
+2358,Matte White/Grey Evil
+2360,Silver/Sea Foam Leaves
+2362,Matte White Icons
+2364,Transparent Blue Tech Flowers
+2370,Matte Gunmetal Badge
+2372,Matte Sepia/Cyan Logo
+2374,Matte White/Orange Logo
+2376,Matte White Grid
+2378,Matte Black/Teal Sasha Barr Dove
+2380,Grey Sasha Barr Ghosts
+2382,Black/Charcoal House Industries
+2384,Metallic Orange/Black House Industries
+2386,Black/Red Retro
+2388,Cyan/White Retro
+2390,Yellow/Orange Retro
+2392,Matte Red Lines Logo
+2398,Matte Slate Botanic Flowers
+2400,Matte Titanium/Grey Evil
+2402,Process Blue Cloud Nine
+2404,Matte White Crossover
+2406,Bright Green/Black Evil
+2408,Matte Titanium Trees
+2410,White/Gold Trees
+2412,Matte Black Trees
+2414,White/Turquoise Explosion
+2416,White/Silver Explosion
+2418,Matte Titanium Explosion
+2420,Pretty and Strong Pink
+2422,DreadSet
+2424,Black Sotto Voce
+2428,Vanilla Bean
+2430,Chocolate Outrage
+2432,Tri-Berry
+2434,Strawberry Banana
+2440,Espresso Love
+2442,Lemon Sublime
+2444,Jet Blackberry
+2446,Mint Chocolate
+2448,Just Plain
+2450,Blueberry Pomegranate
+2452,Cranberry Apple
+2454,Peach Tea
+2456,Watermelon
+2460,Island Nectars
+2462,Chocolate Raspberry
+2466,Vanilla Orange
+2468,Cherry Lime
+2470,Pineapple
+2472,Lemon Lime
+2474,Orange Pineapple
+2476,Strawberry Watermelon
+2478,Grey Anatomy
+2484,Hi-Viz Yellow
+2486,Eclipse Blue
+2494,Grey/Pink
+2496,Blue Bomber
+2498,Black Knight
+2500,36-22
+2502,38-24
+2504,39-26
+2506,42-28
+2508,Red/Yellow/Green
+2510,Red/Green/Blue
+2516,Smoke Mirror
+2518,Black/Gum
+2520,Khaki/Brown
+2526,Black/White/Red
+2528,Clear/Purple
+2530,Frost/Steel Blue
+2532,Steel Blue
+2534,Peat
+2536,Skydiver
+2538,48T
+2554,53T
+2556,Black/Safety Orange
+2558,Black Contour
+2560,True Red
+2562,Pink Tea Party
+2564,Black Steel Mag Circle
+2566,Blue Astro Pigs
+2568,White Teal Cats
+2570,Matte Black Ti Skulls
+2572,Matte Ti Wallpaper
+2574,Firecrest Red
+2576,Disc Yellow
+2578,White Tech Flowers
+2580,Purple/Gold
+2582,White Magenta Lines
+2584,Ti/Turqouise Simple Lines
+2586,Ice Blue/Silver Elements
+2588,Red FireFighting Monkeys
+2590,Blue Airplanes
+2592,Purple/Silver Eleanor Peacocks
+2594,White/Pink Elements
+2596,Red Pin Tail on Monkey
+2598,True Blue/Black
+2600,Black/Blazing Yellow
+2602,Safety Orange/Black
+2618,Black/Peacock
+2620,Black/Pink Punch
+2622,Pink Punch
+2624,Peacock
+2626,BB30
+2628,GXP
+2630,Black/Gunmetal
+2632,Clear/Racing Red
+2634,Racing Red/Charcoal
+2636,Dark Blue/Dress Blue
+2638,Camelbak Yellow
+2640,Skydiver/Egret
+2642,Black/Lemon Chrome
+2644,Jasmine Green
+2646,Ginsting
+2648,Pomegranate Passion Fruit
+2650,Lime-Aide
+2652,Fruit Smoothie
+2654,Cherry Blossom
+2656,Pink Lemonade
+2658,Orange Blossom
+2660,Black/Pinstripe
+2662,Pink/Black
+2664,True Red/White
+2666,Safety Orange
+2668,Matte Black/Brown
+2670,pomegranate
+2672,Sunset
+2674,Grass
+2676,440mm
+2678,Matte Titanium/Black Splinter
+2680,White/Black/Red Splinter
+2682,Silver/Titanium/Blue Splinter
+2684,White/Silver Swoop
+2686,Black/Titanium Swoop
+2688,Squirrel
+2690,Dog
+2692,Giraffe
+2694,Tiger
+2696,Black/White/Fluorescent
+2698,White/Grey/Blue
+2700,Blue/Black/White
+2702,White/Black/Red
+2704,White/Purple
+2706,Matte Black/Color Fade
+2708,Matte Red/Black
+2710,Highlight Yellow/Black
+2712,Matte Black/ Blue MC Hesher
+2714,Matte Yellow/Black Livestrong
+2716,Black/White 16 Bars
+2718,Matte Carbon/Ano Green Blockade
+2720,Black/Bright Green Lockumups
+2722,Matte White/Orange Blackade
+2724,Matte Titanium/White
+2726,Matte Ano Green/Black Blockade
+2728,Matte White/Orange Blockade
+2730,Highlight Yellow Blockade
+2732,Matte Blue MC Hesher
+2734,Titanium/Black 16 Bars
+2736,Lead/White
+2738,Red/Black/White
+2742,Sea Glass
+2744,Tri/Soda
+2746,Matte/Gloss Titanium
+2748,Titanium/White Seaglass
+2750,Matte Black/Blue Forest Floor
+2752,Marre Titanium/Orange Color Blockade
+2754,Matte Kelly Green/Highlight Yellow
+2756,Kelly Green
+2758,Black/Ano Green Blockade
+2760,Matte Clear/Orange Forest Floor
+2772,Pearl White/Soda Scribs
+2774,Matte Black/Blue Blockade
+2776,Transparent Sorrel
+2778,Matte Olive Swat
+2780,Matte Fluorescent Orange
+2782,Matte Bright Green
+2786,Matte White/Blue Logos
+2792,Black/Sorrell Tallac
+2794,White/Soda Tallac
+2796,Matte Black/White Polka Dot
+2798,Matte Titanium/Turquoise Tallac
+2800,Matte White/Soda Scribs
+2802,Black/Color Fade
+2804,Black/Sorrel Pollinate
+2806,White/Soda Pollinate
+2808,Matte Titanium/Turquoise Pollinate
+2810,Matte Titanium Tallac
+2812,Pearl White/Hightlight Yellow Scribs
+2818,Matte White/Kelly Green
+2820,Matte Black/Magenta
+2822,Matte Black Transparent/Sorrell Texture
+2824,ICE Blue/White Flower Sketch
+2826,Sorrel Tallac
+2828,Black/Metallic Charcoal Tallac
+2830,Pearl White/Red Floral
+2832,Pearl White/Turquoise Tallac
+2834,Black Matte/Gloss
+2836,Black Matte/Gloss Fabric
+2840,Matte White/Orange
+2842,Blue/White Flags
+2844,Blue/Pink Z Team Limited Edition
+2846,Matte Black/Bright Orange
+2850,Matte/Gloss Black Crossover
+2852,White/Silver Lines
+2854,Matte Titanium Forrest Floored
+2860,42-34-24
+2862,48-38-28
+2864,Blue Painters
+2866,Turquoise/Magenta Flower Sketch
+2868,Red Firefighter Monkeys
+2874,Light Blue/Pink Woodland
+2880,Black/Highlight Yellow
+2886,Deep Silver
+2888,Patent Black
+2890,-15 Degree Rise
+2894,Obsidian/Highlight Yellow
+2896,Pure White/Black
+2898,Capri Breeze/Ocean Depths
+2900,Imperial Purple
+2902,Cerise
+2904,White/Matte Black
+2912,White/Gray
+2914,Gray Green
+2916,Gray/Green
+2930,Black/Acid Green
+2932,Brown/Tan
+2934,Black Pearl/Fuchsia
+2936,Chrome/White/Teal
+2938,Patent Black/Silver
+2942,Patent White/Rhodamine
+2944,Gunmetal/Berry
+2946,Patent White/Silver
+2948,Black/Plum
+2950,White/Silver/Gold
+2952,Black/Teal
+2954,White/Rhodamine
+2956,White/Silver/Plum
+2962,Charcoal/Soda
+2964,Black/Rhodamine
+2966,Red Sotto Voce
+2968,Pirate Black/Graphite
+2970,Skydiver/Dove
+2972,Brick/Dove
+2974,Pirate Black
+2976,Volcano
+2978,Bamboo
+2980,SSC Blackwall
+2982,Whitewall
+2990,TI/Soda
+2992,White/Black Stripe
+2996,Vertical Charcoal
+2998,Gray
+3000,Parachute Purple/Royal Purple
+3002,Peacoat/Capri
+3004,Royal Purple
+3006,Soil
+3008,Poppy
+3020,Volcano/Soil
+3022,Sprout/Bamboo
+3024,Black with Black
+3026,50T
+3028,1.56 Headshock
+3030,1.50 Standard
+3032,Shimano 11 Speed
+3034,Mahogany
+3036,Natural
+3038,Plaid
+3040,Bunny
+3042,Gloss Purple
+3044,Black Fluo
+3046,Shiny Silver
+3048,Metallic Black
+3050,Metallic White
+3052,Shiny Carbon
+3054,Shiny Red
+3056,Wisteria
+3058,Pink Fluo
+3060,Acqua
+3062,Zebra
+3064,Military
+3066,Cobalt
+3068,White/Blue Navy
+3072,True Blue
+3074,Black/Electric Blue
+3076,Cherry Tomato
+3078,Cyclamen
+3080,Mandarin
+3082,Ocean
+3086,Orchid
+3088,Paradise Pink
+3090,Scuba Blue
+3092,Sapphire
+3094,Acid Green/White
+3096,Ocean/White
+3098,Anthracite/White
+3100,Navy/White
+3102,White/Anthracite
+3104,White/Navy
+3106,Black/Screaming Yellow
+3108,All Blacl
+3110,All Black
+3112,White/Cherry Tomato
+3114,Matador
+3148,Lotus
+3150,Black/Mandarin
+3212,d
+3214,Black/Ocean
+3216,Gray Matte
+3222,Candy Purple
+3224,Flash Blue
+3226,Ferrari
+3228,Emerald
+3234,White/Ocean
+3268,Anthratice/Black
+3270,Red/White/Black
+3312,White/Anthracite/Black
+3316,Ocean/White/Black
+3328,Compact
+3332,162.5mm
+3334,White/Black/Orange
+3336,46t
+3342,52T
+3352,Road Disc
+3354,Rim Brake
+3356,Post Mount
+3358,IS Mount
+3360,Green/Yellow
+3362,Purple/Yellow
+3364,Light Blue/Black
+3368,Star Spangled
+3370,April Showers
+3372,Atlantis
+3374,Bandana
+3376,Blizzard
+3378,Jubilee
+3380,Razzle
+3382,Blue Fade
+3384,Green Fade
+3386,Red Fade
+3392,Monster Truck
+3394,Pixie
+3396,Play Ball!
+3398,Jo Smiley
+3400,Dino Might
+3402,Pink Fade
+3404,Gloss Black/Silver
+3406,Matte Black/Turquoise
+3408,Matte Green/Team Blue
+3410,Matte White/Lime Frost
+3412,Gloss White/Silver
+3414,Celeste Green
+3416,SH-R315
+3418,SH-M315
+3420,Iron/Black
+3422,Iron/Blue
+3424,Clear/Turquoise
+3426,Fluorescent Orange/White
+3430,Matte Black Swerve
+3432,Black/Red/White Stripes
+3434,Pink Dragon
+3436,Linen Blue
+3438,Ultra Blue
+3440,Race Red
+3442,White/Stripes
+3444,Blue/Gold Swerves
+3448,White/Silver Web
+3450,Taylor Reeve Afterparty
+3452,Blue/Green Moto
+3454,Blue/White Burnout
+3456,Matte White/Silver Burnout
+3458,Matte Red/Blue Jimbo Phillips
+3460,Matte Tonal Jimbo Phillips
+3462,Matte Red Exhaust
+3464,Land Speed Record
+3466,Black/Silver Burnout
+3468,Black/Red Star
+3470,White/Silver Star
+3472,Matte White/Orange/Blue Burnout
+3474,Black/Blue/White Burnout
+3476,White Stripes
+3478,Matte Titanium Stripes
+3480,Black/Hi-Vis Yellow Draft
+3482,White/Red/Black Draft
+3484,Matte Black/White/Green
+3486,White/Black/Pink
+3488,Silver/Red/Black
+3490,Ocean Blue
+3492,Matte Titanium/Hi-Vis Yellow Charged
+3494,Black/Titanium Charged
+3496,Turquoise/Silver/White
+3498,White/Silver Hash Lines
+3500,Earth/Orange Hash Lines
+3502,Purple Hash Lines
+3504,Matte Black Vis
+3506,Black/Red/White Scurvy
+3508,Charcoal/Green Zenith
+3510,Charcoal/Blue/Pink Helix
+3512,Matte Black/Blue/Titanium Zenith
+3514,White/Silver Apex
+3516,White/Black/Red Rally
+3518,Matte Black/Titanium Rally
+3520,Charcoal/Orange Shatter
+3522,Matte Black/Titanium Shatter
+3524,Glow Green Shatter
+3526,Purple Shatter
+3528,White/Silver Blast
+3530,Red Stripe Blast
+3532,Blue Stripe Blast
+3534,Blue Skull Streak
+3536,Hi-Vis Yellow Skratcher
+3538,Purple/Teal/Black Swan
+3540,Lavender/Teal/Silver Swan
+3542,Black/Red Flame
+3544,Charcoal/Hi-Vis Rippler
+3546,Black/Red Rippler
+3548,Blue/Pink Rippler
+3550,Black/Pink Dreams
+3552,Black/Red Snakebite
+3554,Purple Lovebirds
+3556,Blue Kid Knievel
+3558,Turquoise/Pink Dream
+3560,Red Shock Steady
+3562,Hi-Vis Yellow Jimbo Phillips Slime
+3564,Black/Pink Slipstream
+3566,Glossy Grey
+3568,Matte Red Specter
+3570,Matte Blue Specter
+3572,White/Sliver Specter
+3574,Titanium/Purple Dunes
+3576,Raspberry Vision
+3578,Blue/Silver Vision
+3580,Black/Gold Cali
+3582,White/Silver Cali
+3584,Matte Safety Orange
+3586,Matte Glow Green
+3588,White/Silver Haze
+3590,Black/Red Haze
+3592,Black/Red/Silver Scurvy
+3594,Charcoal/Titanium Apex
+3598,0
+3600,Matte Black Highlight Yellow
+3606,Matte Green Camo
+3608,Matte Black/Highlight Yellow
+3610,Matte White/Black
+3612,Black/Matador
+3614,Matte Glowing Red
+3618,Matte Titanium/ Highlight Yellow
+3620,Reflective
+3622,Super Nova Yellow
+3626,Matte Titanium/Highlight Yellow
+3628,Matte Bungee Cord/Black
+3630,Matte White Caution Pin Line
+3632,Matte Dark Shadow
+3634,Matte Black/Dynasty Green
+3636,Matte Titanium/Blue Easy Living
+3638,Matte White Galaxy
+3640,White/Silver Modernist
+3642,Ruby Red Lace
+3644,Black/Milky Blue
+3646,Matte Turquoise
+3648,Matte Candy Blue
+3650,Translucent Orange Gloss
+3652,Tanslucent Orange Gloss
+3654,CFR
+3656,Red/Rhodamine Descend
+3658,Matte White Modernist
+3662,Dynasty Green
+3664,Pink Cats
+3666,Matte Bungee Cord
+3668,Black/Lotus
+3670,Matte Glowing Red Camo
+3672,Black/Pink Stars
+3674,Black/Flourescent Orange
+3676,Matte Titanium Speed Fade
+3678,Matte Blue Speed Fade
+3680,Red Speed Fade
+3682,Silver/White Zeta
+3684,Matte Black Modernist
+3692,Ice Blue Lace
+3694,Blue Hammer
+3696,White/Pink Wailua
+3698,46x36
+3700,52x36
+3702,50x39
+3704,Black/Purple/White
+3706,Drizzle/Blue/White
+3708,Black/White/Cyan
+3710,White/Teal
+3712,100mm
+3714,110mm
+3716,120mm
+3718,130mm
+3720,Petrol Blue
+3722,Blue Pink Chihuahua
+3724,Blue Green Gators
+3726,Black Red Snakebite
+3728,White Red Black Memo
+3730,Hi Vis Yellow Whale
+3732,Pink Milkshake
+3734,Purle White Magenta Collage Art
+3736,Neon Green
+3738,black green blue collage
+3740,Black Anodized Green
+3742,Blue Superhero Animals
+3744,White Soda
+3746,Black Orchid
+3748,Black Red
+3750,Black Blue
+3752,Silver Lavender
+3754,Paul Frank Stripes
+3756,Matte Bone Rust
+3758,Charcoal Black Wallpaper
+3760,Charcoal Black DNA
+3762,Blue Yellow
+3764,Blue Red
+3766,Sorrel Silver
+3768,Silver Titanium
+3770,White Blue
+3772,Lead White
+3774,Blue White
+3776,Red White
+3778,Black White
+3780,Black Folio Green
+3782,Black Shadow Grey
+3784,Black White Blue
+3786,Indigo
+3788,Crimson
+3790,Camo
+3792,Sprint Green
+3794,Glowing Red
+3796,Lead Gum
+3798,azure
+3800,slate
+3802,Ruby Red Black
+3804,White Galaxy
+3806,White Milky Blue
+3812,Paul Frank Julius Knockout
+3814,Scratcher Blue
+3816,Mono Black
+3818,Black Rad
+3820,Bright Shamrock Charcoal
+3822,Pure Blue
+3824,Raspberry Lime
+3826,Tangerine Orange
+3828,Tropical Punch
+3830,Watermelon Kiwi
+3832,Blue Black
+3834,Black Lime
+3836,Camo Black Orange
+3838,Red White Grey
+3840,White Black Grey
+3842,Rose/Drummond
+3844,Fluorescent Orange Black
+3850,Silver Fluorescent Orange

@@ -1,0 +1,113 @@
+[%header%]
+
+<script type="text/javaScript">
+function addLoadEvent(func) {
+	window.load = func;
+}
+//addLoadEvent('scrollit()');
+
+function scrollit()
+{ 
+if (document.referrer.toString()=="http://www.bicyclebuys.com/displaycart/") {	 
+	location.href = "/displaycart/#alist";
+}
+} 
+<!--
+function openpopwin(windowpage, popupwidth, popupheight) {
+	window.open(windowpage, '', 'width=' + popupwidth + ',height=' + popupheight + ',location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+
+//-->
+</script>
+
+<!-- begin ###main_body_content### -->
+
+   <TABLE WIDTH=700 class=cartmain CELLPADDING=0 CELLSPACING=0>
+   
+   <tr>
+      
+      <TD colspan="6" align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="https://[%thisserver%]/checkout/"><img src="images/proceed-to-checkout.gif" alt="Proceed to Checkout" width="228" height="30" border=0></a></TD>
+            
+   </tr>
+   
+   
+   <tr>
+      <TD class="carthead"><B>Qty.</B></TD>
+      <TD class="carthead"><B>Item#</B></TD>
+      <TD class="carthead"><B>Description</B></TD>
+      <TD class="carthead"><B>Unit Price</B></TD>
+      <TD class="carthead"><B>Total Price</B></TD>
+      <TD class="carthead"><B>Action</B></TD>
+   </tr>
+   <tr>
+      <TD><img src="images/pixel.gif" width="50" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="100" height="2" border=0></TD>
+      <TD style="background-image: url('images/pixel.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><img src="images/pixel.gif" width="320" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+   </tr>
+
+
+   [%displaycart%]
+   [%adjusttotal%]
+   [%PromoCode%]
+   <tr><TD class="cartR" colspan="6">[%RebateInput%]</td> </tr>
+   <tr bgcolor="#FFFFFF"  >      
+      <TD class="cartR" colspan="3"><div align="right" style="vertical-align:middle;">
+      
+      </div></td>
+      <TD  class="cartR"  style="text-align: center;">Sub Total</TD>
+      <TD class="cartR"  style="text-align: center;">[%cgridtotal%]</TD>
+      <td  ></td>
+   </tr>
+   <tr>
+      
+      <TD colspan="6" align="right"><TABLE WIDTH=100% class=noborder CELLPADDING=0 CELLSPACING=0 style="border-top: 1px solid #C4EAE6;"> 
+      
+         <tr>
+            
+            <TD colspan="2" class="space">-</TD>
+                  
+         </tr>
+         
+         <tr> 
+            
+            <TD style="background-image: url('/images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="/"><img src="/images/continue-shopping.gif" alt="Continue Shopping" width="228" height="30" border=0></a></TD>
+            <TD align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="https://[%thisserver%]/checkout/"><img src="images/proceed-to-checkout.gif" alt="Proceed to Checkout" width="228" height="30" border=0></a></TD>
+
+         </tr></TABLE></TD>
+            
+   </tr>  
+  
+   </TABLE>
+     <div align="center"><a HREF="javascript:openpopwin('/includes/smallship.asp',420,480);">
+     <img SRC="/cartimages/viewmyshipcharges.gif" Width="150" Height="20" Border="0"></a>
+       </div>
+     <P>
+
+   
+   
+   <!-- end ###CART_TABLE### -->   
+<table width="500" class="border3" cellpadding="0" cellspacing="0" align="center">
+     <tr>
+       <td colspan="5"><div class="closeouts">Popular Products You Might Be Interested In... (<a name="alist"  target="_top"  href="/displaycart/"  >Show More Items</a>)</div></td>
+     </tr>
+     <!-- begin ###most_popular_row 1### -->
+     <tr>
+       <td colspan="3" class="popular2" style="background: transparent;">[%similarproducts%] </td>
+     </tr>
+     
+     <tr>
+       <td colspan="5" style="background-image: url('images/hordotted.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><img src="images/hordotted.gif" alt="" name="dotted" width="500" height="1" border="0" id="dotted" /></td>
+     </tr>
+</table>
+ <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Network Solutions SSL for secure e-commerce and confidential communications.">
+<tr>
+<td width="135" align="center" valign="top"><br><script language="JavaScript" type="text/javascript">
+                                                SiteSeal("https://seal.networksolutions.com/images/prorecgreen.gif", "NETSP", "none");</script>
+</tr>
+</table>
+
+   <P>[%footer%]

@@ -1,0 +1,30 @@
+<form METHOD="POST" ACTION="/displaycart/U/">
+   <input TYPE="HIDDEN" NAME="ITEMID" VALUE="[%itemid%]">
+   <input TYPE="HIDDEN" NAME="ITEMNUMBER" VALUE="[%count%]">
+   <input TYPE="HIDDEN" NAME="ITEMNAME" VALUE="[%itemname%]">
+   <input TYPE="HIDDEN" NAME="WEIGHT" VALUE="[%weight%]">
+   <input TYPE="HIDDEN" NAME="ORIGQUANTITY" VALUE="[%itemquantity%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM1" VALUE="[%custom1%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM2" VALUE="[%custom2%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM3" VALUE="[%custom3%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM4" VALUE="[%custom4%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM5" VALUE="[%custom5%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM6" VALUE="[%custom6%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM7" VALUE="[%custom7%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM8" VALUE="[%custom8%]">
+   
+   <tr>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="left">[%itemid%]</td>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="left"><a href="/item/[%itemcustom3%]/">[%itemname%]</a>[%itemoptions%][%freightmsg%]</td>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="right">&nbsp;[%itemprice%]</td>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="right"><input TYPE="text" size="4" MAXLENGTH="7" VALUE="[%itemquantity%]" NAME="Q[%count%]"></td>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="right">&nbsp;[%itempriceextended%]</font></td>
+      <td BGCOLOR="[%bgcolor%]" ALIGN="center">
+         <a href="/displaycart/D/Q[%count%]/">
+         <img border="0" src="/CARTIMAGES/DELETEITEM.GIF" alt="Remove Item from Shopping Cart" WIDTH="15" HEIGHT="15"></a>
+         &nbsp;&nbsp;&nbsp;<input TYPE="IMAGE" NAME="UPDATECART" SRC="/CARTIMAGES/UPDATEITEM.GIF" VALUE="Update Cart" BORDER="0" ALT="Update Item" WIDTH="15" HEIGHT="15">
+      </td>
+   </tr>
+</form>
+
+    

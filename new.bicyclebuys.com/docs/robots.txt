@@ -1,0 +1,9 @@
+User-agent: Yandex
+Crawl-delay: 5
+User-agent: *
+Disallow: /imageview.asp
+Disallow: /viewcart/
+Disallow: /cgi-bin/
+Disallow: /HTML/	
+Disallow: /html/	
+Sitemap: http://www.bicyclebuys.com/sitemapnew.xml

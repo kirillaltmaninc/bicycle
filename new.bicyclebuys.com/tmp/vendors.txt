@@ -1,0 +1,463 @@
+350,3TTT
+805,Abus
+603,Acclaim
+614,ACS
+380,Action Bicycle USA
+395,active sports group
+140,Adams
+432,Adidas
+322,Advent
+137,Air-B
+281,Airwalk
+477,Alex Wheels
+863,Alien Nation
+382,Allen Sports
+423,Alpha Helmets
+445,American Classic
+181,AMEX-CORPORATE ACCT
+753,AMF
+63,AnswerManitou
+294,AT&T Wireless Services
+795,Atlas
+107,Avenir
+394,Avid Brake
+104,Axo
+296,Azonic
+449,B.O.B Trailers
+361,Bank of America
+789,BarFly
+46,Basso
+671,Beljum Budder
+47,Bell
+176,Bell Atlantic Mobile
+502,Bellwether
+503,Beta Tools
+468,BicycleBuys
+464,Biemme
+45,BikeHard
+783,Black-Ops
+105,Blackburn
+178,BLDG Management
+773,Boeshield
+118,Bontrager
+111,Briko
+288,Brunswick Bicycles
+775,BTI
+829,Bullet Bros. USA
+314,Bulletproof
+466,Cablevision
+168,Cablevision Advertising
+759,California Line
+446,CamelBak
+48,Campagnolo
+133,Cane Creek
+49,Cannondale
+617,Cannondale Sports Group
+410,Carrera
+799,Castelli
+102,CatEye
+369,Chain-L
+481,Chase Bank
+767,Cheng Shin Tire
+124,Chris King
+280,CicloSport
+354,Cinelli
+180,CitiBank
+791,Civia
+871,Clean Bottle
+637,Clif Bar
+115,Club Roost
+50,Coda
+51,Colnago
+174,Consumer Review
+120,Continental
+129,Control Tech
+387,CoPilot
+841,Corima
+417,Crank Brothers
+801,Crazy Stuff
+765,Curb Dog
+98,Cycle Pro
+521,CycleAware
+299,CycleFast USA
+52,Cycleops
+329,CygoLite
+643,Cytomax
+426,Dahon
+110,Dean
+458,Deda
+112,Defeet
+827,Del Sol
+101,Delta Cycle Corporation
+482,Dentcare Delivery Systems
+546,Descente
+370,DHL World Wide Express
+441,Dia-Compe
+119,Diadora
+130,Diamond Back
+472,Difco Insurance
+486,Dirt Rag
+403,DK
+348,don test
+297,DOWNEAST BICYCLE SPECIALISTS
+797,DT Swiss
+53,Dyno
+803,DZ Laboratories
+496,e-thirteen
+352,Easton
+418,Easton-Velomax
+142,Edco
+635,Eddy Merckx
+334,EdgeBar
+303,Elite Action Fire Extinguishing
+419,Elite Ciussi
+396,Empire Healthchoice
+333,Endurox
+398,Equitable Insurance
+504,Ergon
+122,Feather
+761,FedEx
+54,Finish Line
+475,Fizik
+103,Fox
+469,Fox Shox
+149,Free Agent
+316,Frost Ind
+116,FSA
+151,Fuji USA
+525,Fulcrum Racing
+433,G. Joannou Cycle Co.
+526,Garmin
+55,GaryFisher
+342,Gator
+292,Gear Up
+530,Geax Tire
+56,Generic
+357,Giesegi
+378,Giordana
+117,Giro
+160,Gita
+757,GlowSpek
+721,Go Pro
+729,GoPro
+57,Graber
+451,Greenfield
+58,GT
+785,GU Energy Labs
+295,Guardian Life Insuarance
+663,Hadley
+639,Hammer Nutrition
+444,Hampton Cruiser
+420,Harken
+522,Harleysville Insurance
+59,Haro
+606,Hawley
+389,Hayes
+326,Headland
+793,Headsweats
+655,HealthNet
+523,Herbert Lithographers
+262,Hi-Torque Publications
+528,Highway Two
+414,HIND
+327,Holland
+331,Hollywood Engineering
+787,Honey Stinger
+374,Hutchinson
+384,Hutchinson Tires
+379,Hydrapak
+298,IBEX, Inc
+825,iBike
+353,ICON
+545,Idearc Media
+328,Incredibell
+604,Infini
+605,Inline
+134,Innovations
+453,Instep
+715,Intense
+289,Intense Cycles
+737,IO DuPont
+139,IRC
+60,Ironhorse
+345,ITM
+161,J&B Importers
+427,Jaguar Credit
+669,Jagwire
+437,Jamis
+490,Jansport
+621,Kalloy
+713,Kashima
+355,KENDA
+434,Kestrel
+474,Kettler
+154,KHS
+865,Kidzamo
+675,Kind Shock
+487,KMC Chain
+602,Knog
+109,Kooka
+132,Kool Stop
+529,Kool`N Fit
+108,Kore
+390,Koski Engineering
+61,Kryptonite
+556,Kuat Racks
+484,Kurt Kinetic
+435,Land Rover Group
+62,Lemond
+290,LI Internet HQ & Web Design
+470,Limar
+165,LIPA
+347,Lizard Skins
+497,Lloyd's & United National
+479,Local Bicycle Shops
+312,Look
+463,Louis Garneau
+166,Luxotica
+336,Magura USA Corp
+731,Man-O-War
+64,Marin
+65,Marzocchi
+709,Masi
+462,Master Lock
+66,Matrix
+68,Mavic
+141,Maxxis
+172,MCI-BBC
+173,MCI-FCW
+745,Mezzo
+440,Miche
+69,Michelin
+867,MicroShift
+70,Minoura
+542,Mirra
+315,Miscellaneous
+385,Mitsubishi Motors
+407,Mizuno
+448,Modolo
+150,Mongoose
+409,Moser
+439,Motorex
+144,MountainSpeed
+349,Mr. Tuffy
+613,Muc-Off
+480,Nalgene
+324,Nathan Reflective Wear
+442,National Grid
+175,Newsday
+412,Nike
+146,Niterider
+703,Noleen-J6 Suspension
+399,North America Parts
+283,North American Internet Service
+143,Northwave
+781,Ochsner
+372,ODI
+311,Odyssey
+405,Olmo
+285,One Beacon Insurance
+547,One Industries
+302,Oneal Azonic
+425,ONGuard
+72,Onza
+659,Origin8
+402,Oury Grip
+645,Owleye
+452,Pace Clothing
+321,Paceline
+100,Panaracer
+73,Park
+465,Pearl Izumi
+74,Pedros
+705,Peels Plus
+531,pelton
+158,Performance
+665,Peugeot
+733,Phil Wood
+488,Pin Head
+75,Pinarello
+447,Platypus
+358,Polar Bottle
+114,Polar Electro USA
+305,Pony
+735,Power Cordz
+392,PowerBar
+307,Powerlite
+611,Premium
+428,Primal Wear
+256,Primedia Specialty Group
+267,Primo Products
+751,Pro Neck
+356,Pro Patch
+147,Profile Design
+368,Profile Racing
+543,Progold
+454,Promax
+544,Pronet
+749,Pryme
+391,Pyramid
+287,Quality Bicycle Products
+375,QUENTIN
+376,quentin Distributors
+126,RACE FACE
+330,Racor
+177,Radar Security
+76,Raleigh
+323,Raw Wear
+411,Red Rose Imports
+388,Redline
+495,Reebok
+416,Reynolds
+77,RhodeGear
+78,Ritchey Design
+319,Rivoli
+743,Roadmaster
+308,robinson
+647,Rochdale Insurance
+498,Rock N Roll
+80,Rock Shox
+179,Rodale Press
+81,Rolf Prima
+413,Royal
+371,Royce Union
+641,Ryders Eyewear
+727,s
+831,Sachs
+657,Safety Kleen
+346,Salsa
+82,Saris
+400,sayville bike works
+485,Schwinn
+125,SDG
+266,Seattle Bike Supply
+156,Security
+406,Selcof
+309,Selle Italia
+673,Selle Royal
+429,Selle San Marco
+362,Serfas
+367,serfas corp
+83,Shimano
+377,SIDI
+438,Sigma Sport
+317,Simple Green
+607,Sinclair Imports
+548,SIXSIXONE
+422,SKS
+476,Skyway
+320,Slime
+653,Softride
+84,Specialized
+85,Speedplay
+86,Spin
+87,Spinergy
+707,Spinner Suspension
+88,Spooky
+649,SportRack
+491,Sports Instruments
+711,SR Suntour
+89,Sram
+478,Stans NoTubes
+381,State Farm Insurance
+397,State Insurance Fund
+763,StopFlats 2
+499,Sugoi
+661,Summit
+431,Sun Rims
+549,Sunline
+550,Sunlite
+615,sunrace
+623,Surly
+651,Suzue
+96,Swagman
+667,Swissstop
+113,Swobo
+127,Syncros
+153,Syntace
+404,System Cycle Supply
+373,T.H.E. Products
+869,Tacx
+553,TAG Industries
+386,Tamer
+360,Teachers Insurance Plan
+359,Tektro
+393,Tempo
+145,Terry Precision
+135,Third Eye
+138,Thomson
+90,Thule
+148,Time
+460,Timex Corp.
+351,Tioga
+128,Titec
+338,TNT Products
+157,Todson
+483,Tomac USA
+91,Topeak
+489,Topolino Technology
+625,Torker
+493,Toyota
+92,Trek
+152,Tri-Flow
+383,Trialtir
+131,Trico
+719,Trik Topz
+467,Truvativ
+747,Tuf Neck
+99,Twofish
+494,United Bicycle Parts
+284,United Health Care
+169,UPS
+282,US Small Business Administration
+93,USE
+567,USENEXT
+555,USPS
+777,Uvex
+450,VDO
+861,Vee Rubber
+833,Velo
+755,Velocity
+807,Velocomp
+430,Velox
+286,Veltec Sports, Inc
+170,Verizon-BBC
+171,Verizon-FCW
+325,Vetta Sports
+106,Vistalite
+424,Vittoria
+313,Vittoria Industries
+291,Volare
+739,VP
+741,VP Industries
+527,Vredestein
+717,VSI Products
+771,Vuelta
+335,Wald Manufacturing
+835,WD-40
+554,Weinmann
+471,Wellgo
+552,WeThePeople
+612,Wheels Manufacturing
+318,White Lightning
+278,Winters Bros. Recycling
+459,Wipperman
+415,Worksman Trading Corp.
+159,World Wide
+95,Wrench Force
+293,WTB Cycles
+701,X-Fusion
+677,X-Fusion USA
+769,XLC
+551,XO Communications
+473,Xpedo
+97,Yeti Cycles
+304,You Are What You Eat
+306,YouAreWhatYouEat
+121,Zap
+332,Zar International
+136,Zefal
+619,Zipp
+492,Zips
+461,Zurich North America
+999,All Vendors

@@ -1,0 +1,71 @@
+ 
+  <TR >
+   <TD colspan="3" class="topshopping">
+       <table width="100%" border="0" cellpadding="0" cellspacing="0">
+           <tr class="border2">
+<!--
+               <td nowrap class="topnavitem2">
+                   <form action="/search" method="post" onsubmit="return search_validator(this)" name="search_formProd">
+                   <span>
+                       <select name="searchcategorydrop" class="turnintodropdown" id="search_cat"
+                           onchange="MM_jumpMenu('parent',this,0)" style="font-size: 10px;">
+                           <option value="">(All products)</option>
+                           [%search_options%]
+                       </select></span>
+                   </form>
+               </td>
+-->
+               <td nowrap class="topnavitem2">
+                   <form action="/search" method="post" onsubmit="return search_validator(this)" name="search_form">
+                   <!--<input name="searchterm" type="text" style="height:20px; width: 200px;vertical-align:middle; font-size:10px;" 
+                       value="[%search_term%]" onblur="if(this.value == ''){ this.value = 'Keyword Search'};" onfocus="this.value=''">
+-->
+<input name="searchterm" type="text" style="height:20px; width: 300px;vertical-align:middle; font-size:10px;" 
+                       value="" onblur="if(this.value == ''){ this.value = 'Keyword Search'};" onfocus="this.value=''">
+                   <input name="submit" value="SUBMITSEARCH" type="image" src="images/search_submit.jpg"
+                       alt="Search" align="middle"></form></td>
+			
+               <td class="topnavitem2"  style="width:200px">
+                   <a class="topnavitem2" href="javascript:openpopwin('/instructions.asp',800,400);"><div style="font-size:1.0em; vertical-align:middle;text-align:center;">Search Tips</div></a>
+               </td>
+               <td  align="right" width="50%"> <!-- Shop by Brand -->
+                   <!-- <a href="/manufacturer/"><img src="images/buy-by-brands2.gif" border=0 alt="Shop by Brand"></a> -->
+					
+                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                       <tr>
+                           <td width="40%" align="center">
+                               [%cat_display%]
+                           </td>
+                       </tr>
+                   </table>
+               </td>
+				<td>
+				<a href="https://www.bicyclebuys.com/displaycart/">
+					<img src="images/shopping-cart-icon.png" border=0 alt="View Cart">
+				</a>
+				</td>
+				<td>
+				&nbsp;
+				</td>
+<!--
+               <td width="10%" align="right" nowrap class="topnavitem2">
+                   <form action="/search" method="post" name="search_formBrand">
+                   <select name="searchcategory" size="1" class="turnintodropdown" id="searchcategory"
+                       onchange="MM_jumpMenu('parent',this,0)" style="font-size: 10px;">
+                       <option value="all">Shop by Brand</option>
+                       [%brand_options%]
+                   </select></form>
+               </td>
+
+-->
+
+           </tr>
+       </table>
+      </TD>
+</TR>
+<!-- end ###search_Section.html### -->
+<!-- end ###content_header### -->
+
+<TR>
+   <TD colspan="3" class="bodycontent" style="background-image: url('images/topshadow.gif'); background-color: #ffffff; background-repeat: repeat-x; background-attachment: scroll; background-position: 0%">&nbsp;</TD>
+</TR>

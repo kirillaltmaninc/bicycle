@@ -1,0 +1,328 @@
+[%header%]
+<script type="text/JavaScript">
+<!--
+function openpopwin(windowpage, popupwidth, popupheight) {
+	window.open(windowpage, '', 'width=' + popupwidth + ',height=' + popupheight +
+	',location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+//-->
+</script>
+<!-- begin ###main_body_content### -->
+
+   <TABLE WIDTH=700 class=cartmain CELLPADDING=0 CELLSPACING=0>
+   
+   <TR>
+      
+      <TD colspan="6" align="right" style="background: URL(images/cart_bkg.gif) transparent repeat-x;"></TD>
+            
+   </TR>
+   
+   
+   <TR>
+      <TD class="carthead"><B>Qty.</B></TD>
+      <TD class="carthead"><B>Item#</B></TD>
+      <TD class="carthead"><B>Description</B></TD>
+      <TD class="carthead"><B>Unit Price</B></TD>
+      <TD class="carthead"><B>Total Price</B></TD>
+   </TR>
+   <TR>
+      <TD><img src="images/pixel.gif" width="50" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="100" height="2" border=0></TD>
+      <TD style="background: URL(images/pixel.gif) transparent repeat-x;"><img src="images/pixel.gif" width="320" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+   </TR>
+
+
+   [%displaycart%]
+
+   <TR bgcolor="#FFFFFF">
+      <TD class="cart" colspan="3"><div align="center"><a href="javascript:openpopwin('/includes/smallship.asp',400,400);"><img src="/cartimages/viewmyshipcharges.gif" width="150" height="20" border="0" /></a></div></td>
+      <TD class="cart" style="text-align: center;">Sub Total</TD>
+      <TD class="cart" style="text-align: center;">[%cgridtotal%]</TD>
+   </TR>
+
+   <TR>
+      
+      <TD colspan="6" align="right"><TABLE WIDTH=100% class=noborder CELLPADDING=0 CELLSPACING=0 style="border-top: 1px solid #C4EAE6;"> 
+      
+         <TR>
+            
+            <TD colspan="2" class="space">-</TD>
+                  
+         </TR>
+         
+         <TR>
+            
+            <TD style="background: URL(images/cart_bkg.gif) transparent repeat-x;"></TD>
+            <TD align="right" style="background: URL(images/cart_bkg.gif) transparent repeat-x;"></TD>
+
+         </TR></TABLE></TD>
+            
+   </TR>
+   
+   </TABLE></div>
+
+   <!-- end ###CART_TABLE### -->
+   <P>
+
+   <!-- begin ###BILLING_INFO -->
+
+   <FORM METHOD="POST" ACTION="/checkout/">
+   <TABLE WIDTH="100%" CELLPADDING="3" CELLSPACING="0" BORDER="0" bgcolor="#DEF4F7" name="checkout">
+      <tr>
+         <td colspan="4" align="center">
+            Shopped at BicycleBuys before? Enter your email address and password here.
+            [%loginerrstring%]
+         </td>
+      </tr>
+      <tr>
+         <td align="right"><font id="cartnormal">Email Address:</font></td>
+         <td align="left"><font id="cartnormal"><input type="text" name="lemail" maxLength=50></font></td>
+         <td align="right"><font id="cartnormal">Password:</font></td>
+         <td align="left"><font id="cartnormal"><input type="password" name="lpassword" maxLength=50>&nbsp;<input type="submit" name="login" value="log in"></font></td>
+      </tr>
+   </TABLE>
+   </FORM>
+
+   <form name="checkoutform" METHOD="POST" ACTION="/checkout/">
+   <table width="100%" align="center">
+      <tr>
+         <td bgcolor="#AEE2DD" colspan="4" align="center"><font id="carttitle"><big>Billing Information:</big></font></td>
+      </tr>
+   
+      <tr align="center">
+         <td colspan="4" bgcolor="#CEE4E7">
+            <p align="center"><font id="cartnormal">
+            <i>International Customers, choose &quot;Outside the U.S.&quot; for Country, then choose your country below.</i>
+            </font>
+            [%billingerrstring%]
+        </td>
+     </tr>
+
+       <tr align="left">
+          <td>&nbsp;</td>
+          <td colspan="3">
+          <font id="cartnormal">
+          <font color="990000">*</font>
+   	    <small>(fields marked with an asterisk are required)</small></font>
+   	    </td>
+   	 </tr>
+  
+       <tr align="center">
+         <td align="right"><font id="cartnormal">Name:<font color="990000">*</font></font></td>
+         <td align="left"><input TYPE="TEXT" NAME="NAME" VALUE="[%InfoName%]" size="20" maxLength=50></td>
+
+         <td align="right"><font id="cartnormal">Country:<font color="990000">*</font></font></td>
+         <td align="left">
+           <select name="COUNTRY" onchange="if (document.checkoutform.COUNTRY.options[document.checkoutform.COUNTRY.selectedIndex].value != 'US') {disableField();} else {enableField();}">
+           <option value="US" [%USSelect%]>US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+           <option value="OTHER" [%OTHERSelect%]>Outside the U.S.</option>
+           </select><font id="cartnormal"><div id="dNote" name="dNote"></div></font></td>
+       </tr>
+   
+       <tr align="center">
+         <td align="right"><font id="cartnormal">Company:</font></td>
+         <td align="left"><input TYPE="TEXT" NAME="COMPANY" VALUE="[%InfoCompany%]" size="20" maxLength=50></td>
+         <td align="right"><font id="cartnormal">State:<font color="990000">*</font></font></td>
+         <td align="left">
+            <select name="STATEPROVINCE" [%StateDisabled%]>
+               <option value="NONE">Choose State</option>
+               <option value="OTHER" [%OtherStateSelected%]>Outside the U.S.</option>
+[%StateSelect%]
+            </select>
+         </td>
+       </tr>
+
+       <tr align="center">
+         <td align="right"><font id="cartnormal">Address:<font color="990000">*</font></font></td>
+         <td align="left"><input TYPE="TEXT" NAME="ADDRESS1" VALUE="[%Address1%]" size="20" maxLength=50></td>
+         <td align="right"><font id="cartnormal">Zip/Postal Code:<font color="990000">*</font></font></td>
+         <td align="left"><input TYPE="TEXT" NAME="ZIPPOSTAL" VALUE="[%ZipPostal%]" size="20" maxLength=15></td>
+       </tr>
+   
+       <tr align="center">
+         <td align="right"><font id="cartnormal">City:<font color="990000">*</font></font></td>
+         <td align="left"><input NAME="CITY" VALUE="[%City%]" size="20" maxLength=50></td>
+
+         <td align="right"><font id="cartnormal">Email:<font color="990000">*</font></font></td>
+         <td align="left"><input TYPE="TEXT" NAME="EMAIL" VALUE="[%Email%]" size="20" maxLength=50></td>
+       </tr>
+   
+      <tr align="center">
+         <td align="right"><font id="cartnormal">Phone:<font color="990000">*</font></font></td>
+         <td align="left"><input NAME="PHONE" VALUE="[%Phone%]" size="20" maxLength=20></td>
+         <td align="right" rowspan="2"><font id="cartnormal">Comments:&nbsp;</font></td>
+         <td align="left" rowspan="2"><textarea NAME="COMMENTS" ROWS="3" COLS="20">[%Comments%]</textarea></td>
+      </tr>
+   
+      <tr align="center">
+         <td align="right"><font id="cartnormal">Fax:&nbsp;</font></td>
+         <td align="left"><input NAME="FAX" VALUE="[%Fax%]" size="20" maxLength=20></td>
+      </tr>
+   
+      <tr>
+         <td colspan="4">&nbsp;</td>
+      </tr>
+   
+      <tr align="left">
+         <td colspan="4">
+         <font id="cartnormal">
+         <b>INTERNATIONAL CUSTOMERS ONLY:</b>
+         </td>
+      </tr>
+   
+      <tr align="center" name="intbill">
+         <td align="right"><font id="cartnormal">Province:</font></td>
+         <td align="left"><input NAME="CUSTOM1" VALUE="[%Country%]" size="20" [%CountryDisabled%] maxLength=50></td>
+         <td align="right"><font id="cartnormal">Country:</font></td>
+         <td align="left"><select name="CUSTOM2" [%CountryDisabled%]>
+            <option value="">International Only -  Choose country</option>
+[%Countries%]
+            </select>
+         </td>
+      </tr>
+   </table>
+   <P>
+   <table WIDTH="98%" CELLPADDING="3" CELLSPACING="0" BORDER="0" bgcolor="#DEF4F7">
+      <tr>
+         <td bgcolor="#AEE2DD" colspan="4"><div align="center"><center><p><font id="carttitle"><big>Shipping Information:</big></font></div></td>
+      </tr>
+      <tr align="center">
+         <td colspan="4" bgcolor="#9ED2CD">
+            <p align="center"><font id="cartnormal">
+            <i>International Customers, choose &quot;Outside the U.S.&quot; for Country, then choose your country below.</i>
+         </td>
+      </tr>
+
+      <tr align="center">
+         <td colspan="4" bgcolor="CEE4E7">[%shippingerrstring%]</td>
+      </tr>
+
+      <tr>
+         <td colspan="4" align="center">
+            <h2><input TYPE="CHECKBOX" NAME="ORDERCUSTOM8" value="ON" [%shipsamechecked%]>Use billing address as shipping address.</h2>
+            <i>If an alternate address is entered, it needs to be </i><i>listed 
+            as an alternate ship address with your credit card company.<br>
+            Continue processing your order, entering all credit card information, then contact us for further info to expedite your order.  Toll Free 1-888-4-BikeBuy (1-888-424-5328), international 631-673-2211.
+            </i></font>
+         </td>
+      </tr>
+  
+    <tr align="left">
+       <td>&nbsp;</td>
+       <td colspan="3">
+       <font id="cartnormal">
+       <font color="990000">*</font>
+	    <small>(fields marked with an asterisk are required)</small></font>
+      </td>
+	 </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Name:<font color="990000">*</font></font></td>
+      <td align="left"><input TYPE="TEXT" NAME="SHIPNAME" VALUE="[%ShipName%]" size="20" maxLength=50></td>
+      <td align="right"><font id="cartnormal">Country:<font color="990000">*</font></font></td>
+      <td align="left">
+        <select name="SHIPCOUNTRY" onchange="if (document.checkoutform.SHIPCOUNTRY.options[document.checkoutform.SHIPCOUNTRY.selectedIndex].value != 'US') {disableFieldShip();} else {enableFieldShip();}">
+        <option value="US" [%ShipUSSelect%]>US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        <option value="OTHER" [%ShipOTHERSelect%]>Outside the U.S.</option>
+        </select><font id="cartnormal"><div id="dNote2" name="dNote2"></div></font>
+      </td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Company:</font></td>
+      <td align="left"><input TYPE="TEXT" NAME="SHIPCOMPANY" VALUE="[%ShipCompany%]" size="20" maxLength=50></td>
+      <td align="right"><font id="cartnormal">State:<font color="990000">*</font></font></td>
+
+      <td align="left">
+         <select name="SHIPSTATEPROVINCE" [%ShipStateDisabled%]>
+            <option value="NONE">Choose State</option>
+            <option value="OTHER" [%ShipOtherStateSelected%]>Outside the U.S.</option>
+[%ShipStateSelect%]
+         </select>
+      </td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Address:<font color="990000">*</font></font></td>
+      <td align="left"><input TYPE="TEXT" NAME="SHIPADDRESS1" VALUE="[%ShipAddress1%]" size="20" maxLength=50></td>
+      <td align="right"><font id="cartnormal">Zip/Postal Code:<font color="990000">*</font></font></td>
+      <td align="left"><input TYPE="TEXT" NAME="SHIPZIPPOSTAL" VALUE="[%ShipZipPostal%]" size="20" maxLength=15></td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">City:<font color="990000">*</font></font></td>
+      <td align="left"><input NAME="SHIPCITY" VALUE="[%ShipCity%]" size="20" maxLength=50></td>
+      <td align="right"><font id="cartnormal">Email:&nbsp;</font></td>
+      <td align="left"><input TYPE="TEXT" NAME="SHIPEMAIL" VALUE="[%ShipEmail%]" size="20" maxLength=50></td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Phone:<font color="990000">*</font></font></td>
+      <td align="left"><input NAME="SHIPPHONE" VALUE="[%ShipPhone%]" size="20" maxLength=20></td>
+            <td align="right" rowspan="2">&nbsp;</td>
+            <td align="left" rowspan="2">&nbsp;</td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Fax:&nbsp;</font></td>
+      <td align="left"><input NAME="SHIPFAX" VALUE="[%ShipFax%]" size="20" maxLength=20></td>
+    </tr>
+
+    <tr align="center">
+      <td colspan="2">&nbsp;</td>
+    </tr>
+
+    <tr align="left">
+      <td colspan="4">
+      <font id="cartnormal">
+      <b>INTERNATIONAL CUSTOMERS ONLY:</b>
+      </td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Province:</font></td>
+      <td align="left"><input NAME="SHIPCUSTOM1" VALUE="[%ShipCountry%]" size="20" [%ShipCountryDisabled%] maxLength=50></td>
+      <td align="right"><font id="cartnormal">Country:</font></td>
+      <td align="left">
+         <select name="SHIPCUSTOM2" [%ShipCountryDisabled%]>
+           <option value="">International Only -  Choose country</option>
+[%ShipCountries%]
+         </select>
+      </td>
+    </tr>
+
+   <tr>
+    <td colspan="4"><hr></td>
+   </tr>
+   
+   <tr>
+                <td colspan="4" align="center"><font id="cartnormal"><b>To expedite 
+                  future orders enter a password here. With this password you will not
+                  need to enter all of this information again on future orders:</b></td>
+   </tr>
+
+   <tr>
+    <td align="right"><font id="cartnormal">Password:</font></td>
+    <td align="left"><input type="password" name="password1" maxLength=50>
+    <td align="right"><font id="cartnormal">Confirm:</font></td>
+    <td align="left"><input type="password" name="password2" maxLength=50></td>
+  </tr>
+  </table>
+  
+  <div align="center"><center>
+  <input type="hidden" name="Save" value="Save Info">
+  <font id="body"><div align="center"><b>Please read the Purchase Agreement and Return Policy before you continue.</b></div></font>
+  <a href="javascript:openpopwin('returnspolicy1.asp',600,400);"><img src="/cartimages/PurchaseAGREE.gif" alt="View Purchase &amp; Returns Policy" border="0" WIDTH="100" HEIGHT="20"></a> 
+  <input TYPE="image" src="/cartimages/continue.gif" NAME="SUBMIT" VALUE="Save Info" alt="Save shipping info and continue." WIDTH="100" HEIGHT="20">
+  <br>
+  <a href="[%continueshopping%]"><img src="/cartimages/backtoshopping.gif" alt="Continue shopping" border="0" WIDTH="100" HEIGHT="20"></a>
+  <a href="/emptycart/"><img src="/cartimages/emptycart.gif" alt="Remove ALL items from the cart" border="0" WIDTH="100" HEIGHT="20"></a>
+  </center></div>
+
+</form>
+
+
+[%footer%]

@@ -1,0 +1,76 @@
+213,
+199,Accessory
+114,ATB Tires
+163,Babyseats
+147,Bags
+198,Bar Ends
+209,Bibs-Short
+121,Bicycle Computers
+208,Bicycle Fenders
+122,Bicycles
+120,Bike Racks
+180,BMX Accessories
+115,BMX Tires
+138,BMX Wheels
+206,Body Lotions
+158,Bottom Brackets
+124,Brakes
+210,Brakes-Disc
+211,Cables
+116,Car Carriers
+125,Cassettes
+161,Chains
+123,Clipless Pedals
+126,Cranksets
+195,Energy Food
+146,Eyewear
+127,Front Derailleur
+192,Gifts
+155,Gloves
+159,Handlebar Tape/Grips
+128,Handlebars
+197,Hats
+160,Headsets
+205,Heart Rate Monitors
+113,Helmets
+129,Hubs
+156,Hydration
+119,Indoor Trainers
+207,Jackets
+143,Jerseys
+164,Joggers
+193,Labor
+148,LightSets
+118,Locks
+150,Lubrication
+166,Mirrors
+130,Miscellaneous Components
+157,Mountain Groups
+153,Mountain Kits
+137,Mountain Wheels
+201,Protective Gear
+149,Pumps
+162,Rear Derailleur
+154,Regular Pedals
+202,Road Groups
+152,Road Kits
+139,Road Tires
+136,Road Wheels
+132,Seatposts
+131,Seats
+167,Shifter/Levers
+133,Shifters
+196,Shock Accessories
+151,Shocks/Forks
+142,Shoes
+144,Shorts
+117,Socks
+134,Stems
+203,Storage Systems
+212,temp
+200,Tights
+194,Tire Tools
+112,Tools
+165,Trailers
+141,Tubes
+204,Winter Clothing Accessories

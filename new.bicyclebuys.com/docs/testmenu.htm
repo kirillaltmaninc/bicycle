@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Stu Nicholls | CSSplay | A Professional drop-down menu #8</title>
+<meta name="Author" content="Stu Nicholls" />
+<meta name="Keywords" content= "cssplay, css, play, Cascading, Style, Sheets, experiments, demonstrations, menu, horizontal, dropdown, drop, multi, level, cross, browser, valid, professional" />
+<meta name="Description" content="CSS - Cutting edge Cascading Style Sheets. Experiments in CSS" />
+<meta name="verify-v1" content="n3Dpx4NklZjg5p/Tq7h1q+Oj6Ml83crtkO/PwepVQ6Y=" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+
+<link rel="meta" href="http://www.cssplay.co.uk/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="pics-Label" content='(pics-1.1 "http://www.icra.org/pics/vocabularyv03/" l gen true for "http://cssplay.co.uk" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0)  gen true for "http://www.cssplay.co.uk" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0))' />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.cssplay.co.uk/feed.xml" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/ico" />
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+
+</head>
+<body style="background:tan" >
+
+
+SOme text
+
+
+<style type="text/css">
+ul.download {list-style-image:url(zip.gif);}
+ul.download li {padding-left:5px; font-size:11px; line-height:1.5em;}
+#info {padding-bottom:100px;}
+
+/* ================================================================
+This copyright notice must be kept untouched in the stylesheet at
+all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menu/pro_drop8.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any
+way to fit your requirements.
+=================================================================== */
+.preload1 {background: url(prodrop4/pro_drop4_2a.gif);}
+.preload1 {background: url(prodrop4/pro_drop4_2b.gif);}
+
+.prodrop8 {padding:0 0 0 32px; margin:0; list-style:none; height:36px; background:transparent url(prodrop4/pro_drop4_back.gif); position:relative; z-index:500; font-family:arial, verdana, sans-serif;}
+.prodrop8 li.top {display:block; float:left;}
+.prodrop8 li a.top_link {display:block; float:left; height:36px; line-height:27px; color:#666; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 10px; cursor:pointer;background: url(prodrop4/pro_drop4_0a.gif) no-repeat;}
+.prodrop8 li a.top_link span {float:left; display:block; padding:0 20px 0 10px; height:36px;background:url(prodrop4/pro_drop4_0b.gif) right top;}
+.prodrop8 li a.top_link:hover {color:#000; background: url(prodrop4/pro_drop4_2a.gif) no-repeat; line-height:25px;}
+.prodrop8 li a.top_link:hover span {background:url(prodrop4/pro_drop4_2b.gif) no-repeat right top;}
+
+.prodrop8 li:hover > a.top_link {color:#000; background: url(prodrop4/pro_drop4_2a.gif) no-repeat; line-height:25px;}
+.prodrop8 li:hover > a.top_link span {background:url(prodrop4/pro_drop4_2b.gif) no-repeat right top;}
+
+
+.prodrop8 table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+
+/* Default link styling */
+
+/* Style the list OR link hover. Depends on which browser is used */
+
+.prodrop8 a:hover {visibility:visible; position:relative; z-index:200;}
+.prodrop8 li:hover {position:relative; z-index:200;}
+
+/* keep the 'next' level invisible by placing it off screen. */
+.prodrop8 ul, .prodrop8 iframe {position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+
+.prodrop8 ul.sub1 {width:160px;}
+.prodrop8 ul.sub2 {width:110px;}
+.prodrop8 ul.sub3 {width:90px;}
+.prodrop8 ul.sub4 {width:112px;}
+
+.prodrop8 :hover iframe.one {left:0; top:35px; width:150px; height:100px;}
+.prodrop8 :hover iframe.two {left:0; top:35px; width:100px; height:65px;}
+
+.prodrop8 :hover ul {left:0; top:35px; background: #b9d3fb; padding:3px; border:1px solid #3a93d2; border-width:0 1px 1px; white-space:nowrap; height:auto; z-index:300;}
+.prodrop8 :hover ul li {display:block; height:20px; position:relative; font-weight:normal; width:auto;}
+.prodrop8 :hover ul li a {display:block; font-size:11px; height:20px; line-height:20px; width:auto; padding:0 10px; color:#000; text-decoration:none;}
+.prodrop8 :hover ul li a:hover {background:#3a93d2; color:#fff;}
+
+
+</style>
+
+
+<ul class="proddrop8">
+	<li class="top"><a href="#nogo" class="top_link"><span>Sales</span><!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><iframe class="one"></iframe><![endif]-->
+		<ul class="sub1">
+			<li><a href="../menu/" class="fly">Digital SLR Cameras</a></li>
+			<li><a href="../boxes/">Interchangeable Lenses</a></li>
+			<li><a href="../mozilla/">Flash Guns and Accessories</a></li>
+			<li><a href="../ie/">Professional Tripods</a></li>
+			<li><a href="../opacity/">Filters &amp; Lens Hoods</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="top"><a href="#nogo" class="top_link"><span>Services</span><!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><iframe class="two"></iframe><![endif]-->
+		<ul class="sub2">
+			<li><a href="../menu/">Printing &amp; Framing</a></li>
+			<li><a href="../layouts/">Photo Editing</a></li>
+			<li><a href="../boxes/">Storage &amp; Backup</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="top"><a href="#nogo" class="top_link"><span>Contacts</span><!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul class="sub3">
+			<li><a href="../layouts/">Support</a></li>
+			<li><a href="../boxes/">Sales</a></li>
+			<li><a href="../mozilla/">Buying</a></li>
+			<li><a href="../ie/">Photographers</a></li>
+			<li><a href="../opacity/">Stockist</a></li>
+			<li><a href="../menu/">General</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="top"><a href="#nogo" class="top_link"><span>Store Location</span><!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul class="sub4">
+			<li><a href="../ie/">South West Region</a></li>
+			<li><a href="../opacity/">North East Region</a></li>
+			<li><a href="../menu/">Central Region</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="top"><a href="http://www.cssplay.co.uk" class="top_link"><span>Privacy Policy</span></a></li>
+</ul>
+
+<BR><BR><BR><BR><BR><BR><BR><BR>
+</body>
+</html>
+
+

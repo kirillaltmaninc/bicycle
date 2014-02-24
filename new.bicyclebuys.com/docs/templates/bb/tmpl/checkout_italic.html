@@ -1,0 +1,673 @@
+[%header%]
+<script type="text/JavaScript">
+<!--
+function openpopwin(windowpage, popupwidth, popupheight) {
+	window.open(windowpage, '', 'width=' + popupwidth + ',height=' + popupheight +
+	',location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+//-->
+</script>
+<script language="javascript">
+<!--
+
+
+function ChkFN()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPFIRSTNAME.value = document.checkoutform.FIRSTNAME.value;
+}
+}
+
+function ChkMN()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPMIDDLENAME.value = document.checkoutform.MIDDLENAME.value;
+}
+}
+
+function ChkLN()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPLASTNAME.value = document.checkoutform.LASTNAME.value;
+}
+}
+
+function ChkCom()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPCOMPANY.value = document.checkoutform.COMPANY.value;
+}
+}
+
+function ChkAdd()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPADDRESS1.value = document.checkoutform.ADDRESS1.value;
+}
+}
+
+function ChkCity()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPCITY.value = document.checkoutform.CITY.value;
+}
+}
+
+function ChkSP()
+{
+if (document.checkoutform.STATEPROVINCE.selected != "ZZ")
+{
+//alert(document.checkoutform.STATEPROVINCE.value)
+    if (document.checkoutform.COUNTRY.value != "US")
+    {
+        document.checkoutform.COUNTRY.value = "US";
+        document.checkoutform.CUSTOM1.disabled=true;
+        document.checkoutform.CUSTOM1.value = 'for International';
+    }
+
+}
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPSTATEPROVINCE.value = document.checkoutform.STATEPROVINCE.value;
+if ((document.checkoutform.SHIPCOUNTRY.value != "US") || (document.checkoutform.SHIPCOUNTRY.value != "Canada"))
+    {
+        document.checkoutform.SHIPCOUNTRY.value = "US";
+        document.checkoutform.SHIPCUSTOM1.disabled=true;
+        document.checkoutform.SHIPCUSTOM1.value = 'for International';
+    }
+}
+
+}
+
+function ChkShipSP()
+{
+if (document.checkoutform.SHIPSTATEPROVINCE.selected != "ZZ")
+{
+    if (document.checkoutform.SHIPCOUNTRY.value != "US")
+    {
+        document.checkoutform.SHIPCOUNTRY.value = "US";
+        document.checkoutform.SHIPCUSTOM1.disabled=true;
+        document.checkoutform.SHIPCUSTOM1.value = 'for International';
+    }
+
+}
+//else
+//{
+//alert("Please choose a SHIP country")
+//document.checkoutform.SHIPCOUNTRY.focus();
+//}
+
+}
+
+function ChkZP()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPZIPPOSTAL.value = document.checkoutform.ZIPPOSTAL.value;
+}
+}
+
+function ChkCoun()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+///document.checkoutform.SHIPCOUNTRY.value = document.checkoutform.COUNTRY.value;
+}
+}
+
+function ChkEmail()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPEMAIL.value = document.checkoutform.EMAIL.value;
+}
+}
+
+function ChkPhone()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPPHONE.value = document.checkoutform.PHONE.value;
+}
+}
+
+function ChkFax()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPFAX.value = document.checkoutform.FAX.value;
+}
+}
+
+function ChkProv()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPCUSTOM1.value = document.checkoutform.CUSTOM1.value;
+}
+}
+
+function ChkAllTrue()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPFIRSTNAME.value = document.checkoutform.FIRSTNAME.value;
+document.checkoutform.SHIPMIDDLENAME.value = document.checkoutform.MIDDLENAME.value;
+document.checkoutform.SHIPLASTNAME.value = document.checkoutform.LASTNAME.value;
+document.checkoutform.SHIPCOMPANY.value = document.checkoutform.COMPANY.value;
+document.checkoutform.SHIPADDRESS1.value = document.checkoutform.ADDRESS1.value;
+document.checkoutform.SHIPCITY.value = document.checkoutform.CITY.value;
+document.checkoutform.SHIPSTATEPROVINCE.value = document.checkoutform.STATEPROVINCE.value;
+document.checkoutform.SHIPZIPPOSTAL.value = document.checkoutform.ZIPPOSTAL.value;
+document.checkoutform.SHIPCOUNTRY.value = document.checkoutform.COUNTRY.value;
+document.checkoutform.SHIPEMAIL.value = document.checkoutform.EMAIL.value;
+document.checkoutform.SHIPPHONE.value = document.checkoutform.PHONE.value;
+document.checkoutform.SHIPFAX.value = document.checkoutform.FAX.value;
+document.checkoutform.SHIPCUSTOM1.value = document.checkoutform.CUSTOM1.value;
+}
+if (document.checkoutform.ORDERCUSTOM8.checked != true)
+{
+document.checkoutform.SHIPFIRSTNAME.value = '';
+document.checkoutform.SHIPMIDDLENAME.value = '';
+document.checkoutform.SHIPLASTNAME.value = '';
+document.checkoutform.SHIPCOMPANY.value = '';
+document.checkoutform.SHIPADDRESS1.value = '';
+document.checkoutform.SHIPCITY.value = '';
+document.checkoutform.SHIPSTATEPROVINCE.selectedIndex = 0;
+document.checkoutform.SHIPZIPPOSTAL.value = '';
+document.checkoutform.SHIPCOUNTRY.selectedIndex = 0;
+document.checkoutform.SHIPEMAIL.value = '';
+document.checkoutform.SHIPPHONE.value = '';
+document.checkoutform.SHIPFAX.value = '';
+document.checkoutform.SHIPCUSTOM1.value = '';
+}
+}
+
+
+function UpdateShippingFields()
+{
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+document.checkoutform.SHIPFIRSTNAME.value = document.checkoutform.FIRSTNAME.value;
+document.checkoutform.SHIPMIDDLENAME.value = document.checkoutform.MIDDLENAME.value;
+document.checkoutform.SHIPLASTNAME.value = document.checkoutform.LASTNAME.value;
+document.checkoutform.SHIPCOMPANY.value = document.checkoutform.COMPANY.value;
+document.checkoutform.SHIPADDRESS1.value = document.checkoutform.ADDRESS1.value;
+document.checkoutform.SHIPCITY.value = document.checkoutform.CITY.value;
+document.checkoutform.SHIPSTATEPROVINCE.value = document.checkoutform.STATEPROVINCE.value;
+document.checkoutform.SHIPZIPPOSTAL.value = document.checkoutform.ZIPPOSTAL.value;
+document.checkoutform.SHIPCOUNTRY.value = document.checkoutform.COUNTRY.value;
+document.checkoutform.SHIPEMAIL.value = document.checkoutform.EMAIL.value;
+document.checkoutform.SHIPPHONE.value = document.checkoutform.PHONE.value;
+document.checkoutform.SHIPFAX.value = document.checkoutform.FAX.value;
+document.checkoutform.SHIPCUSTOM1.value = document.checkoutform.CUSTOM1.value;
+}
+}
+
+
+
+function setState() {
+document.all.dNote2.innerHTML='Something.';
+document.checkoutform.STATEPROVINCE.disabled=false;
+  document.checkoutform.STATEPROVINCE.value=document.checkoutform.CUSTOM1.value;
+document.checkoutform.COMMENTS.value = document.checkoutform.CUSTOM1.value;
+///alert("You are here!");
+}
+
+function enableField() {
+
+   document.all.dNote.innerHTML='';
+   if (document.checkoutform.COUNTRY.value != "US" && document.checkoutform.COUNTRY.value != "Canada") {
+	   document.checkoutform.STATEPROVINCE.disabled=false;
+ 	  document.checkoutform.STATEPROVINCE.selectedIndex = 0;
+   }
+   document.checkoutform.CUSTOM1.disabled=true;
+   document.checkoutform.CUSTOM1.value = 'for International';
+   ///document.checkoutform.CUSTOM2.disabled=true;
+   ///document.checkoutform.CUSTOM2.selectedIndex=0;
+   ///document.checkoutform.intbill.bgcolor = "#ff0000";
+   if (document.checkoutform.ZIPPOSTAL.value == "NONE") {
+	document.checkoutform.ZIPPOSTAL.value = '';
+   }
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+
+ if (document.checkoutform.COUNTRY.value != "US" && document.checkoutform.COUNTRY.value != "Canada") {
+   document.checkoutform.SHIPSTATEPROVINCE.disabled=false;
+   document.checkoutform.SHIPSTATEPROVINCE.value = "ZZ";
+  }
+document.checkoutform.SHIPCOUNTRY.value = document.checkoutform.COUNTRY.value;
+   document.checkoutform.SHIPCUSTOM1.disabled=true;
+   document.checkoutform.SHIPCUSTOM1.value = 'for International';
+
+   if (document.checkoutform.SHIPZIPPOSTAL.value == "NONE") {
+	document.checkoutform.SHIPZIPPOSTAL.value = '';
+   }
+
+}
+}
+
+function disableField() {
+
+   document.all.dNote.innerHTML='International Customers Please Enter a Province and Postal Code if applicable.';
+      document.checkoutform.STATEPROVINCE.value = "ZZ";
+//document.checkoutform.SHIPSTATEPROVINCE.selectedIndex = 52;
+   //document.checkoutform.STATEPROVINCE.disabled=true;
+    document.checkoutform.CUSTOM1.disabled=false;
+    document.checkoutform.CUSTOM1.value = '';
+   ///document.checkoutform.SHIPCUSTOM1.disabled=false;
+    document.checkoutform.CUSTOM1.focus();
+   ///document.checkoutform.CUSTOM2.disabled=false;
+	document.checkoutform.ZIPPOSTAL.value = 'None';
+
+if (document.checkoutform.ORDERCUSTOM8.checked == true)
+{
+   //document.checkoutform.SHIPSTATEPROVINCE.selectedIndex = 0;
+  // document.checkoutform.SHIPSTATEPROVINCE.disabled=true;
+
+    document.checkoutform.SHIPCOUNTRY.value = document.checkoutform.COUNTRY.value;
+	if ((document.checkoutform.SHIPCOUNTRY.value != "US") && (document.checkoutform.SHIPCOUNTRY.value != "Canada")) {
+		document.checkoutform.SHIPSTATEPROVINCE.value = "ZZ";
+	}
+   document.checkoutform.SHIPCUSTOM1.disabled=false;
+   document.checkoutform.SHIPCUSTOM1.value = document.checkoutform.CUSTOM1.value;
+	document.checkoutform.SHIPZIPPOSTAL.value = 'None';
+}
+}
+function enableFieldShip() {
+   document.all.dNote2.innerHTML='';
+   if (document.checkoutform.SHIPCOUNTRY.value != "US" && document.checkoutform.SHIPCOUNTRY.value != "Canada") {
+	   document.checkoutform.SHIPSTATEPROVINCE.disabled=false;
+	   document.checkoutform.SHIPSTATEPROVINCE.selectedIndex = 0;
+   }
+
+   document.checkoutform.SHIPCUSTOM1.disabled=true;
+   document.checkoutform.SHIPCUSTOM1.value = 'for International';
+  /// document.checkoutform.CUSTOM2.disabled=true;
+   ///document.checkoutform.CUSTOM2.selectedIndex=0;
+	//document.checkoutform.SHIPZIPPOSTAL.value = '';
+
+   if (document.checkoutform.SHIPZIPPOSTAL.value == "NONE") {
+	document.checkoutform.SHIPZIPPOSTAL.value = '';
+   }
+
+}
+function disableFieldShip() {
+   document.all.dNote2.innerHTML='International Customers Please Enter a Province and Postal Code if applicable.';
+   //document.checkoutform.SHIPSTATEPROVINCE.disabled=true;
+   document.checkoutform.SHIPSTATEPROVINCE.selectedIndex = 0;
+   if ((document.checkoutform.SHIPCOUNTRY.value == "US") || (document.checkoutform.SHIPCOUNTRY.value == "Canada")) {
+   		document.checkoutform.SHIPSTATEPROVINCE.value = "ZZ";
+   }
+
+   document.checkoutform.SHIPCUSTOM1.disabled=false;
+   document.checkoutform.SHIPCUSTOM1.value = '';
+   document.checkoutform.SHIPZIPPOSTAL.value = 'None';
+}
+//-->
+</script>
+<!-- begin ###main_body_content### -->
+
+   <TABLE WIDTH=700 class=cartmain CELLPADDING=0 CELLSPACING=0>
+
+   <TR>
+
+      <TD colspan="6" align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+
+   </TR>
+
+
+   <TR>
+      <TD class="carthead"><B>Qty.</B></TD>
+      <TD class="carthead"><B>Item#</B></TD>
+      <TD class="carthead"><B>Description</B></TD>
+      <TD class="carthead"><B>Unit Price</B></TD>
+      <TD class="carthead"><B>Total Price</B></TD>
+   </TR>
+   <TR>
+      <TD><img src="images/pixel.gif" width="50" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="100" height="2" border=0></TD>
+      <TD style="background-image: url('images/pixel.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"><img src="images/pixel.gif" width="320" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+   </TR>
+
+
+   [%displaycart%]
+   [%PromoCode%]  
+   
+   <tr bgcolor="#FFFFFF"  >      
+      <TD class="cartR" colspan="3"><div align="right" style="vertical-align:middle;">
+      
+      </div></td>
+      <TD  class="cartR"  style="text-align: center;">Sub Total</TD>
+      <TD class="cartR"  style="text-align: center;">[%cgridtotal%]</TD>
+      <td  ></td>
+   </tr>
+   
+   [%adjusttotal%] 
+   <TR>
+
+      <TD colspan="6" align="right">
+      <TABLE WIDTH=100% class=noborder CELLPADDING=0 CELLSPACING=0 style="border-top: 1px solid #C4EAE6;">
+
+         <TR>
+
+            <TD colspan="2" class="space">-</TD>
+
+         </TR>
+
+         <TR>
+
+            <TD style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+            <TD align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+
+         </TR></TABLE></TD>
+
+   </TR>
+
+   </TABLE>
+    <div align="center"><a href="javascript:openpopwin('/includes/smallship.asp',420,480);"><img src="/cartimages/viewmyshipcharges.gif" width="150" height="20" border="0" /></a></div>
+   <!-- end ###CART_TABLE### -->
+   <P>
+
+   <!-- begin ###BILLING_INFO -->
+
+   <FORM name="myform" METHOD="POST" ACTION="/checkout/">
+   <TABLE WIDTH="100%" CELLPADDING="3" CELLSPACING="0" BORDER="0" bgcolor="#DEF4F7" name="checkout">
+      <tr>
+         <td colspan="4" align="center">
+            Shopped at BicycleBuys before? Enter your email address and password here.
+            [%loginerrstring%]
+         </td>
+      </tr>
+      <tr>
+         <td align="right"><font id="cartnormal">Email Address:</font></td>
+         <td align="left"><font id="cartnormal"><input type="text" name="lemail" maxLength=50 value=""></font></td>
+         <td align="right"><font id="cartnormal">Password:</font></td>
+         <td align="left"><font id="cartnormal"><input type="password" name="lpassword" maxLength=50>&nbsp;<input type="submit" name="login" value="log in">
+         &nbsp;&nbsp;<input type="button" name="changePwd" value="change passsword" onclick="javascript:openpopwin('/cp.asp',500,300);"></font></td>
+      </tr>
+   </TABLE>
+   </FORM>
+
+   <form name="checkoutform" METHOD="POST" ACTION="/checkout/">
+   <table width="100%" align="center" height="300">
+      <tr>
+         <td bgcolor="#AEE2DD" colspan="4" align="center" height="23"><font id="carttitle"><big>Billing Information:</big></font></td>
+      </tr>
+
+      <tr align="center">
+         <td colspan="4" bgcolor="#CEE4E7" height="21">
+            <p align="center"><font id="cartnormal">
+            <i>International Customers, choose &quot;Outside the U.S.&quot; for Country, then choose your country below.</i>
+            </font>
+        [%billingerrstring%]        </td>
+     </tr>
+
+       <tr align="left">
+          <td height="21">&nbsp;</td>
+          <td colspan="3" height="21">
+          <font id="cartnormal">
+          <font color="990000">*</font>
+   	    <small>(fields marked with an asterisk are required)</small></font>   	    </td>
+   	 </tr>
+
+       <tr align="center">
+         <td align="right" height="25" width="130px"><font id="cartnormal">First Name:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><input NAME="FIRSTNAME" TYPE="TEXT" id="FIRSTNAME" VALUE="[%InfoFIRSTNAME%]" size="20" maxLength=50 onBlur="ChkFN()"></td>
+
+         <td align="right" height="25">Middle:</td>
+         <td align="left" height="25"><font id="cartnormal"><div id="dNote" name="dNote">
+           <input name="MIDDLENAME" type="text" id="MIDDLENAME" value="[%InfoMIDDLENAME%]" size="3" maxlength="50" OnBlur="ChkMN()"/>
+         </div></font></td>
+       </tr>
+
+       <tr align="center">
+         <td align="right" height="25"><font id="cartnormal">Last Name:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><font id="cartnormal">
+           <div id="dNote" name="dNote">
+             <input name="LASTNAME" type="text" id="LASTNAME" value="[%InfoLASTNAME%]" size="20" maxlength="50" OnBlur="ChkLN()"/>
+           </div>
+         </font></td>
+         <td align="right" height="25"><font id="cartnormal">Company:</font></td>
+         <td align="left" height="25"><input type="TEXT" name="COMPANY" value="[%InfoCompany%]" size="20" maxlength=50 OnBlur="ChkCom()"/></td>
+       </tr>
+       <tr align="center">
+         <td align="right" height="25"><font id="cartnormal">Address:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><input type="TEXT" name="ADDRESS1" value="[%Address1%]" size="20" maxlength=50 OnBlur="ChkAdd()"/></td>
+         <td align="right" height="25"><font id="cartnormal">City:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><input name="CITY" value="[%City%]" size="20" maxlength=50 OnBlur="ChkCity()"/></td>
+       </tr>
+       <tr align="center">
+         <td align="right" height="25"><font id="cartnormal">Zip/Postal Code:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><input type="TEXT" name="ZIPPOSTAL" value="[%ZipPostal%]" size="20" maxlength=15 OnBlur="ChkZP()"/></td>
+         <td align="right" height="25"><font id="cartnormal">State:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><select name="STATEPROVINCE" [%statedisabled%] onChange="ChkSP()">
+            <option value="ZZ">Choose State/Province</option>
+
+
+
+[%StateSelect%]
+
+
+
+         </select>
+           US and Canada Only!</td>
+       </tr>
+
+      
+		<tr><td colspan="4">
+		<div class="chError">
+			<div class="chHintLeft">Enter e-mail address without spaces:
+					  (name@company.com)</div>
+			<div class="chHintRight">International Customers: Do not select State!</div>
+		</div>
+<div style="clear:both"></div>
+		</td></tr>
+       <tr align="center">
+         <td align="right" height="25"><font id="cartnormal0">Email:<font color="990000">*</font></font></td>
+         <td align="left" height="25"><input type="TEXT" name="EMAIL" value="[%Email%]" size="20" maxlength=50 OnBlur="ChkEmail()"/></td>
+
+         <td align="right" height="25">Country:</td>
+         <td align="left" rowspan="2" height="61"><select name="COUNTRY" id="COUNTRY" onChange="if ((document.checkoutform.COUNTRY.options[document.checkoutform.COUNTRY.selectedIndex].value != 'US') && document.checkoutform.COUNTRY.options[document.checkoutform.COUNTRY.selectedIndex].value != 'Canada') {disableField();} else {enableField();}">
+           <option value="">Choose country</option>
+
+[%Countries%]
+
+         </select>
+         <br/>
+         <div id="div" name="dNote"><strong>Country code for the USA must be a two letter   entry.</strong> Example <strong>US</strong> not <strong>United States</strong></div>
+          <p>&nbsp;</td>
+       </tr>
+		<tr><td colspan="4">
+		<div class="chError">
+			<div class="chHintLeft">Enter Phone # without dashes or spaces:
+          (123456789...)</div>
+		</div>		
+
+		</td></tr>
+       
+
+       <tr align="center">
+         <td align="right" height="1"><font id="cartnormal">Phone:<font color="990000">*</font></font></td>
+         <td align="left" height="1"><input name="PHONE" value="[%Phone%]" size="20" maxlength=20 OnBlur="ChkPhone()"/></td>
+
+         <td align="right" height="1"><font id="cartnormal1">Province:</font>
+     
+         </td>
+         <td align="left" height="1"><input name="CUSTOM1" value="[%Country%]" size="20" [%countrydisabled%] maxlength=50 OnBlur="ChkProv()"/></td>
+       </tr>
+
+       <tr align="center">
+         <td align="right" height="42"><font id="cartnormal">Fax:</font></td>
+         <td align="left" height="42"><input name="FAX" value="[%Fax%]" size="20" maxlength=20 OnBlur="ChkFax()"/></td>
+         <td align="right" height="1"><font id="cartnormal2">Comments</font></td>
+         <td align="left" height="1"><textarea name="COMMENTS" rows="3" cols="20">[%Comments%]</textarea></td>
+       </tr>
+     
+
+
+      <tr>
+         <td colspan="4" height="21">&nbsp;</td>
+      </tr>
+   </table>
+   <P>
+   <table WIDTH="98%" CELLPADDING="3" CELLSPACING="0" BORDER="0" bgcolor="#DEF4F7">
+      <tr>
+         <td bgcolor="#AEE2DD" colspan="4"><div align="center"><center><p><font id="carttitle"><big>Shipping Information:</big></font></div></td>
+      </tr>
+      <tr align="center">
+         <td colspan="4" bgcolor="#9ED2CD">
+            <p align="center"><font id="cartnormal">
+         <i>International Customers, choose &quot;Outside the U.S.&quot; for Country, then choose your country below.</i>         </td>
+      </tr>
+
+      <tr align="center">
+         <td colspan="4" bgcolor="CEE4E7">[%shippingerrstring%]</td>
+      </tr>
+
+      <tr>
+         <td colspan="4" align="center">
+            <h2><input TYPE="CHECKBOX" NAME="ORDERCUSTOM8" value="ON" [%shipsamechecked%] onclick="UpdateShippingFields()">Use billing address as shipping address.</h2>
+            <i>If an alternate address is entered, it needs to be </i><i>listed
+            as an alternate ship address with your credit card company.<br>
+            Continue processing your order, entering all credit card information, then contact us for further info to expedite your order.  Toll Free 1-888-4-BikeBuy (1-888-424-5328), international 631-673-2211.
+            </i></font>         </td>
+      </tr>
+
+    <tr align="left">
+       <td>&nbsp;</td>
+       <td colspan="3">
+       <font id="cartnormal">
+       <font color="990000">*</font>
+	    <small>(fields marked with an asterisk are required)</small></font>      </td>
+	 </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">First Name:<font color="990000">*</font></font></td>
+      <td align="left"><input name="SHIPFIRSTNAME" type="TEXT" id="SHIPFIRSTNAME" value="[%ShipFirstName%]" size="20" maxlength=50 /></td>
+      <td align="right">Middle:</td>
+      <td align="left"><font id="cartnormal">
+        <div id="dNote" name="dNote">
+          <input name="SHIPMIDDLENAME" type="text" id="SHIPMIDDLENAME" value="[%ShipMiddleName%]" size="3" maxlength="50" />
+        </div>
+      </font></td>
+    </tr>
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Last Name:<font color="990000">*</font></font></td>
+      <td align="left"><font id="cartnormal">
+
+          <input name="SHIPLASTNAME" type="text" id="SHIPLASTNAME" value="[%ShipLastName%]" size="20" maxlength="50" />
+
+      </font></td>
+      <td align="right"><font id="cartnormal">Company:</font></td>
+      <td align="left"><font id="cartnormal">
+        <input type="TEXT" name="SHIPCOMPANY" value="[%ShipCompany%]" size="20" maxlength=50 />
+      </font>      </td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Address:<font color="990000">*</font></font></td>
+      <td align="left"><input type="TEXT" name="SHIPADDRESS1" value="[%ShipAddress1%]" size="20" maxlength=50 /></td>
+      <td align="right"><font id="cartnormal">City:<font color="990000">*</font></font></td>
+      <td align="left"><input name="SHIPCITY" value="[%ShipCity%]" size="20" maxlength=50 /></td>
+    </tr>
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Zip/Postal Code:<font color="990000">*</font></font></td>
+      <td align="left"><input type="TEXT" name="SHIPZIPPOSTAL" value="[%ShipZipPostal%]" size="20" maxlength=15 /></td>
+      <td align="right"><font id="cartnormal">State:<font color="990000">*</font></font></td>
+      <td align="left"><select name="SHIPSTATEPROVINCE" [%shipstatedisabled%] onChange="ChkShipSP()">
+        <option value="ZZ">Choose State/Province</option>
+
+[%ShipStateSelect%]
+
+      </select> US and Canada Only!</td>
+    </tr>
+    <tr align="center">
+      <td align="right">&nbsp;</td>
+      <td align="left">Enter e-mail address without spaces: (name@company.com)</td>
+      <td colspan="2" align="right" rowspan="2"><div style="float: left; text-align: left; width: 280px; margin: 0 0 0 65px;">International Customers: Do not select State!</div>
+	  <div id="dNote" name="dNote"> </div><div id="dNote2" name="dNote2"> </div>
+	  </td>
+     </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal3">Email:&nbsp;</font><font color="990000" id="cartnormal4">*</font>
+        <p>&nbsp;</td>
+      <td align="left"><input type="TEXT" name="SHIPEMAIL" value="[%ShipEmail%]" size="20" maxlength=50 /></td>
+     </tr>
+
+    <tr align="center">
+      <td align="right">&nbsp;</td>
+      <td align="left">Enter Phone # without dashes or spaces: (123456789...)</td>
+      <td align="right"><font id="cartnormal">Country:</font></td>
+      <td align="left"><select name="SHIPCOUNTRY" id="SHIPCOUNTRY"  onChange="if ((document.checkoutform.SHIPCOUNTRY.options[document.checkoutform.SHIPCOUNTRY.selectedIndex].value != 'US') && (document.checkoutform.SHIPCOUNTRY.options[document.checkoutform.SHIPCOUNTRY.selectedIndex].value != 'Canada')) {disableFieldShip();} else {enableFieldShip();}">
+        <option value="">Choose country</option>
+
+[%ShipCountries%]
+
+      </select></td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Phone:<font color="990000">*</font></font></td>
+      <td align="left"><input name="SHIPPHONE" value="[%ShipPhone%]" size="20" maxlength=20 /></td>
+      <td align="right"><font id="cartnormal">Province:</font></td>
+      <td align="left"><input name="SHIPCUSTOM1" value="[%ShipCountry%]" size="20" [%shipcountrydisabled%] maxlength=50 /></td>
+    </tr>
+
+    <tr align="center">
+      <td align="right"><font id="cartnormal">Fax:&nbsp;</font></td>
+      <td align="left"><input name="SHIPFAX" value="[%ShipFax%]" size="20" maxlength=20 /></td>
+            <td align="right">&nbsp;</td>
+            <td align="left">&nbsp;</td>
+    </tr>
+
+
+    <tr align="center">
+      <td colspan="2">&nbsp;</td>
+    </tr>
+
+
+   <tr>
+    <td colspan="4"><hr></td>
+   </tr>
+
+   <tr>
+                <td colspan="4" align="center"><font id="cartnormal"><b>To expedite
+                  future orders enter a password here. With this password you will not
+                  need to enter all of this information again on future orders:</b></td>
+   </tr>
+
+   <tr>
+    <td align="right"><font id="cartnormal">Password:</font></td>
+    <td align="left"><input type="password" name="password1" maxLength=50>
+    <td align="right"><font id="cartnormal">Confirm:</font></td>
+    <td align="left"><input type="password" name="password2" maxLength=50></td>
+  </tr>
+  </table>
+	<div align="center"><b>Please read the Purchase Agreement and Return Policy before you continue.</b></div>
+	<div style="clear:both"></div>
+	<div class="shopFooterBut">
+		<input type="hidden" name="Save" value="Save Info">
+		<a href="/emptycart/"><img src="/cartimages/emptycart.gif" alt="Remove ALL items from the cart" border="0" WIDTH="100" HEIGHT="20"></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="javascript:openpopwin('/returnspolicy1.asp',600,400);"><img src="/cartimages/PurchaseAGREE.gif" alt="View Purchase &amp; Returns Policy" border="0" WIDTH="100" HEIGHT="20"></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="https://www.bicyclebuys.com/"><img src="/cartimages/backtoshopping.gif" alt="Continue shopping" border="0" WIDTH="100" HEIGHT="20"></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input TYPE="image" src="/cartimages/continue.gif" NAME="SUBMIT" VALUE="Save Info" alt="Save shipping info and continue." WIDTH="100" HEIGHT="20">
+	</div>
+
+</form>
+
+
+[%footer%]

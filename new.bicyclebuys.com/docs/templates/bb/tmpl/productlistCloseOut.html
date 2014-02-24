@@ -1,0 +1,51 @@
+﻿[%prodmeta%]
+[%header%]
+
+<script type="text/JavaScript">
+<!--
+    //ProductListFeat_new.html
+    function MM_jumpMenu(targ, selObj, restore) { //v3.0
+        if (selObj.options[selObj.selectedIndex].value) {
+            eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+            if (restore) selObj.selectedIndex = 0;
+        }
+
+    }
+//-->
+</script>
+
+[%search_section%]
+
+<!-- begin ###main_body_content### -->
+<TR>
+
+
+<td style="width: 2%; background-color: rgb(255, 255, 255);"> 
+&nbsp;</td>
+  <TD class="bodycontent_right" style="width: 30%; border: 1px solid; padding: 0px 0px 0px 20px;"" align="center" >
+<p><h1>SPECIALS</h1></p>
+
+		
+	   <TABLE WIDTH="700" CELLPADDING=0 CELLSPACING=0 ALIGN=CENTER style="border-top: 0px;">
+		
+	<tr><td>
+	  [%productlist%]
+
+		
+	   </tr>     
+	   [%pagenav%] 
+	   </TABLE>
+ 
+   	 </td>
+
+   <td  bgcolor="white" style="height:100%;width:60px;padding-top:20px;padding-right:20px;vertical-align:top;" bgcolor="white">
+<table  bgcolor="white" border="0"  CELLPADDING="0" CELLSPACING="0" ALIGN="TOP">
+<tr><td style="height:100%;vertical-align:top;border-left: 1px solid #D9D9B3;" bgcolor="white">
+[%featured%] </td>
+</tr></table> </td>             
+   </tr>     
+ <tr><td colspan="23"  style="background-color:#ffffff;">&nbsp;</td></tr>
+   </TABLE>
+<!-- end ###main_body_content### -->
+
+[%footer%]

@@ -1,0 +1,33 @@
+   <!-----------------BEGIN NON-INTERNATIONAL SHIPPING DISPLAY---------------------->
+
+   <TR>
+      <TD COLSPAN="5">
+         <TABLE WIDTH="100%" class=cartmain>
+            <TR>
+               <TD ALIGN="RIGHT">Ship Via:</TD>
+                  <form name="shipnav" action="/ship/" method="get"><TD COLSPAN="2">
+                  <select NAME="SHIPPINGTYPE" onChange="javascript:if ((document.forms.shipnav.SHIPPINGTYPE.selectedIndex!=0) &amp;&amp; (document.forms.shipnav.SHIPPINGTYPE[document.forms.shipnav.SHIPPINGTYPE.selectedIndex].value!='x')) {window.location=document.forms.shipnav.SHIPPINGTYPE[document.forms.shipnav.SHIPPINGTYPE.selectedIndex].value}">
+                     <option VALUE="/ship/NONE;0">Choose Shipping</option>
+                     [%chooseship%]
+                  </select><input type="image" src="/cartimages/updateitem.gif" NAME="submit" VALUE="Select Shipping Method" alt="Select a shipping method." WIDTH="15" HEIGHT="15">&nbsp;Update
+               </TD></form>
+            </TR>
+            <TR>
+                <TD ALIGN="RIGHT">S&amp;H:</TD>
+                <TD COLSPAN="2">[%shippingandhandling%]</TD>
+            </TR>
+            
+            [%shippingtax%]
+         
+            <TR>
+                <TD align="right">Total w/ Shipping:</TD>
+                <TD colspan="2">[%totalwithshipping%]</TD>
+            </TR>
+            <TR align="center">
+                <TD colspan="3" style="color: #FF0000; font-size: 12px; font-weight: bold;">[%errstring%]</TD>
+            </TR>
+         </TABLE>
+      </TD>
+   </TR>
+
+<!-----------------END SHIPPING DISPLAY---------------------->

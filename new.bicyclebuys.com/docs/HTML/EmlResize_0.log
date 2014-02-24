@@ -1,0 +1,31 @@
+CEmailDest::CEmailDest:  760315765: 
+InitInstance   :  760315765: ShowEmailDialog
+***            :  760315765: ----------------------------------------------------
+CEmailRszApp::ShowEmailDialog:  760315765: Enter ShowEmailDialog
+CEmailRszApp::ShowEmailDialog:  760315781: cmdline xml file is C:\DOCUME~1\ADMINI~1.xml
+CEmailRszApp::ShowEmailDialog:  760315781: new CEmailDest created
+ENTRY          :  760315796: --> CEmailDest::Initialize
+ENTRY          :  760315796: --> CEmailDest::InitEmailSettingsClassFactory
+EXIT           :  760316890: <-- CEmailDest::InitEmailSettingsClassFactory
+CEmailDest::Initialize:  760316906: InitClass factory done
+CEmailDest::Initialize:  760316906: m_pEmailSettingsInterface is Ok
+CEmailDest::Initialize:  760316906: OpenSettings Worked
+CEmailDest::Initialize:  760316906: flag InitDestComp is set to TRUE
+CEmailDest::InitDestComp:  760317156: get_DestConfig returned 0
+CEmailDest::InitDestComp:  760317156: put_ImageType returned 0
+CEmailDest::Initialize:  760317156: InitDestComp done
+EXIT           :  760317156: <-- CEmailDest::Initialize - true
+CEmailRszApp::ShowEmailDialog:  760317156: out of initialize
+CEmailRszApp::ShowEmailDialog:  760317156: GlobalSettings: Emailpgm is 0x010F35A0, PhotoSize is 2, Prompt is 1
+CEmailRszApp::ShowEmailDialog:  760317156: no Prompt, size is set to 4
+CEmailRszApp::ShowEmailDialog:  760317156: Entering GetAndResize
+CEmailRszApp::ShowEmailDialog:  760317156: In GetAndResize
+CEmailDest::Resize:  760317312: Add to resize list <file sequence=1 type=jpg>C:\DOCUME~1\ADMINI~1.REA\LOCALS~1\Temp\~DEST\int order fax.jpg</file>
+CEmailDest::Resize:  760317312: new sel count is 1
+ShareToEmail   :  760317328: Got USDs
+ShareToEmail   :  760317921: Got Count = 18
+ShareToEmail   :  760317921: Found USD 0x010F35A0
+Send2Dest      :  760317921: no of files to send = 1
+Send2Dest      :  760317921: Send to destination - C:\DOCUME~1\ADMINI~1.REA\LOCALS~1\Temp\~DEST\int order fax.jpg
+Send2Dest      :  760419640: m_pIDualDestComp->SendToDestination hr - 0
+ShareToEmail   :  760419640: Done with send2dest

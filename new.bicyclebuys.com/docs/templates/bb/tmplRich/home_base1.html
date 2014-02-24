@@ -1,0 +1,1159 @@
+[%header%]
+
+<script type="text/javascript" >
+
+if (typeof dd_domreadycheck=="undefined") //global variable to detect if DOM is ready
+	var dd_domreadycheck=false
+
+var ddlevelsmenu={
+enableshim: true, //enable IFRAME shim to prevent drop down menus from being hidden below SELECT or FLASH elements? (tip: disable if not in use, for efficiency)
+
+arrowpointers:{
+	downarrow: ["images/arrow-down.gif", 11,7], //[path_to_down_arrow, arrowwidth, arrowheight]
+	rightarrow: ["images/arrow-right.gif", 12,12], //[path_to_right_arrow, arrowwidth, arrowheight]
+	showarrow: {toplevel: true, sublevel: true} //Show arrow images on top level items and sub level items, respectively?
+},
+hideinterval: 200, //delay in milliseconds before entire menu disappears onmouseout.
+effects: {enableswipe: true, enableslide: true, enablefade: true, duration: 200},
+httpsiframesrc: "blank.htm", //If menu is run on a secure (https) page, the IFRAME shim feature used by the script should point to an *blank* page *within* the secure area to prevent an IE security prompt. Specify full URL to that page on your server (leave as is if not applicable).
+
+///No need to edit beyond here////////////////////
+
+topmenuids: [], //array containing ids of all the primary menus on the page
+topitems: {}, //object array containing all top menu item links
+subuls: {}, //object array containing all ULs
+lastactivesubul: {}, //object object containing info for last mouse out menu item's UL
+topitemsindex: -1,
+ulindex: -1,
+hidetimers: {}, //object array timer
+shimadded: false,
+nonFF: !/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent), //detect non FF browsers
+ismobile:navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null, //boolean check for popular mobile browsers
+
+getoffset:function(what, offsettype){
+	return (what.offsetParent)? what[offsettype]+this.getoffset(what.offsetParent, offsettype) : what[offsettype]
+},
+
+getoffsetof:function(el){
+	el._offsets={left:this.getoffset(el, "offsetLeft"), top:this.getoffset(el, "offsetTop")}
+},
+
+getwindowsize:function(){
+	this.docwidth=window.innerWidth? window.innerWidth-10 : this.standardbody.clientWidth-10
+	this.docheight=window.innerHeight? window.innerHeight-15 : this.standardbody.clientHeight-18
+},
+
+gettopitemsdimensions:function(){
+	for (var m=0; m<this.topmenuids.length; m++){
+		var topmenuid=this.topmenuids[m]
+		for (var i=0; i<this.topitems[topmenuid].length; i++){
+			var header=this.topitems[topmenuid][i]
+			var submenu=document.getElementById(header.getAttribute('rel'))
+			header._dimensions={w:header.offsetWidth, h:header.offsetHeight, submenuw:submenu.offsetWidth, submenuh:submenu.offsetHeight}
+		}
+	}
+},
+
+isContained:function(m, e){
+	var e=window.event || e
+	var c=e.relatedTarget || ((e.type=="mouseover")? e.fromElement : e.toElement)
+	while (c && c!=m)try {c=c.parentNode} catch(e){c=m}
+	if (c==m)
+		return true
+	else
+		return false
+},
+
+addpointer:function(target, imgclass, imginfo, BeforeorAfter){
+	var pointer=document.createElement("img")
+	pointer.src=imginfo[0]
+	pointer.style.width=imginfo[1]+"px"
+	pointer.style.height=imginfo[2]+"px"
+	if(imgclass=="rightarrowpointer"){
+		pointer.style.left=target.offsetWidth-imginfo[2]-2+"px"
+	}
+	pointer.className=imgclass
+	var target_firstEl=target.childNodes[target.firstChild.nodeType!=1? 1 : 0] //see if the first child element within A is a SPAN (found in sliding doors technique)
+	if (target_firstEl && target_firstEl.tagName=="SPAN"){
+		target=target_firstEl //arrow should be added inside this SPAN instead if found
+	}
+	if (BeforeorAfter=="before")
+		target.insertBefore(pointer, target.firstChild)
+	else
+		target.appendChild(pointer)
+},
+
+css:function(el, targetclass, action){
+	var needle=new RegExp("(^|\\s+)"+targetclass+"($|\\s+)", "ig")
+	if (action=="check")
+		return needle.test(el.className)
+	else if (action=="remove")
+		el.className=el.className.replace(needle, "")
+	else if (action=="add" && !needle.test(el.className))
+		el.className+=" "+targetclass
+},
+
+addshimmy:function(target){
+	var shim=(!window.opera)? document.createElement("iframe") : document.createElement("div") //Opera 9.24 doesnt seem to support transparent IFRAMEs
+	shim.className="ddiframeshim"
+	shim.setAttribute("src", location.protocol=="https:"? this.httpsiframesrc : "about:blank")
+	shim.setAttribute("frameborder", "0")
+	target.appendChild(shim)
+	try{
+		shim.style.filter='progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'
+	}
+	catch(e){}
+	return shim
+},
+
+positionshim:function(header, submenu, dir, scrollX, scrollY){
+	if (header._istoplevel){
+		var scrollY=window.pageYOffset? window.pageYOffset : this.standardbody.scrollTop
+		var topgap=header._offsets.top-scrollY
+		var bottomgap=scrollY+this.docheight-header._offsets.top-header._dimensions.h
+		if (topgap>0){
+			this.shimmy.topshim.style.left=scrollX+"px"
+			this.shimmy.topshim.style.top=scrollY+"px"
+			this.shimmy.topshim.style.width="99%"
+			this.shimmy.topshim.style.height=topgap+"px" //distance from top window edge to top of menu item
+		}
+		if (bottomgap>0){
+			this.shimmy.bottomshim.style.left=scrollX+"px"
+			this.shimmy.bottomshim.style.top=header._offsets.top + header._dimensions.h +"px"
+			this.shimmy.bottomshim.style.width="99%"
+			this.shimmy.bottomshim.style.height=bottomgap+"px" //distance from bottom of menu item to bottom window edge
+		}
+	}
+},
+
+hideshim:function(){
+	this.shimmy.topshim.style.width=this.shimmy.bottomshim.style.width=0
+	this.shimmy.topshim.style.height=this.shimmy.bottomshim.style.height=0
+},
+
+
+buildmenu:function(mainmenuid, header, submenu, submenupos, istoplevel, dir){
+	header._master=mainmenuid //Indicate which top menu this header is associated with
+	header._pos=submenupos //Indicate pos of sub menu this header is associated with
+	header._istoplevel=istoplevel
+	if (istoplevel){
+		this.addEvent(header, function(e){
+		ddlevelsmenu.hidemenu(ddlevelsmenu.subuls[this._master][parseInt(this._pos)].parentNode)
+		}, "click")
+	}
+	this.subuls[mainmenuid][submenupos]=submenu
+	header._dimensions={w:header.offsetWidth, h:header.offsetHeight, submenuw:submenu.offsetWidth, submenuh:submenu.offsetHeight}
+	this.getoffsetof(header)
+	submenu.parentNode.style.left=0
+	submenu.parentNode.style.top=0
+	submenu.parentNode.style.visibility="hidden"
+	submenu.style.visibility="hidden"
+	this.addEvent(header, function(e){ //mouseover event
+		if (ddlevelsmenu.ismobile || !ddlevelsmenu.isContained(this, e)){
+			var submenu=ddlevelsmenu.subuls[this._master][parseInt(this._pos)]
+			if (this._istoplevel){
+				ddlevelsmenu.css(this, "selected", "add")
+				clearTimeout(ddlevelsmenu.hidetimers[this._master][this._pos])
+			}
+			ddlevelsmenu.getoffsetof(header)
+			var scrollX=window.pageXOffset? window.pageXOffset : ddlevelsmenu.standardbody.scrollLeft
+			var scrollY=window.pageYOffset? window.pageYOffset : ddlevelsmenu.standardbody.scrollTop
+			var submenurightedge=this._offsets.left + this._dimensions.submenuw + (this._istoplevel && dir=="topbar"? 0 : this._dimensions.w)
+			var submenubottomedge=this._offsets.top + this._dimensions.submenuh
+			//Sub menu starting left position
+			var menuleft=(this._istoplevel? this._offsets.left + (dir=="sidebar"? this._dimensions.w : 0) : this._dimensions.w)
+			if (submenurightedge-scrollX>ddlevelsmenu.docwidth){
+				menuleft+= -this._dimensions.submenuw + (this._istoplevel && dir=="topbar" ? this._dimensions.w : -this._dimensions.w)
+			}
+			submenu.parentNode.style.left=menuleft+"px"
+			//Sub menu starting top position
+			var menutop=(this._istoplevel? this._offsets.top + (dir=="sidebar"? 0 : this._dimensions.h) : this.offsetTop)
+			if (submenubottomedge-scrollY>ddlevelsmenu.docheight){ //no room downwards?
+				if (this._dimensions.submenuh<this._offsets.top+(dir=="sidebar"? this._dimensions.h : 0)-scrollY){ //move up?
+					menutop+= - this._dimensions.submenuh + (this._istoplevel && dir=="topbar"? -this._dimensions.h : this._dimensions.h)
+				}
+				else{ //top of window edge
+					menutop+= -(this._offsets.top-scrollY) + (this._istoplevel && dir=="topbar"? -this._dimensions.h : 0)
+				}
+			}
+			submenu.parentNode.style.top=menutop+"px"
+			if (ddlevelsmenu.enableshim && (ddlevelsmenu.effects.enableswipe==false || ddlevelsmenu.nonFF)){ //apply shim immediately only if animation is turned off, or if on, in non FF2.x browsers
+				ddlevelsmenu.positionshim(header, submenu, dir, scrollX, scrollY)
+			}
+			else{
+				submenu.FFscrollInfo={x:scrollX, y:scrollY}
+			}
+			ddlevelsmenu.showmenu(header, submenu, dir)
+			if (!ddlevelsmenu.ismobile){
+				if (e.preventDefault)
+					e.preventDefault()
+				if (e.stopPropagation)
+					e.stopPropagation()
+			}
+			else{ //if is mobile
+				if (header._istoplevel || e.target.parentNode.getElementsByTagName('ul').length>0){ //if user clicks on a header (instead of a menu item)
+					e.preventDefault()
+					e.stopPropagation()
+				}
+			}
+		}
+	}, (this.ismobile)? "click" : "mouseover")
+	this.addEvent(header, function(e){ //mouseout event
+		var submenu=ddlevelsmenu.subuls[this._master][parseInt(this._pos)]
+		if (this._istoplevel){
+			if (!ddlevelsmenu.isContained(this, e) && !ddlevelsmenu.isContained(submenu.parentNode, e)) //hide drop down div if mouse moves out of menu bar item but not into drop down div itself
+				ddlevelsmenu.hidemenu(submenu.parentNode)
+		}
+		else if (!this._istoplevel && !ddlevelsmenu.isContained(this, e)){
+			ddlevelsmenu.hidemenu(submenu.parentNode)
+		}
+
+	}, "mouseout")
+},
+
+setopacity:function(el, value){
+	el.style.opacity=value
+	if (typeof el.style.opacity!="string"){ //if it's not a string (ie: number instead), it means property not supported
+		el.style.MozOpacity=value
+		try{
+			if (el.filters){
+				el.style.filter="progid:DXImageTransform.Microsoft.alpha(opacity="+ value*100 +")"
+			}
+		} catch(e){}
+	}
+},
+
+showmenu:function(header, submenu, dir){
+	if (this.effects.enableswipe || this.effects.enablefade){
+		if (this.effects.enableswipe){
+			var endpoint=(header._istoplevel && dir=="topbar")? header._dimensions.submenuh : header._dimensions.submenuw
+			submenu.parentNode.style.width=submenu.parentNode.style.height=0
+			submenu.parentNode.style.overflow="hidden"
+		}
+		if (this.effects.enablefade){
+			submenu.parentNode.style.width=submenu.offsetWidth+"px"
+			submenu.parentNode.style.height=submenu.offsetHeight+"px"
+			this.setopacity(submenu.parentNode, 0) //set opacity to 0 so menu appears hidden initially
+		}
+		submenu._curanimatedegree=0
+		submenu.parentNode.style.visibility="visible"
+		submenu.style.visibility="visible"
+		clearInterval(submenu._animatetimer)
+		submenu._starttime=new Date().getTime() //get time just before animation is run
+		submenu._animatetimer=setInterval(function(){ddlevelsmenu.revealmenu(header, submenu, endpoint, dir)}, 10)
+	}
+	else{
+		submenu.parentNode.style.visibility="visible"
+		submenu.style.visibility="visible"
+	}
+},
+
+revealmenu:function(header, submenu, endpoint, dir){
+	var elapsed=new Date().getTime()-submenu._starttime //get time animation has run
+	if (elapsed<this.effects.duration){
+		if (this.effects.enableswipe){
+			if (submenu._curanimatedegree==0){ //reset either width or height of sub menu to "auto" when animation begins
+				submenu.parentNode.style[header._istoplevel && dir=="topbar"? "width" : "height"]=(header._istoplevel && dir=="topbar"? submenu.offsetWidth : submenu.offsetHeight)+"px"
+			}
+			submenu.parentNode.style[header._istoplevel && dir=="topbar"? "height" : "width"]=(submenu._curanimatedegree*endpoint)+"px"
+			if (this.effects.enableslide){
+				submenu.style[header._istoplevel && dir=="topbar"? "top" : "left"]=Math.floor((submenu._curanimatedegree-1)*endpoint)+"px"
+			}
+		}
+		if (this.effects.enablefade){
+			this.setopacity(submenu.parentNode, submenu._curanimatedegree)
+		}
+	}
+	else{
+		clearInterval(submenu._animatetimer)
+		if (this.effects.enableswipe){
+			submenu.parentNode.style.width=submenu.offsetWidth+"px"
+			submenu.parentNode.style.height=submenu.offsetHeight+"px"
+			submenu.parentNode.style.overflow="visible"
+			if (this.effects.enableslide){
+				submenu.style.top=0;
+				submenu.style.left=0;
+			}
+		}
+		if (this.effects.enablefade){
+			this.setopacity(submenu.parentNode, 1)
+			submenu.parentNode.style.filter=""
+		}
+		if (this.enableshim && submenu.FFscrollInfo) //if this is FF browser (meaning shim hasn't been applied yet
+			this.positionshim(header, submenu, dir, submenu.FFscrollInfo.x, submenu.FFscrollInfo.y)
+	}
+	submenu._curanimatedegree=(1-Math.cos((elapsed/this.effects.duration)*Math.PI)) / 2
+},
+
+hidemenu:function(submenu){
+	if (typeof submenu._pos!="undefined"){ //if submenu is outermost DIV drop down menu
+		this.css(this.topitems[submenu._master][parseInt(submenu._pos)], "selected", "remove")
+		if (this.enableshim)
+			this.hideshim()
+	}
+	clearInterval(submenu.firstChild._animatetimer)
+	submenu.style.left=0
+	submenu.style.top="-1000px"
+	submenu.style.visibility="hidden"
+	submenu.firstChild.style.visibility="hidden"
+},
+
+
+addEvent:function(target, functionref, tasktype) {
+	if (target.addEventListener)
+		target.addEventListener(tasktype, functionref, false);
+	else if (target.attachEvent)
+		target.attachEvent('on'+tasktype, function(){return functionref.call(target, window.event)});
+},
+
+domready:function(functionref){ //based on code from the jQuery library
+	if (dd_domreadycheck){
+		functionref()
+		return
+	}
+	// Mozilla, Opera and webkit nightlies currently support this event
+	if (document.addEventListener) {
+		// Use the handy event callback
+		document.addEventListener("DOMContentLoaded", function(){
+			document.removeEventListener("DOMContentLoaded", arguments.callee, false )
+			functionref();
+			dd_domreadycheck=true
+		}, false )
+	}
+	else if (document.attachEvent){
+		// If IE and not an iframe
+		// continually check to see if the document is ready
+		if ( document.documentElement.doScroll && window == window.top) (function(){
+			if (dd_domreadycheck){
+				functionref()
+				return
+			}
+			try{
+				// If IE is used, use the trick by Diego Perini
+				// http://javascript.nwbox.com/IEContentLoaded/
+				document.documentElement.doScroll("left")
+			}catch(error){
+				setTimeout( arguments.callee, 0)
+				return;
+			}
+			//and execute any waiting functions
+			functionref();
+			dd_domreadycheck=true
+		})();
+	}
+	if (document.attachEvent && parent.length>0) //account for page being in IFRAME, in which above doesn't fire in IE
+		this.addEvent(window, function(){functionref()}, "load");
+},
+
+
+init:function(mainmenuid, dir){
+	this.standardbody=(document.compatMode=="CSS1Compat")? document.documentElement : document.body
+	this.topitemsindex=-1
+	this.ulindex=-1
+	this.topmenuids.push(mainmenuid)
+	this.topitems[mainmenuid]=[] //declare array on object
+	this.subuls[mainmenuid]=[] //declare array on object
+	this.hidetimers[mainmenuid]=[] //declare hide entire menu timer
+	this.enableshim = (this.ismobile)? false : this.enableshim //disable shim if mobile browser
+	if (this.enableshim && !this.shimadded){
+		this.shimmy={}
+		this.shimmy.topshim=this.addshimmy(document.body) //create top iframe shim obj
+		this.shimmy.bottomshim=this.addshimmy(document.body) //create bottom iframe shim obj
+		this.shimadded=true
+	}
+	var menubar=document.getElementById(mainmenuid)
+	var alllinks=menubar.getElementsByTagName("a")
+	var shelldivs=[]
+	this.getwindowsize()
+	for (var i=0; i<alllinks.length; i++){
+		if (alllinks[i].getAttribute('rel')){
+			this.topitemsindex++
+			this.ulindex++
+			var menuitem=alllinks[i]
+			this.topitems[mainmenuid][this.topitemsindex]=menuitem //store ref to main menu links
+			var dropul=document.getElementById(menuitem.getAttribute('rel'))
+			var shelldiv=document.createElement("div") // create DIV which will contain the UL
+			shelldiv.className="ddsubmenustyle"
+			dropul.removeAttribute("class")
+			shelldiv.appendChild(dropul)
+			document.body.appendChild(shelldiv) //move main DIVs to end of document
+			shelldivs.push(shelldiv)
+			shelldiv.style.zIndex=2000 //give drop down menus a high z-index
+			shelldiv._master=mainmenuid  //Indicate which main menu this main DIV is associated with
+			shelldiv._pos=this.topitemsindex //Indicate which main menu item this main DIV is associated with
+			this.addEvent(shelldiv, function(e){  // 3.03 code
+				e.stopPropagation()
+				e.cancelBubble = true
+			}, "touchstart")
+			this.addEvent(shelldiv, function(e){  // 3.03 code
+				ddlevelsmenu.hidemenu(this)
+			}, "click")			
+			var arrowclass=(dir=="sidebar")? "rightarrowpointer" : "downarrowpointer"
+			var arrowpointer=(dir=="sidebar")? this.arrowpointers.rightarrow : this.arrowpointers.downarrow
+			if (this.arrowpointers.showarrow.toplevel)
+				this.addpointer(menuitem, arrowclass, arrowpointer, (dir=="sidebar")? "before" : "after")
+			this.buildmenu(mainmenuid, menuitem, dropul, this.ulindex, true, dir) //build top level menu
+			shelldiv.onmouseover=function(){
+				clearTimeout(ddlevelsmenu.hidetimers[this._master][this._pos])
+			}
+			this.addEvent(shelldiv, function(e){ //hide menu if mouse moves out of main DIV element into open space
+				if (!ddlevelsmenu.isContained(this, e) && !ddlevelsmenu.isContained(ddlevelsmenu.topitems[this._master][parseInt(this._pos)], e)){
+					var dropul=this
+					if (ddlevelsmenu.enableshim)
+						ddlevelsmenu.hideshim()
+					ddlevelsmenu.hidetimers[this._master][this._pos]=setTimeout(function(){
+						ddlevelsmenu.hidemenu(dropul)
+					}, ddlevelsmenu.hideinterval)
+				}
+			}, "mouseout")
+			var subuls=dropul.getElementsByTagName("ul")
+			for (var c=0; c<subuls.length; c++){
+				this.ulindex++
+				var parentli=subuls[c].parentNode
+				var subshell=document.createElement("div")
+				subshell.appendChild(subuls[c])
+				parentli.appendChild(subshell)
+				if (this.arrowpointers.showarrow.sublevel)
+					this.addpointer(parentli.getElementsByTagName("a")[0], "rightarrowpointer", this.arrowpointers.rightarrow, "before")
+				this.buildmenu(mainmenuid, parentli, subuls[c], this.ulindex, false, dir) //build sub level menus
+			}
+		}
+	} //end for loop
+	this.addEvent(window, function(){ddlevelsmenu.getwindowsize(); ddlevelsmenu.gettopitemsdimensions()}, "resize")
+	if (this.ismobile){  // 3.03 code
+		this.addEvent(document, function(e){
+			for (var i=0; i<shelldivs.length; i++){
+				ddlevelsmenu.hidemenu(shelldivs[i])
+			}
+		}, 'touchstart')
+	}
+},
+
+setup:function(mainmenuid, dir){
+	this.domready(function(){ddlevelsmenu.init(mainmenuid, dir)})
+}
+
+}
+
+</script>
+
+
+
+[%search_section%]
+
+<TR>
+
+   <!-- begin ###left_column_main_content### -->
+<td>
+
+
+<div id="ddsidemenubar" class="markermenu">
+<ul>
+<li><a href="http://www.bicyclebuys.com">bikes</a></li>
+<li><a href="http://www.bicyclebuys.com" rel="ddsubmenuside1">pedals</a></li>
+<li><a href="http://www.bicyclebuys.com" rel="ddsubmenuside2">clothing</a></li>
+<li><a href="http://www.bicyclebuys.com">accessories</a></li>
+<li><a href="http://www.bicyclebuys.com" rel="ddsubmenuside3">ligts</a></li>
+<li><a href="http://www.bicyclebuys.com" style="border-bottom-width: 0">tires</a></li>		
+</ul>
+</div>
+
+<script type="text/javascript">
+ddlevelsmenu.setup("ddsidemenubar", "sidebar") //ddlevelsmenu.setup("mainmenuid", "topbar|sidebar")
+</script>
+
+
+
+
+<ul id="ddsubmenuside1" class="ddsubmenustyle blackwhite">
+<li><a href="#">Item 1a</a></li>
+<li><a href="#">Item 2a</a></li>
+<li><a href="#">Item Folder 3a</a>
+  <ul>
+  <li><a href="#">Sub Item 3.1a</a></li>
+  <li><a href="#">Sub Item 3.2a</a></li>
+  <li><a href="#">Sub Item 3.3a</a></li>
+  <li><a href="#">Sub Item 3.4a</a></li>
+  </ul>
+</li>
+<li><a href="#">Item 4a</a></li>
+<li><a href="#">Item Folder 5a</a>
+  <ul>
+  <li><a href="#">Sub Item 5.1a</a></li>
+  <li><a href="#">Item Folder 5.2a</a>
+    <ul>
+    <li><a href="#">Sub Item 5.2.1a</a></li>
+    <li><a href="#">Sub Item 5.2.2a</a></li>
+    <li><a href="#">Sub Item 5.2.3a</a></li>
+    <li><a href="#">Sub Item 5.2.4a</a></li>
+    </ul>
+  </li>
+	</ul>
+</li>
+<li><a href="#">Item 6a</a></li>
+</ul>
+
+<!--Side Drop Down Menu 2 HTML-->
+
+<ul id="ddsubmenuside2" class="ddsubmenustyle blackwhite">
+<li><a href="#">Item 1b</a></li>
+<li><a href="#">Item 2b</a></li>
+<li><a href="#">Item Folder 3b</a>
+  <ul>
+  <li><a href="#">Sub Item 3.1b</a></li>
+  <li><a href="#">Sub Item 3.2b</a></li>
+  <li><a href="#">Sub Item 3.3b</a></li>
+  <li><a href="#">Sub Item 3.4b</a></li>
+  </ul>
+</li>
+<li><a href="#">Item 4b</a></li>
+<li><a href="#">Item Folder 5b</a>
+  <ul>
+  <li><a href="#">Sub Item 5.1b</a></li>
+  <li><a href="#">Item Folder 5.2b</a>
+    <ul>
+    <li><a href="#">Sub Item 5.2.1b</a></li>
+    <li><a href="#">Sub Item 5.2.2b</a></li>
+    <li><a href="#">Sub Item 5.2.3b</a></li>
+    </ul>
+  </li>
+	</ul>
+</li>
+<li><a href="#">Item 6b</a></li>
+</ul>
+
+
+<!--Side Drop Down Menu 3 HTML-->
+
+<ul id="ddsubmenuside3" class="ddsubmenustyle blackwhite">
+<li><a href="http://www.bicyclebuys.com">Item 1</a></li>
+<li><a href="http://www.bicyclebuys.com">Item 2</a></li>
+<li><a href="http://www.bicyclebuys.com">Item 3</a></li>
+<li><a href="http://www.bicyclebuys.com">Item 4</a></li>
+<li><a href="http://www.bicyclebuys.com">Item 5</a></li>
+</ul>
+
+
+</td>
+
+   <TD class="bodycontent">
+   
+   
+   
+   <!-- begin ###MOST_POPULAR_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>    
+   <TR>
+      <div class="HPh1">
+		<H1>Welcome to Bicyclebuys.com, Your Largest Selection of Bicycle Parts on the World Wide Web!</H1> 
+	  </div>
+<!--
+	<div id="sliderFrame">
+        <div id="ribbon"></div>
+        <div id="slider">
+            <a href="/item/1600019PART/crank-brothers-cobalt-3-flat-handlebar"><img src="images/image-slider-2.jpg" alt="Buy crank brothers Cobalt 3 Handlebar Now" /></a>
+            <a href="item/0101350PART/camelbak-lobo-100oz-hydrapack-12"><img src="images/image-slider-3.jpg" alt="Buy camelbak lobo 100oz hydrapack Now" /></a>
+            <a href="/item/LGMURXPART/louis-garneau-multi-rx-spinning-shoe"><img src="images/image-slider-4.jpg" alt="Buy Louis Garneau ulti RX Shoes Now" /></a>
+        </div>
+    </div>
+-->
+   </TR>
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/double-line2_bkg.gif) transparent repeat-x;"><img name="most_popular" src="images/most_popular.gif" width="595" height="39" border="0" alt="Most Popular Products"></TD>
+            
+   </TR>
+
+  <!-- begin ###most_popular_row 1### -->
+   <tr>
+		<td colspan="4">
+			<div class="mostPopRow">
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod1sku%]/[%prodLink1name%]">
+							<img src="[%prod1image%]" onmouseover="setmarkdesc(1,this);" onmouseout="closeFloat();"  border="0" alt="[%prod1name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod1sku%]/[%prodLink1name%]">[%prod1name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod1msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod1price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod1sku%]/[%prodLink1name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo1%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod2sku%]/[%prodLink2name%]">
+							<img src="[%prod2image%]" onmouseover="setmarkdesc(2,this);" onmouseout="closeFloat();"  border="0" alt="[%prod2name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod2sku%]/[%prodLink2name%]">[%prod2name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod2msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod2price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod2sku%]/[%prodLink2name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo2%]
+						</div>
+					</div>
+				</div>
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod3sku%]/[%prodLink3name%]">
+							<img src="[%prod3image%]" onmouseover="setmarkdesc(3,this);" onmouseout="closeFloat();"  border="0" alt="[%prod3name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod3sku%]/[%prodLink3name%]">[%prod3name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod3msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod3price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod3sku%]/[%prodLink3name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo3%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod4sku%]/[%prodLink4name%]">
+							<img src="[%prod4image%]" onmouseover="setmarkdesc(4,this);" onmouseout="closeFloat();"  border="0" alt="[%prod4name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod4sku%]/[%prodLink4name%]">[%prod4name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod4msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod4price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod4sku%]/[%prodLink4name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo4%]
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mostPopSep">&nbsp;</div>
+		</td>
+	</tr>
+   <TR>
+   
+      <TD class="popularmore"><a href="[%prod1more%]">More [%prod1moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod2more%]">More [%prod2moretext%]</a></TD>
+
+      
+      <TD class="popularmore"><a href="[%prod3more%]">More [%prod3moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod4more%]">More [%prod4moretext%]</a></TD>
+   
+   </TR>
+   
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###most_popular_row 1### -->
+   
+   
+   <!-- begin ###most_popular_row 2### -->
+
+    <tr>
+		<td colspan="4">
+			<div class="mostPopRow">
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod5sku%]/[%prodLink5name%]">
+							<img src="[%prod5image%]" onmouseover="setmarkdesc(5,this);" onmouseout="closeFloat();"   border="0" alt="[%prod5name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod5sku%]/[%prodLink5name%]">[%prod5name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod5msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod5price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod1sku%]/[%prodLink5name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo5%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod6sku%]/[%prodLink6name%]">
+							<img src="[%prod6image%]" onmouseover="setmarkdesc(6,this);" onmouseout="closeFloat();"  border="0" alt="[%prod6name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod6sku%]/[%prodLink6name%]">[%prod6name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod6msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod6price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod6sku%]/[%prodLink6name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo6%]
+						</div>
+					</div>
+				</div>
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod7sku%]/[%prodLink7name%]">
+							<img src="[%prod7image%]" onmouseover="setmarkdesc(7,this);" onmouseout="closeFloat();"  border="0" alt="[%prod7name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod7sku%]/[%prodLink7name%]">[%prod7name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod7msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod7price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod7sku%]/[%prodLink7name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo7%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%prod8sku%]/[%prodLink8name%]">
+							<img src="[%prod8image%]" onmouseover="setmarkdesc(8,this);" onmouseout="closeFloat();"  border="0" alt="[%prod8name%]">
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%prod8sku%]/[%prodLink8name%]">[%prod8name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%prod8msrp%]
+						</div>
+						 <div class="price">SALE PRICE: [%prod8price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%prod8sku%]/[%prodLink8name%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%cartinfo8%]
+						</div>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+  
+   <TR>
+   
+      <TD class="popularmore"><a href="[%prod5more%]">More [%prod5moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod6more%]">More [%prod6moretext%]</a></TD>
+
+      
+      <TD class="popularmore"><a href="[%prod7more%]">More [%prod7moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod8more%]">More [%prod8moretext%]</a></TD>
+   
+   </TR>
+   
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###most_popular_row 2### -->
+   
+   </TABLE>
+
+   <P>
+   
+   <!-- end ###MOST_POPULAR_TABLE### -->
+ 
+   <!-- begin ###POPULAR_CATEGORIES_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>   
+   
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/double-line2_bkg.gif) transparent repeat-x;"><img name="pop_cats" src="images/pop_cats.gif" width="595" height="40" border="0" alt="Popular Categories"></TD>
+            
+   </TR>
+
+
+   <!-- begin popular categories -->
+   <TR>
+      <td class="popcats" colspan="4" align="center">
+         [%popcat%]
+      </td>
+   </TR>
+   <!-- end popular categories -->
+
+   
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   </TABLE>
+   <P>
+   
+   <!-- end ###POPULAR_CATEGORIES_TABLE### -->
+
+
+   <!-- begin ###NEW_PRODUCTS_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0 >   
+   
+   <TR>
+      
+      <TD colspan="4" align="left" style="background: URL(/images/double-line2_bkg.gif) transparent repeat-x; margin-left: 60px"><a href="/newitems" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image26','','/images/new_products_new_roll.gif',1)"><img src="/images/new_products_new.gif" name="Image26" height="40" border="0" id="Image26" alt="New Products"></a></TD>
+            
+   </TR>
+   
+   <!-- begin ###new_products_row 1### -->
+   <tr>
+		<td colspan="4">
+			<div class="mostPopRow">
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod1sku%]">
+							<img src="[%newprod1image%]" border="0" alt="[%newprod1name%]" onmouseover="setmarkdesc(9,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod1sku%]  ">[%newprod1name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod1msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod1price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod1sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo1%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod2sku%]">
+							<img src="[%newprod2image%]" border="0" alt="[%newprod2name%]" onmouseover="setmarkdesc(10,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod2sku%]  ">[%newprod2name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod2msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod2price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod2sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo2%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod3sku%]">
+							<img src="[%newprod3image%]" border="0" alt="[%newprod3name%]" onmouseover="setmarkdesc(11,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod3sku%]  ">[%newprod3name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod3msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod3price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod3sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo3%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod4sku%]">
+							<img src="[%newprod4image%]" border="0" alt="[%newprod4name%]" onmouseover="setmarkdesc(12,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod4sku%]  ">[%newprod4name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod4msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod4price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod4sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo4%]
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mostPopSep">&nbsp;</div>
+		</td>
+	</tr>
+ 
+
+   <!-- end ###new_products_row 1### -->
+   
+
+   <!-- begin ###new_products_row 2### -->
+   
+						
+   
+   <!-- begin ###new_products_row 1### -->
+   <tr>
+		<td colspan="4">
+			<div class="mostPopRow">
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod5sku%]">
+							<img src="[%newprod5image%]" border="0" alt="[%newprod5name%]" onmouseover="setmarkdesc(13,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod5sku%]  ">[%newprod5name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod5msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod5price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod5sku%]">
+								MORE INFO
+						</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo5%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod6sku%]">
+							<img src="[%newprod6image%]" border="0" alt="[%newprod6name%]" onmouseover="setmarkdesc(14,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod6sku%]  ">[%newprod6name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod6msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod6price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod6sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo6%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod7sku%]">
+							<img src="[%newprod7image%]" border="0" alt="[%newprod7name%]" onmouseover="setmarkdesc(15,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod7sku%]  ">[%newprod7name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod7msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod7price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod7sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo7%]
+						</div>
+					</div>
+				</div>
+
+				<div class="mostPopInfoCell">
+					<div class="mostPopImg">
+						<a href="/item/[%newprod8sku%]">
+							<img src="[%newprod8image%]" border="0" alt="[%newprod8name%]" onmouseover="setmarkdesc(16,this);" onmouseout="closeFloat();"  >
+						</a>
+					</div>
+					<div class="mostPopInfo">
+						<div class="hpMostPop">
+							<a href="/item/[%newprod8sku%]  ">[%newprod8name%]</a>
+						</div>
+						<div class="hpMostPopMSRP">
+							[%newprod8msrp%]
+						</div>
+						 <div class="price">YOUR PRICE: [%newprod8price%]</div>
+						<div class="hpMostPop">
+							<a href="/item/[%newprod8sku%]">
+								MORE INFO
+							</a>
+						</div>
+						<div class="hpMostPopForm">
+							[%newcartinfo8%]
+						</div>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+   
+   <!-- end ###new_products_row 2### -->
+
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###new_products_row 2### -->
+   
+   </TABLE>
+   <br>
+   <P>
+   
+   <!-- end ###NEW_PRODUCTS_TABLE### -->
+
+   
+
+   <!-- begin ###WELCOME_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>   
+   
+   <TR>      
+      <TD style="background: URL(images/single-line_bkg.gif) transparent repeat-x;"><img name="welcome" src="images/welcome.gif" width="595" height="30" border="0" alt="Welcome"></TD>            
+   </TR>  
+   <TR>   
+      <TD class="welcome">
+        <div class="welcomediv">
+            <!--We are your greatest source featuring a complete line of bicycle and bicycle parts and accessories. All major brands in the Bicycle Industry at the lowest prices.  We ship more than 98% of orders within 48 hours.  Call us for any of your cycle needs.-->
+            We are your greatest source for bicycle and <a href="/bikeparts">bike parts</a> and <a href="/accessories">accessories</a>, <a href="/bagsracks">Bike Racks</a>, <a href="/carcarriers">Car Carriers</a>, <a href="/clothing">bike clothing</a>, <a href="/pedals">Pedals</a>, <a href="/pumps">Pumps</a>, <a href="/shoes">Shoes</a> &amp; more. We carry all major brands in the bicycle industry, including <a href="/manufacturer/Avenir/bikes">Avenir</a>, <a href="/manufacturer/Basso/bikes">Basso</a>, <a href="/manufacturer/Cannondale/bikes">Cannondale</a>, <a href="/manufacturer/Carrera/bikes">Carrera</a>, <a href="/manufacturer/Colnago/bikes">Colnago</a>, <a href="/manufacturer/Dahon/bikes">Dahon</a>, <a href="/manufacturer/Diamond_Back/bikes">Diamond Back</a>, <a href="/manufacturer/Eddy_Merckx/bikes">Eddy Merckx</a>, <a href="/manufacturer/Fuji_USA/bikes">Fuji USA</a>, <a href="/manufacturer/GT/bikes">GT</a>, <a href="/manufacturer/Kestrel/bikes">Kestrel</a>, <a href="/manufacturer/Look/bikes">Look</a>, <a href="/manufacturer/Marin/bikes">Marin</a>, <a href="/manufacturer/Mezzo/bikes">Mezzo</a>, <a href="/manufacturer/Mongoose/bikes">Mongoose</a>, <a href="/manufacturer/Pinarello/bikes">Pinarello</a>, <a href="/manufacturer/Raleigh/bikes">Raleigh</a>, <a href="/manufacturer/Torker/bikes">Torker</a>, <a href="/manufacturer/Worksman_Trading_Corp./bikes">Worksman Trading Corp.</a>, <a href="/manufacturer/Yeti_Cycles/bikes')">Yeti Cycles</a> at the lowest prices. We ship more than 98% of orders within 48 hours. Or, call us at 1-888-424-5328 for any assistance finding the right products for your cycling needs.
+            </div>
+      </TD>   
+   </TR>
+   </TABLE>
+   
+   
+   <!-- end ###WELCOME_TABLE### -->
+   
+   <BR><div id="pfloatTXT" onmouseout="moveFL(-500,-500,getStyleObjectID(this.id));"
+           style="padding: 10px; border: thick solid #808080; left:-500px; top:-500px; width: 400px; position: absolute; background-color: #FFFFFF; text-align: justify; z-index:20;">.</div>
+   [%moving%]
+  </TD>
+   
+   <!-- end ###left_column_main_content### -->
+
+
+   <!-- begin closeouts -->         
+   [%closeouts%]
+   <!-- end closeouts -->         
+    <td class="featuring2">
+		
+        <MAP NAME="map1">
+            <AREA SHAPE="RECT" COORDS="1,162,148,294" HREF="/item/0790380PART/look-ultra-bib-knicker" TITLE="look-ultra-bib-knicker">
+            <AREA SHAPE="RECT" COORDS="1,303,147,459" HREF="/item/0791171PART/look-excellence-resistex-bib-short" TITLE="look-excellence-resistex-bib-short">
+            <AREA SHAPE="RECT" COORDS="1,467,148,640" HREF="/item/0100059PART/look-hr-carbon-bottle-cage TITLE="look-hr-carbon-bottle-cage">            
+        </MAP>
+        <img name="most_popular" src="images/TopRightBanner.jpg" border="0" alt="Easton Sale" USEMAP="#map1">
+        <br />
+        <a href="/item/1600016PART/crank-brothers-cobalt-2-low-rise-handlebar"><img name="most_popular" src="images/MidRightBanner.jpg" border="0" alt="crank brothers cobalt 2 low rise handlebar"></a> 
+     <br /><br />
+        <a href="/item/0603258/hutchinson-sector28-tubeless-ready-road-tire"><img name="hutchinson-sector28-tubeless-ready-road-tire" src="images/BotRightBanner.jpg" border="0" alt="hutchinson sector 28 tubeless ready road tire"></a>      
+    </td>     
+
+
+</TR>
+
+<!-- end ###main_body_content### -->
+
+
+[%footer%] 

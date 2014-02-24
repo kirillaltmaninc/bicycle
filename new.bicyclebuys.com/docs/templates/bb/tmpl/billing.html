@@ -1,0 +1,444 @@
+[%header%]
+<script type="text/JavaScript">
+<!--
+function openpopwin(windowpage, popupwidth, popupheight) {
+	window.open(windowpage, '', 'width=' + popupwidth + ',height=' + popupheight +
+	',location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+	function paymentSelect(){
+		var option = document.getElementById("PAYMENTTYPE").value;
+        //alert(option);
+			if(option == "PayPal")
+                  {
+                        document.getElementById('CCNUMBER').disabled = true;
+                        document.getElementById('CVVN').disabled = true;
+                        document.getElementById('CCMONTH').disabled = true;
+                        document.getElementById('CCTYPE').disabled = true;
+                        document.getElementById('CCYEAR').disabled = true;
+                        document.getElementById('CCName').disabled = true;
+						document.getElementById('finishProper').src = "/images/paypal_checkout_button.png";
+                       //document.getElementById('finishProper').style.visibility= "hidden";
+						//document.getElementById('finishPaypal').style.visibility= "visible";
+                  }	
+			else
+                  {
+                        document.getElementById('CCNUMBER').disabled = false;
+                        document.getElementById('CVVN').disabled = false;
+                        document.getElementById('CCMONTH').disabled = false;
+                        document.getElementById('CCTYPE').disabled = false;
+                        document.getElementById('CCYEAR').disabled = false;
+                        document.getElementById('CCName').disabled = false;
+						document.getElementById('finishProper').src = "/cartimages/confirmorder.gif";
+						//document.getElementById('finishProper').style.visibility= "visible";
+						//document.getElementById('finishPaypal').style.visibility= "hidden";
+                  }
+	}
+
+   var chLoad={
+	ajax:function(st)
+		{
+			this.show('load');
+		},
+	show:function(el)
+		{
+			this.getID(el).style.display='';
+		},
+	getID:function(el)
+		{
+			return document.getElementById(el);
+		}
+	}
+	function check_formB() {
+     var myvalid=false;
+       var myMsg='';
+       var cvalid;
+      if (submitted == true) {
+         alert ("Order is being processed.") ;
+         return false;
+      }
+      else {
+         // everything is ok check the fields, ie using if (document.... .lenght == 0) alert...
+         
+         if (document.forms.item("billing").elements("PAYMENTTYPE").value == 'Credit Card') {            
+            cvalid = document.forms.item("billing").elements("CCMONTH").value!='0';
+            myvalid = cvalid;
+            if (cvalid!=true) { myMsg = 'Select a valid expiration month.'+ '\n'  }
+            cvalid = document.forms.item("billing").elements("CCYEAR").value!= '0';
+            if (cvalid!=true) { myMsg = myMsg + ' Select a valid expiration year.' + '\n' }
+            cvalid = document.forms.item("billing").elements("CCNUMBER").value!= '';
+            myvalid = cvalid && myvalid;
+            if (cvalid!=true) { myMsg = myMsg + ' Enter a card number.' + '\n' }
+            cvalid = document.forms.item("billing").elements("CCName").value!= '';
+            myvalid = cvalid && myvalid;
+            if (cvalid!=true) { myMsg = myMsg + ' Enter a card name.'+ '\n'  }
+            cvalid = document.forms.item("billing").elements("CVVN").value!= '';
+            myvalid = cvalid && myvalid;
+            if (cvalid!=true) { myMsg = myMsg + ' Enter a CVN number.' }
+            if (myvalid!=true) {
+                alert(myMsg);
+            } 
+            return myvalid;
+         } else {
+            myvalid = confirm("Please confirm this is a Fax/Call Order payment option.");
+            return myvalid;
+         }
+         return false;
+         submitted = true ;
+      }
+   }
+
+
+//-->
+</script>
+
+   <TABLE WIDTH=700 class=cartmain CELLPADDING=0 CELLSPACING=0>
+
+   <TR>
+      <TD colspan="6" align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+   </TR>
+
+   <TR>
+      <TD class="carthead"><B>Qty.</B></TD>
+      <TD class="carthead"><B>Item#</B></TD>
+      <TD class="carthead"><B>Description</B></TD>
+      <TD class="carthead"><B>Unit Price</B></TD>
+      <TD class="carthead"><B>Total Price</B></TD>
+   </TR>
+   <TR>
+      <TD><img src="images/pixel.gif" width="50" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="100" height="2" border=0></TD>
+      <TD style="background-image: url('images/pixel.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"><img src="images/pixel.gif" width="320" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+   </TR>
+
+   [%displaycart%] 
+   [%PromoCode%]
+   <TR bgcolor="#FFFFFF">
+      <TD class="cart" colspan="2">&nbsp;</td>
+      <TD class="cart" colspan="2" style="text-align: right;">Sub Total</TD>
+      <TD class="cart" style="text-align: center;">[%cgridtotal%]</TD>
+   </TR>
+
+   [%adjusttotal%]  
+   <TR bgcolor="#FFFFFF">
+      <TD class="cart" colspan="2">&nbsp;</td>
+      <TD class="cart" colspan="2" style="text-align: right;">Shipping & Handling</TD>
+      <TD class="cart" style="text-align: center;">[%shiptotal%]</TD>
+   </TR>
+
+   <TR bgcolor="#FFFFFF">
+      <TD class="cart" colspan="2">&nbsp;</td>
+      <TD class="cart" colspan="2" style="text-align: right;">Sales Tax</TD>
+      <TD class="cart" style="text-align: center;">[%salestax%]</TD>
+   </TR>
+
+   <TR bgcolor="#DEF4F7">
+      <TD class="cart" colspan="2">&nbsp;</td>
+      <TD class="cart" colspan="2" style="text-align: right;">Grand Total</TD>
+      <TD class="cart" style="text-align: center;">[%grandtotal%]</TD>
+   </TR>
+
+   <TR>
+      <TD colspan="6" align="right">
+         <TABLE WIDTH=100% class=noborder CELLPADDING=0 CELLSPACING=0 style="border-top: 1px solid #C4EAE6;">
+         <TR>
+            <TD colspan="2" class="space">-</TD>
+         </TR>
+         <TR>
+            <TD style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+            <TD align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent 50%"></TD>
+         </TR>
+         </TABLE>
+      </TD>
+   </TR>
+   <TR>
+      <TD COLSPAN="5">
+   <TABLE WIDTH="100%" CELLPADDING="3" CELLSPACING="0" BORDER="0" bgcolor="#DEF4F7" name="checkout">
+      <TR>
+         <TD WIDTH="50%" VALIGN="TOP" ALIGN="CENTER">
+            <TABLE width="100%" cellpadding="0" cellspacing="0" border="0" BGCOLOR="#FFFFFF">
+               <TR><TD BGCOLOR="#AFE1E0" COLSPAN="2" ALIGN="CENTER">Bill To:</TD></TR>
+               <TR ALIGN="CENTER"><TD ALIGN="RIGHT">Name:&nbsp;</TD>
+               <TD ALIGN="LEFT">[%InfoName%]</TD></tr>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Company:&nbsp;</font></td>
+                  <TD ALIGN="LEFT">[%InfoCompany%]</TD>
+               </tr>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Address:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%Address1%]</TD>
+               </tr>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">City:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%City%]</TD>
+               </tr>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">[%SPTitle%]:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%SPDisp%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Zip/Postal Code:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ZipPostal%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Country:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%CDisp%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Phone:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%Phone%]</TD>
+               </TR>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Email:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%Email%]</TD>
+               </TR>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Fax:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%Fax%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Comments:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%Comments%]&nbsp;</TD>
+               </TR>
+            </TABLE>
+         </TD>
+         <TD WIDTH="50%" VALIGN="TOP" ALIGN="CENTER">
+            <TABLE width="100%" cellpadding="0" cellspacing="0" border="0" BGCOLOR="#FFFFFF">
+               <TR><TD BGCOLOR="#AFE1E0" COLSPAN="2" ALIGN="CENTER">Ship To:</TD></TR>
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Name:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipName%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Company:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipCompany%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Address:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipAddress1%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">City:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipCity%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">[%SSPTitle%]:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%SSPDisp%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Zip/Postal Code:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipZipPostal%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Country:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%SCDisp%]</TD>
+               </TR>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Phone:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipPhone%]</TD>
+               </TR>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Email:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipEmail%]</TD>
+               </TR>
+               
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Fax:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipFax%]</TD>
+               </TR>
+
+               <TR ALIGN="CENTER">
+                  <TD ALIGN="RIGHT">Comments:&nbsp;</TD>
+                  <TD ALIGN="LEFT">[%ShipComments%]&nbsp;</TD>
+               </TR>
+
+               <TR ALIGN="CENTER" BGCOLOR="DEF4F7">
+                  <TD ALIGN="RIGHT"><B>Shipping Method:</B></TD>
+                  <TD ALIGN="LEFT"><B>&nbsp;[%shippingtype%]</B></TD>
+               </TR>
+
+               [%AddressListed%]
+
+            </TABLE>
+         </TD>
+      </TR>
+   </TABLE>
+   </TR>
+   <TR>
+      <TD COLSPAN="5">
+<div id="load" style="display:none;">Your Order is Being Processed...Please Wait</div>
+   <TABLE WIDTH="100%" CELLPADDING="3" CELLSPACING="0" BORDER="0" BGCOLOR="#FFFFFF">
+      <FORM METHOD="POST" ACTION="/includes/billing.asp" ONSUBMIT="return (chLoad.ajax() && check_formB())" NAME="billing">
+      <!-- CCTYPE required as a dummy value, prevents "CC TYPE REQUIRED" error -->
+      <INPUT TYPE="HIDDEN" NAME="CCTYPE" VALUE="DISCOVER">
+      <INPUT TYPE="HIDDEN" NAME="NAME" VALUE="[%InfoName%]">
+      <INPUT TYPE="HIDDEN" NAME="COMPANY" VALUE="[%InfoCompany%]">
+      <INPUT TYPE="HIDDEN" NAME="ADDRESS1" VALUE="[%Address1%]">
+      <INPUT TYPE="HIDDEN" NAME="ADDRESS2" VALUE="[%Address2%]">
+      <INPUT TYPE="HIDDEN" NAME="CITY" VALUE="[%City%]">
+      <INPUT TYPE="HIDDEN" NAME="STATEPROVINCE" VALUE="[%SP2%]">
+      <INPUT TYPE="HIDDEN" NAME="ZIPPOSTAL" VALUE="[%ZipPostal%]">
+      <INPUT TYPE="HIDDEN" NAME="COUNTRY" VALUE="[%CDisp%]">
+      <INPUT TYPE="HIDDEN" NAME="PHONE" VALUE="[%Phone%]">
+      <INPUT TYPE="HIDDEN" NAME="EMAIL" VALUE="[%Email%]">
+      <INPUT TYPE="HIDDEN" NAME="FAX" VALUE="[%Fax%]">
+      <INPUT TYPE="HIDDEN" NAME="COMMENTS" VALUE="[%Comments%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM1" VALUE="[%Custom1%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM2" VALUE="[%Custom2%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM3" VALUE="[%Custom3%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM4" VALUE="[%Custom4%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM5" VALUE="[%Custom5%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM6" VALUE="[%Custom6%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM7" VALUE="[%Custom7%]">
+      <INPUT TYPE="HIDDEN" NAME="CUSTOM8" VALUE="[%Custom8%]">
+      
+      <INPUT TYPE="HIDDEN" NAME="SHIPNAME" VALUE="[%ShipName%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCOMPANY" VALUE="[%ShipCompany%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPADDRESS1" VALUE="[%ShipAddress1%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPADDRESS2" VALUE="[%ShipAddress2%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCITY" VALUE="[%ShipCity%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPSTATEPROVINCE" VALUE="[%SSP2%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPZIPPOSTAL" VALUE="[%ShipZipPostal%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCOUNTRY" VALUE="[%ShipCountry%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPPHONE" VALUE="[%ShipPhone%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPEMAIL" VALUE="[%ShipEmail%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPFAX" VALUE="[%ShipFax%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCOMMENTS" VALUE="[%ShipComments%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM1" VALUE="[%ShipCustom1%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM2" VALUE="[%ShipCustom2%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM3" VALUE="[%ShipCustom3%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM4" VALUE="[%ShipCustom4%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM5" VALUE="[%ShipCustom5%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM6" VALUE="[%ShipCustom6%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM7" VALUE="[%ShipCustom7%]">
+      <INPUT TYPE="HIDDEN" NAME="SHIPCUSTOM8" VALUE="[%ShipCustom8%]">
+
+
+
+
+
+
+
+      <TR ALIGN="CENTER" BGCOLOR="#CEE4E7">
+         <TD ALIGN="CENTER" COLSPAN="5">&nbsp;</TD>
+      </TR>
+      <TR ALIGN="CENTER" BGCOLOR="#CEE4E7">
+         <TD ALIGN="CENTER" COLSPAN="5"><h2>Total: [%CartTotal%]</h2></TD>
+      </TR>
+
+      <TR BGCOLOR="#CDCDCD">
+         <TD COLSPAN="5">[%ErrString%]</TD>
+      </TR>
+
+      <TR ALIGN="CENTER">
+         <TD ALIGN="RIGHT" width="110">Payment Type:*&nbsp;&nbsp;</TD>
+         <TD ALIGN="LEFT">
+            <select NAME="PAYMENTTYPE" id="PAYMENTTYPE" size="1" onChange="paymentSelect();">
+               [%PaymentTypes%]
+            </select></TD>
+
+         <TD ALIGN="LEFT">
+            <p style="line-height: 100%; margin-top: 5; margin-left:5px;"><img src="../../../../inetpub/wwwroot/bicyclebuys.com/docs/templates/bb/tmpl/images/creditcards.gif" width="363" height="40" border="0" align="center" alt="Credit Card Payments"></p>
+         </TD>
+
+         <TD ALIGN="RIGHT" width="110">&nbsp;
+            <small><font id="cartnormal">Credit Card Type:&nbsp;&nbsp;</small>
+         </TD>
+
+         <TD ALIGN="LEFT">
+            <select NAME="CCTYPE" id="CCTYPE" size="1">
+               [%CCTypes%]
+            </select>
+         </TD>
+      </TR>
+
+      <TR ALIGN="CENTER">
+         <TD ALIGN="RIGHT"><small><font id="cartnormal">Expiration Month:&nbsp;&nbsp;</small></TD>
+         <TD ALIGN="LEFT">
+            <select NAME="CCMONTH" id="CCMONTH">
+               [%CCMonths%]
+            </select>
+         </TD>
+         <TD ALIGN="LEFT"><span style="line-height: 100%; margin-top: 5; margin-left:5px;">CVV2 #: Visa/Mastercard and Discover
+            are the last 3 digits on the back.&nbsp; Amex is the 4 digits that
+          are not raised on the front.</span></TD>
+         <TD ALIGN="RIGHT"><small><font id="cartnormal">Expiration Year:&nbsp;&nbsp;</small></TD>
+         <TD ALIGN="LEFT">
+            <select NAME="CCYEAR" id="CCYEAR">
+               [%ccyears%]
+            </select>
+         </TD>
+      </TR>
+
+      <TR ALIGN="CENTER">
+         <TD rowspan="2" ALIGN="RIGHT"><small><font id="cartnormal">Card Number:*&nbsp;&nbsp;</small></TD>
+         <TD rowspan="2" ALIGN="LEFT"><input TYPE="TEXT" id="CCNUMBER" NAME="CCNUMBER" VALUE="[%CCNumber%]" size="20">
+</TD>
+         <TD ALIGN="LEFT" bgcolor="#CEE4E7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <font id="cartnormal"><a class="topnavitem"  href="javascript:openpopwin('/CreditCardInfo.htm',800,400);">CVV
+          #:*</a></font>
+          
+	<input TYPE="TEXT" NAME="CVVN" id="CVVN" VALUE="[%CVVN%]" size="6">
+           
+</TD>
+         <TD rowspan="2" ALIGN="RIGHT"><small><font id="cartnormal">Name on Card:*&nbsp;&nbsp;</small></TD>
+         <TD rowspan="2" ALIGN="LEFT"><input TYPE="TEXT" NAME="CCName" id="CCName" VALUE="[%CCName%]" size="20"></TD>
+
+      </TR>
+      <TR ALIGN="CENTER">
+        <TD ALIGN="LEFT" bgcolor="#CEE4E7"><span style="line-height: 100%; margin-top: 5; margin-left:5px;"> If not sure, click
+          on link above for location on your card.&nbsp;</span></TD>
+      </TR>
+
+      <TR>
+         <TD COLSPAN="5"><HR></td>
+      </TR>
+
+      <TR ALIGN="CENTER">
+         <td colspan="5" align="center">
+
+		<div style="clear:both"></div>
+		<div class="shopFooterBut">
+            <a href="/includes/showshiptotal.asp"><img src="/cartimages/cartback.gif" border="0" alt="Change Shipping Options" WIDTH="100" HEIGHT="20"></a>
+            <input type="hidden" name="SAVE" value="Submit Order">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input id="finishProper" type=image src="/cartimages/confirmorder.gif" alt="Process order NOW!"  name="Finish">
+
+		
+
+<br>
+         </div>  
+		</TD>
+      </TR>
+
+      <TR ALIGN="CENTER">
+         <TD COLSPAN="5" ALIGN="CENTER">&nbsp;</td>
+      </TR>
+   </TABLE>
+</TABLE>
+
+   <INPUT TYPE="HIDDEN" NAME="cartstring" VALUE="[%CartString%]">
+
+   </FORM>
+
+[%footer%]

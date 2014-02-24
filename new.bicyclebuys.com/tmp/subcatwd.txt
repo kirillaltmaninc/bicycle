@@ -1,0 +1,21 @@
+43,Full Suspension Bikes
+45,Front Suspension Bikes
+46,Hybrid Bikes
+50,BMX Jumping  Bikes
+51,BMX Freestyle/Racing
+53,ATB Framesets
+54,Road Bikes
+95,Sport Comfort Bikes
+96,Children's Bikes- 16"-24"
+97,Bicycle Tool Sets
+98,Drivetrain Tools
+99,Brake Tools
+100,Headset / Bottom Bracket Tools
+101,Wheels / Rims Tools
+102,Road Shoes
+103,Mountain Shoes
+104,Folding Bikes
+105,Cruiser Bikes
+200,BMX Helmets
+203,Reflective Wear
+210,Energy Food and Drinks

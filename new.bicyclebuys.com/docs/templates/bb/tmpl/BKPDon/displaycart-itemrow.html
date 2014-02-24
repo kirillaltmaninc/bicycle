@@ -1,0 +1,30 @@
+<form METHOD="POST" ACTION="/displaycart/U/">
+   <input TYPE="HIDDEN" NAME="ITEMID" VALUE="[%itemid%]">
+   <input TYPE="HIDDEN" NAME="ITEMNUMBER" VALUE="[%count%]">
+   <input TYPE="HIDDEN" NAME="ITEMNAME" VALUE="[%itemname%]">
+   <input TYPE="HIDDEN" NAME="WEIGHT" VALUE="[%weight%]">
+   <input TYPE="HIDDEN" NAME="ORIGQUANTITY" VALUE="[%itemquantity%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM1" VALUE="[%itemcustom1%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM2" VALUE="[%itemcustom2%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM3" VALUE="[%itemcustom3%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM4" VALUE="[%itemcustom4%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM5" VALUE="[%itemcustom5%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM6" VALUE="[%itemcustom6%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM7" VALUE="[%itemcustom7%]">
+   <input TYPE="HIDDEN" NAME="CUSTOM8" VALUE="[%itemcustom8%]">
+   <TR bgcolor="[%bgcolor%]">
+      <TD class="cart"><INPUT VALUE="[%itemquantity%]" NAME="Q[%count%]" TYPE="text" class="qty"></TD>
+      <TD class="cart" style="text-align: center;">[%itemid%]</TD>
+      <TD width="100%" class="cart"><a href="/item/[%itemcustom3%]/"><TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=5>
+         <TR>
+            <TD><img src="/productimages/[%itempicture%]" width="40" border=0 style="padding: 0 5px 0 0;"></TD>
+            <TD width="100%" style="padding: 0 0 0 5px;"><a href="/item/[%itemcustom3%]/">[%itemname%]</a>
+            [%itemoptions%][%freightmsg%]</TD>
+         </TR>
+         </TABLE></TD>
+      <TD class="cart" style="text-align: center;">[%itemprice%]</TD>
+      <TD class="cart" style="text-align: center;">[%itempriceextended%]</TD>
+      <TD class="cart" style="text-align: center;"><a href="/displaycart/D/Q[%count%]/" class="remove">REMOVE</a><BR>
+      <INPUT TYPE="SUBMIT" NAME="UPDATE" VALUE="UPDATE" class="update"></TD>
+   </TR>
+</form>

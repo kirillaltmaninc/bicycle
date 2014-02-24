@@ -1,0 +1,135 @@
+<%@ WebHandler Language="C#" Class="MyNamespace.robotshandler" %>
+
+using System;
+using System.Web;
+
+namespace MyNamespace {
+
+    public class robotshandler: IHttpHandler {
+
+        public void ProcessRequest (HttpContext context) {
+ 
+            context.Response.ContentType = "text/plain";
+            context.Response.Write("User-agent: Yandex\n");
+            context.Response.Write("Crawl-delay: 5 \n");
+
+            context.Response.Write("User-agent: *\n");
+                
+            if (context.Request.ServerVariables["Https"]=="off" && context.Request.ServerVariables["HTTP_HOST"] !="www.bicyclebuys.net"  && context.Request.ServerVariables["HTTP_HOST"] !="bicyclebuys.net"){
+                // HTTP
+                context.Response.Write("Allow: /\n");
+//context.Response.Write("Allow:/components/*\n");
+//context.Response.Write("Allow:/maintenance/RepairStands/*\n");
+//context.Response.Write("Allow:/shoes/ShoeSpin/*\n");
+		context.Response.Write("Disallow: /imageview.asp*\n");
+                context.Response.Write("Disallow: /HTML/*\n");
+                context.Response.Write("Disallow: *XXX/\n");                				
+                context.Response.Write("Disallow: *xxx/\n");                				//context.Response.Write("Disallow: /?*\n");
+//context.Response.Write("Disallow:/components\n");
+//context.Response.Write("Disallow:/maintenance/RepairStands\n");
+//context.Response.Write("Disallow:/shoes/ShoeSpin\n");
+                context.Response.Write("Disallow: /html/*\n");
+                context.Response.Write("Disallow: /manufacturer/*\n");
+                context.Response.Write("Disallow: /viewcart/\n");
+                context.Response.Write("Disallow: /viewcart\n");
+                context.Response.Write("Disallow: /displaycart\n");
+                context.Response.Write("Disallow: /displaycart/\n");
+                context.Response.Write("Disallow: /images/\n");
+                context.Response.Write("Disallow: /search/\n");
+                context.Response.Write("Disallow: /search\n");
+                context.Response.Write("Disallow: /*&d=all&m*\n");
+//                context.Response.Write("Disallow: /contact\n");
+//                context.Response.Write("Disallow: /contact/\n");
+                context.Response.Write("Disallow: /viewcart\n");
+                context.Response.Write("Disallow: /viewcart/\n");
+                context.Response.Write("Disallow: /sizing/\n");
+                context.Response.Write("Disallow: /sizing\n");
+                context.Response.Write("Disallow: /shipping\n");
+                context.Response.Write("Disallow: /addtocart/\n");
+                context.Response.Write("Disallow: /addtocart\n");
+                context.Response.Write("Disallow: /includes/addtocart.asp*\n");
+                context.Response.Write("Disallow: /*/all/\n");
+                context.Response.Write("Disallow: /*/all\n");
+                context.Response.Write("Disallow: /*/R3\n");
+                context.Response.Write("Disallow: /*/chkOut\n");
+                context.Response.Write("Disallow: /*/mostPop\n");
+                context.Response.Write("Disallow: /*/newItemsSection\n");
+                context.Response.Write("Disallow: /*/closeOut\n");
+                context.Response.Write("Disallow: /closeouts*\n");
+                context.Response.Write("Disallow: /closeouts/*\n");
+                context.Response.Write("Disallow: /*/RV\n");
+                context.Response.Write("Disallow: /*/mostPop4\n");
+                context.Response.Write("Disallow: /*/feat\n");
+//                context.Response.Write("Disallow: /*/24X138TU\n");
+                context.Response.Write("Disallow: /HTML/N1*.htm\n");
+                context.Response.Write("Disallow: /HTML/N2*.htm\n");
+                context.Response.Write("Disallow: /HTML/N3*.htm\n");
+                context.Response.Write("Disallow: /HTML/N4*.htm\n");
+                context.Response.Write("Disallow: /HTML/N5*.htm\n");
+                context.Response.Write("Disallow: /HTML/N6*.htm\n");
+                context.Response.Write("Disallow: /HTML/N7*.htm\n");
+                context.Response.Write("Disallow: /HTML/N8*.htm\n");
+                context.Response.Write("Disallow: /HTML/N9*.htm\n");
+                context.Response.Write("Disallow: /HTML/WT*.htm\n");
+                context.Response.Write("Disallow: /HTML/V*.htm\n");
+                context.Response.Write("Disallow: /*.js\n");
+                context.Response.Write("Disallow: /*.inc\n");
+                context.Response.Write("Disallow: /*.css\n");
+                context.Response.Write("Disallow: /item\n");
+                context.Response.Write("Disallow: /?pg=pg&c=search\n");
+                context.Response.Write("Disallow: /?c=*\n");
+                context.Response.Write("Disallow: /?c=allmfg&d=&m=Look&price*\n");
+                context.Response.Write("Disallow: /?c=search*\n");
+                context.Response.Write("Disallow: /?drop=drop&c*\n");
+                context.Response.Write("Disallow: /index.asp?pg=pg&c=search\n");
+                context.Response.Write("Disallow: /index.asp?c=*\n");
+                context.Response.Write("Disallow: /index.asp?c=allmfg&d=&m=Look&price*\n");
+                context.Response.Write("Disallow: /index.asp?c=search*\n");
+                context.Response.Write("Disallow: /index.asp?drop=drop&c*\n");
+                context.Response.Write("Disallow: /indoortrainers/electronicsheartrate\n");
+                //context.Response.Write("Disallow: /manufacturer/\n");
+                context.Response.Write("Disallow: /instructions.asp\n");
+                context.Response.Write("Disallow: /babyseatstrikes/electronics\n");
+                context.Response.Write("Disallow: /babyseatstrikes/locks\n");
+                context.Response.Write("Disallow: /babyseatstrikes/tools\n");
+                context.Response.Write("Disallow: /barsstems/pedals\n");
+                context.Response.Write("Disallow: /bicycles\n");
+                context.Response.Write("Disallow: /bikes/clothes\n");
+                context.Response.Write("Disallow: /bikes/wheels\n");
+                context.Response.Write("Disallow: /cgi-bin/*\n"); 
+                context.Response.Write("Disallow: /electronics/clothing\n");
+                context.Response.Write("Disallow: /electronics/pedals\n");
+                context.Response.Write("Disallow: /electronics/shoes\n");
+                context.Response.Write("Disallow: /flash/accessories\n");
+                context.Response.Write("Disallow: /flash/bikeparts/forksshocks/wheels\n");
+                context.Response.Write("Disallow: /groupkits/hydration\n");
+                context.Response.Write("Disallow: /helmets/Mirrors\n");
+                context.Response.Write("Disallow: /hydration/accessories\n");
+                context.Response.Write("Disallow: /hydration/trainers\n");
+                context.Response.Write("Disallow: /item/MABR8PART\n");
+                context.Response.Write("Disallow: /item/MACT7PART\n");
+                //context.Response.Write("Disallow: /maintenance/ToolMulti\n");
+                context.Response.Write("Disallow: /pedals/tools\n");
+                context.Response.Write("Disallow: /shoes/hydration\n");
+                context.Response.Write("Disallow: /shoes/pedals\n");	
+		context.Response.Write("Disallow: /*/*/*/*/*/\n");
+		context.Response.Write("Disallow: /*/*/*/*/\n");
+context.Response.Write("Disallow: /index.php*\n");
+context.Response.Write("Disallow: /26\n");
+
+
+              //  context.Response.Write("User-agent: Googlebot-Image\n");
+               // context.Response.Write("Disallow: /\n");
+
+            } else {
+                // HTTPS
+                context.Response.Write("Disallow: /");
+//                context.Response.Write("Disallow: " + context.Request.ServerVariables["HTTP_HOST"] );
+            }
+        }
+    
+        public bool IsReusable {
+            get {return false;}
+        }
+    }
+}

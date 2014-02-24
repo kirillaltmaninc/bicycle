@@ -1,0 +1,381 @@
+[%header%]
+
+
+[%search_section%]
+
+<TR>
+<td align="center" valign="top" bgcolor="#ffffff">
+		<!-- Left Column Start --> 
+			[%leftColumn%]
+		<!-- Left Column Finish --> 
+<div class="LeftHomePromo">
+		<MAP NAME="map1">
+           <AREA SHAPE="RECT" COORDS="1,58,149,260" HREF="/item/1011112PART/shimano-ultegra-rd-6800-11-speed-rear-derailleur" TITLE=" 	
+Shimano Ultegra RD-6800 11-Speed Rear Derailleur">
+			<AREA SHAPE="RECT" COORDS="2,262,149,449" HREF="/item/1011174/shimano-ultegra-st-6800-11-speed-double-shifter-lever-set" TITLE="Shimano Ultegra ST-6800 11-Speed Double Shifter/Lever Set">
+			<AREA SHAPE="RECT" COORDS="1,454,149,640" HREF="/item/0508665/shimano-wh-6800-ultegra-wheelset" TITLE=" 	
+Shimano WH-6800 Ultegra Wheelset">            
+        </MAP>
+        <img name="most_popular" src="images/TopRightBanner.gif" border="0" alt="Shimano Sale" USEMAP="#map1">
+		<MAP NAME="map2">
+		<AREA SHAPE="RECT" COORDS="1,854,149,840" HREF="/item/0900234PART/selle-san-marco-mantra-racing-saddle" TITLE=" 	
+Selle San Marco Mantra Racing Saddle"> 
+		<img name="most_popular" src="images/MidRightBanner.gif" border="0" alt="Selle San Marco Mantra Sale" USEMAP="#map2">
+		</Map>
+</div> 
+	</td>
+   <!-- begin ###left_column_main_content### -->
+
+   <TD class="bodycontent">
+   
+   
+   
+   <!-- begin ###MOST_POPULAR_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>    
+   <TR>
+      <div class="HPh1">
+		<H1>Find the Largest Selection of Bicycle Parts, Clothing and Accessories <br />on the Internet at BicycleBuys.com</H1> 
+	  </div>
+<!--
+	<div id="sliderFrame">
+        <div id="ribbon"></div>
+        <div id="slider">
+            <a href="/item/1600019PART/crank-brothers-cobalt-3-flat-handlebar"><img src="images/image-slider-2.jpg" alt="Buy crank brothers Cobalt 3 Handlebar Now" /></a>
+            <a href="item/0101350PART/camelbak-lobo-100oz-hydrapack-12"><img src="images/image-slider-3.jpg" alt="Buy camelbak lobo 100oz hydrapack Now" /></a>
+            <a href="/item/LGMURXPART/louis-garneau-multi-rx-spinning-shoe"><img src="images/image-slider-4.jpg" alt="Buy Louis Garneau ulti RX Shoes Now" /></a>
+        </div>
+    </div>
+-->
+   </TR>
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/double-line2_bkg.gif) transparent repeat-x;"><img name="most_popular" src="images/most_popular.gif" width="595" height="39" border="0" alt="Most Popular Products"></TD>
+            
+   </TR>
+
+  <!-- begin ###most_popular_row 1### -->
+   
+   <TR>
+   
+      <TD class="popular"><a href="/item/[%prod1sku%]/[%prodLink1name%]"><img src="[%prod1image%]" onmouseover="setmarkdesc(1,this);" onmouseout="closeFloat();"  border="0" alt="[%prod1name%]"></a></TD>
+      
+      <TD class="popular"><a href="/item/[%prod2sku%]/[%prodLink2name%]"><img src="[%prod2image%]" onmouseover="setmarkdesc(2,this);" onmouseout="closeFloat();"  border="0" alt="[%prod2name%]"></a></TD>
+      
+      <TD class="popular"><a href="/item/[%prod3sku%]/[%prodLink3name%]"><img src="[%prod3image%]" onmouseover="setmarkdesc(3,this);" onmouseout="closeFloat();"  border="0" alt="[%prod3name%]"></a></TD>
+    <!--  
+      <TD class="popular"><a href="/item/[%prod4sku%]/[%prodLink4name%]"><img src="[%prod4image%]" onmouseover="setmarkdesc(4,this);" onmouseout="closeFloat();"  border="0" alt="[%prod4name%]"></a></TD>
+   -->
+   </TR>
+   
+   <TR>
+   
+      <TD class="popularfoot"><a href="/item/[%prod1sku%]/[%prodLink1name%]">[%prod1name%]</a><BR>
+
+         [%prod1msrp%]
+         <span class="price">SALE PRICE: [%prod1price%]</span><br>
+         <a href="/item/[%prod1sku%]/[%prodLink1name%]">MORE INFO<br>
+         </a>[%cartinfo1%]</TD>
+
+      <TD class="popularfoot"><a href="/item/[%prod2sku%]/[%prodLink2name%]">[%prod2name%]</a><BR>
+         [%prod2msrp%]
+         <span class="price">SALE PRICE: [%prod2price%]</span><BR>
+
+         <a href="/item/[%prod2sku%]/[%prodLink2name%]">MORE INFO</a><br>
+         [%cartinfo2%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%prod3sku%]/[%prodLink3name%]">[%prod3name%]</a><BR>
+         [%prod3msrp%]
+         <span class="price">SALE PRICE: [%prod3price%]</span><BR>
+         <a href="/item/[%prod3sku%]/[%prodLink3name%]">MORE INFO</a><br>
+         [%cartinfo3%]</TD>
+     <!-- 
+      <TD class="popularfoot"><a href="/item/[%prod4sku%]/[%prodLink4name%]">[%prod4name%]</a><BR>
+
+         [%prod4msrp%]
+         <span class="price">SALE PRICE: [%prod4price%]</span><BR>
+         <a href="/item/[%prod4sku%]/[%prodLink4name%]">MORE INFO</a><br>
+         [%cartinfo4%]</TD>
+   -->
+   </TR>
+   
+   <TR>
+   
+      <TD class="popularmore"><a href="[%prod1more%]">More [%prod1moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod2more%]">More [%prod2moretext%]</a></TD>
+
+      
+      <TD class="popularmore"><a href="[%prod3more%]">More [%prod3moretext%]</a></TD>
+    <!--  
+      <TD class="popularmore"><a href="[%prod4more%]">More [%prod4moretext%]</a></TD>
+   -->
+   </TR>
+   
+   <TR>
+      
+      <TD colspan="3" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###most_popular_row 1### -->
+   
+   
+   <!-- begin ###most_popular_row 2### -->
+
+   
+   <TR>
+   
+      <TD class="popular"><a href="/item/[%prod5sku%]/[%prodLink5name%]"><img src="[%prod5image%]" onmouseover="setmarkdesc(5,this);" onmouseout="closeFloat();"   border="0" alt="[%prod5name%]"></a></TD>
+      
+      <TD class="popular"><a href="/item/[%prod6sku%]/[%prodLink6name%]"><img src="[%prod6image%]" onmouseover="setmarkdesc(6,this);" onmouseout="closeFloat();"   border="0" alt="[%prod6name%]"></a></TD>
+      
+      <TD class="popular"><a href="/item/[%prod7sku%]/[%prodLink7name%]"><img src="[%prod7image%]" onmouseover="setmarkdesc(7,this);" onmouseout="closeFloat();"   border="0" alt="[%prod7name%]"></a></TD>
+     <!-- 
+      <TD class="popular"><a href="/item/[%prod8sku%]/[%prodLink8name%]"><img src="[%prod8image%]" onmouseover="setmarkdesc(8,this);" onmouseout="closeFloat();"   border="0" alt="[%prod8name%]"></a></TD>
+   -->
+   </TR>
+   
+   <TR>
+   
+      <TD class="popularfoot"><a href="/item/[%prod5sku%]/[%prodLink5name%]">[%prod5name%]</a><BR>
+
+         [%prod5msrp%]
+         <span class="price">SALE PRICE: [%prod5price%]</span><BR>
+         <a href="/item/[%prod5sku%]/[%prodLink5name%]">MORE INFO</a><br>[%cartinfo5%]</TD>
+
+      <TD class="popularfoot"><a href="/item/[%prod6sku%]/[%prodLink6name%]">[%prod6name%]</a><BR>
+         [%prod6msrp%]
+         <span class="price">SALE PRICE: [%prod6price%]</span><BR>
+
+         <a href="/item/[%prod6sku%]/[%prodLink6name%]">MORE INFO</a><br>[%cartinfo6%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%prod7sku%]/[%prodLink7name%]">[%prod7name%]</a><BR>
+         [%prod7msrp%]
+         <span class="price">SALE PRICE: [%prod7price%]</span><BR>
+         <a href="/item/[%prod7sku%]/[%prodLink7name%]">MORE INFO</a><br>[%cartinfo7%]</TD>
+     <!-- 
+      <TD class="popularfoot"><a href="/item/[%prod8sku%]/[%prodLink8name%]">[%prod8name%]</a><BR>
+
+         [%prod8msrp%]
+         <span class="price">SALE PRICE: [%prod8price%]</span><BR>
+         <a href="/item/[%prod8sku%]/[%prodLink8name%]">MORE INFO</a><br>[%cartinfo8%]</TD>
+   -->
+   </TR>
+   
+   <TR>
+   
+      <TD class="popularmore"><a href="[%prod5more%]">More [%prod5moretext%]</a></TD>
+      
+      <TD class="popularmore"><a href="[%prod6more%]">More [%prod6moretext%]</a></TD>
+
+      
+      <TD class="popularmore"><a href="[%prod7more%]">More [%prod7moretext%]</a></TD>
+     <!-- 
+      <TD class="popularmore"><a href="[%prod8more%]">More [%prod8moretext%]</a></TD>
+   -->
+   </TR>
+   
+   <TR>
+      
+      <TD colspan="3" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###most_popular_row 2### -->
+   
+   </TABLE>
+
+   <P>
+   
+   <!-- end ###MOST_POPULAR_TABLE### -->
+ 
+   <!-- begin ###POPULAR_CATEGORIES_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>   
+    <!-- begin popular categories  
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/double-line2_bkg.gif) transparent repeat-x;"><img name="pop_cats" src="images/pop_cats.gif" width="595" height="40" border="0" alt="Popular Categories"></TD>
+            
+   </TR>
+
+
+ 
+   <TR>
+      <td class="popcats" colspan="4" align="center">
+         [%popcat%]
+      </td>
+   </TR>
+  end popular categories -->
+
+   
+   <TR>
+      
+      <TD colspan="3" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   </TABLE>
+   <P>
+   
+   <!-- end ###POPULAR_CATEGORIES_TABLE### -->
+
+
+   <!-- begin ###NEW_PRODUCTS_TABLE### -->
+   
+   <TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0 >   
+   
+   <TR>
+      
+      <TD colspan="4" align="left" style="background: URL(/images/double-line2_bkg.gif) transparent repeat-x; margin-left: 60px"><a href="/newitems" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image26','','/images/new_products_new_roll.gif',1)"><img src="/images/new_products_new.gif" name="Image26" height="40" border="0" id="Image26" alt="New Products"></a></TD>
+            
+   </TR>
+    
+   <!-- begin ###new_products_row 1### -->
+   
+   <TR>
+   
+      <TD class="popular"><a href="/item/[%newprod1sku%]/[%newprod1nameUrl%]"><img src="[%newprod1image%]"   border="0" alt="[%newprod1name%]" onmouseover="setmarkdesc(9,this);" onmouseout="closeFloat();"  ></a></TD>
+      <TD class="popular"><a href="/item/[%newprod2sku%]/[%newprod2nameUrl%]"><img src="[%newprod2image%]"   border="0" alt="[%newprod2name%]" onmouseover="setmarkdesc(10,this);" onmouseout="closeFloat();"  ></a></TD>
+      <TD class="popular"><a href="/item/[%newprod3sku%]/[%newprod3nameUrl%]"><img src="[%newprod3image%]"   border="0" alt="[%newprod3name%]" onmouseover="setmarkdesc(11,this);" onmouseout="closeFloat();"  ></a></TD>
+    <!-- 
+	<TD class="popular"><a href="/item/[%newprod4sku%]/[%newprod4nameUrl%]"><img src="[%newprod4image%]"   border="0" alt="[%newprod4name%]" onmouseover="setmarkdesc(12,this);" onmouseout="closeFloat();"  ></a></TD>
+      -->
+   </TR>
+
+   
+   <TR>
+      
+      <TD colspan="4" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+
+   <TR>
+   
+      <TD class="popularfoot"><a href="/item/[%newprod1sku%]/[%newprod1nameUrl%]">[%newprod1name%]</a><BR>
+         [%newprod1msrp%]
+         <span class="price">YOUR PRICE: [%newprod1price%]</span><BR>
+         <a href="/item/[%newprod1sku%]/[%newprod1nameUrl%]">MORE INFO</a><br>[%newcartinfo1%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%newprod2sku%]/[%newprod2nameUrl%]">[%newprod2name%]</a><BR>
+         [%newprod2msrp%]
+         <span class="price">YOUR PRICE: [%newprod2price%]</span><BR>
+         <a href="/item/[%newprod2sku%]/[%newprod2nameUrl%]">MORE INFO</a><br>[%newcartinfo2%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%newprod3sku%]/[%newprod3nameUrl%]">[%newprod3name%]</a><BR>
+
+         [%newprod3msrp%]
+         <span class="price">YOUR PRICE: [%newprod3price%]</span><BR>
+         <a href="/item/[%newprod3sku%]/[%newprod3nameUrl%]">MORE INFO</a><br>[%newcartinfo3%]</TD>
+<!--
+      <TD class="popularfoot"><a href="/item/[%newprod4sku%]/[%newprod4nameUrl%]">[%newprod4name%]</a><BR>
+
+         [%newprod4msrp%]
+         <span class="price">YOUR PRICE: [%newprod4price%]</span><BR>
+         <a href="/item/[%newprod4sku%]/[%newprod4nameUrl%]">MORE INFO</a><br>[%newcartinfo4%]</TD>
+   -->
+   </TR>
+
+   <!-- end ###new_products_row 1### -->
+   
+
+   <!-- begin ###new_products_row 2### -->
+   
+   <TR>
+   
+      <TD class="popular"><a href="/item/[%newprod5sku%]/[%newprod5nameUrl%]"><img src="[%newprod5image%]"   border="0" alt="[%newprod5name%]" onmouseover="setmarkdesc(13,this);" onmouseout="closeFloat();"  ></a></TD>
+      <TD class="popular"><a href="/item/[%newprod6sku%]/[%newprod6nameUrl%]"><img src="[%newprod6image%]"   border="0" alt="[%newprod6name%]" onmouseover="setmarkdesc(14,this);" onmouseout="closeFloat();"  ></a></TD>
+      <TD class="popular"><a href="/item/[%newprod7sku%]/[%newprod7nameUrl%]"><img src="[%newprod7image%]"   border="0" alt="[%newprod7name%]" onmouseover="setmarkdesc(15,this);" onmouseout="closeFloat();"  ></a></TD>
+     <!--
+ <TD class="popular"><a href="/item/[%newprod8sku%]/[%newprod8nameUrl%]"><img src="[%newprod8image%]"   border="0" alt="[%newprod8name%]" onmouseover="setmarkdesc(16,this);" onmouseout="closeFloat();"  ></a></TD>
+      -->
+   </TR>
+
+   
+   <TR>
+      
+      <TD colspan="3" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+
+   <TR>
+   
+      <TD class="popularfoot"><a href="/item/[%newprod5sku%]/[%newprod5nameUrl%]">[%newprod5name%]</a><BR>
+         [%newprod5msrp%]
+         <span class="price">YOUR PRICE: [%newprod5price%]</span><BR>
+         <a href="/item/[%newprod5sku%]/[%newprod5nameUrl%]">MORE INFO</a><br>[%newcartinfo5%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%newprod6sku%]/[%newprod6nameUrl%]">[%newprod6name%]</a><BR>
+         [%newprod6msrp%]
+         <span class="price">YOUR PRICE: [%newprod6price%]</span><BR>
+         <a href="/item/[%newprod6sku%]/[%newprod6nameUrl%]">MORE INFO</a><br>[%newcartinfo6%]</TD>
+      
+      <TD class="popularfoot"><a href="/item/[%newprod7sku%]/[%newprod7nameUrl%]">[%newprod7Name%]</a><BR>
+
+         [%newprod7msrp%]
+         <span class="price">YOUR PRICE: [%newprod7price%]</span><BR>
+         <a href="/item/[%newprod7sku%]/[%newprod7nameUrl%]">MORE INFO</a><br>[%newcartinfo7%]</TD>
+<!--
+      <TD class="popularfoot"><a href="/item/[%newprod8sku%]/[%newprod8nameUrl%]">[%newprod8name%]</a><BR>
+
+         [%newprod8msrp%]
+         <span class="price">YOUR PRICE: [%newprod8price%]</span><BR>
+         <a href="/item/[%newprod8sku%]/[%newprod8nameUrl%]">MORE INFO</a><br>[%newcartinfo8%]</TD>
+   ->
+   </TR>
+
+
+   <!-- end ###new_products_row 2### -->
+
+   <TR>
+      
+      <TD colspan="3" style="background: URL(images/hordotted.gif) transparent repeat-x;"><img name="dotted" src="images/hordotted.gif" width="594" height="1" border="0" alt=""></TD>
+            
+   </TR>
+   <!-- end ###new_products_row 2### -->
+   
+   </TABLE>
+   <br>
+   <P>
+   
+   <!-- end ###NEW_PRODUCTS_TABLE### -->
+
+   
+
+   <!-- begin ###WELCOME_TABLE### -->
+   
+   <!--<TABLE WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>   
+   
+   <TR>      
+      <TD style="background: URL(images/single-line_bkg.gif) transparent repeat-x;"><img name="welcome" src="images/welcome.gif" width="595" height="30" border="0" alt="Welcome"></TD>            
+   </TR>  
+   <TR>   
+      <TD class="welcome">
+        <div class="welcomediv">
+<H2>Bicycle Accessories Online</h2>
+            We are your greatest source featuring a complete line of bicycle and bicycle parts and accessories. All major brands in the Bicycle Industry at the lowest prices.  We ship more than 98% of orders within 48 hours.  Call us for any of your cycle needs.
+            We are your greatest source for bicycles and bike parts and <a href="accessories">accessories</a>, including bike <a href="helmets">helmets</a>, bike <a href="bagsracks/racks/">racks</a>, car <a href="carcarriers">carriers</a>, bike <a href="clothing">clothing</a>, <a href="pedals">pedals</a>, <a href="pumps">pumps</a>, <a href="shoes">shoes</a> & other bike <a href="maintenance">tools</a>. We carry all major brands in the bicycle industry, including <a href="manufacturer/avenir">Avenir</a>, <a href="manufacturer/bell">Bell</a>, <a href="manufacturer/bellwether">Bellwether</a>, <a href="manufacturer/blackburn">Blackburn</a>, <a href="manufacturer/cannondale">Cannondale</a>, <a href="manufacturer/cycleops">Cycleops</a>, <a href="manufacturer/dahon">Dahon</a>, <a href="manufacturer/diamondback">Diamond Back</a>, <a href="manufacturer/fox">Fox</a>, <a href="manufacturer/giro">Giro</a>, <a href="manufacturer/gt">GT</a>, <a href="manufacturer/look">Look</a>, <a href="manufacturer/louis_garneau">Louis Garneau</a>, <a href="/manufacturer/Marin">Marin</a>,  <a href="manufacturer/Mongoose">Mongoose</a>, <a href="manufacturer/Pearl_Izumi">Pearl Izumi</a>, <a href="/manufacturer/saris">Saris</a>, <a href="/manufacturer/shimano">Shimano</a>, <a href="/manufacturer/sram">Sram</a>, <a href="/manufacturer/torker">Torker</a>, <a href="manufacturer/topeak">Topeak</a> & more at the lowest prices. We ship more than 98% of orders within 48 hours. Shop online or call us at <strong>1-888-424-5328</strong> for any assistance finding the right products for your cycling needs.
+            </div>
+      </TD>   
+   </TR>
+   </TABLE>-->
+   
+   
+   <!-- end ###WELCOME_TABLE### -->
+   
+   <BR><div id="pfloatTXT" onmouseout="moveFL(-500,-500,getStyleObjectID(this.id));"
+           style="padding: 10px; border: thick solid #808080; left:-500px; top:-500px; width: 400px; position: absolute; background-color: #FFFFFF; text-align: justify; z-index:20;">.</div>
+   [%moving%]
+  </TD>
+   
+   <!-- end ###left_column_main_content### -->
+
+
+   <!-- begin closeouts -->         
+   [%closeouts%]
+   <!-- end closeouts -->         
+    
+</TR>
+
+<!-- end ###main_body_content### -->
+
+
+[%footer%] 

@@ -1,0 +1,342 @@
+<%
+   ' BICYCLEBUYS.COM
+   '
+   ' (c)2006 - LIHQ all rights reserved
+   '
+   ' common.asp
+
+   Dim vRemote_IP, vDEBUGGING
+   vRemote_IP = Request.ServerVariables("REMOTE_ADDR")
+   vDEBUGGING = 0
+
+   ' need a cart object
+   dim Cart
+   Set Cart  = Server.CreateObject("iiscart2000.store")
+
+   ' --- Get the cart working with our registration
+   Cart.key = "lii"          ' lii = bicyclebuys
+
+   ' --- Security; Only these host/domains can post form data to the cart. (not working right, commented out)
+   'Cart.Server = "hqwww.bicyclebuys.com,bicyclebuys.com,www.bicyclebuys.com,10.0.0.66"
+   Cart.Server = ""
+
+   ' --- Cart specific configuration
+   Cart.HeaderText = Array("Remove", "SKU", "Description", "Long", "Size/Color", "Price", "Qty", "Adj.", "Total")
+   Cart.SetTableProperties "98%", 2, 0, 1
+   Cart.HeaderColor = "#CCCCFF"
+   Cart.SetHeaderFont "Verdana,Arial,Helvetica", 2, "#000000"
+   Cart.Color = "#E5E5F0,#FFFFFF"
+   Cart.SetFont "Verdana,Arial,Helvetica", 1, "#000000"
+   Cart.FooterColor = "#CCCCFF"
+   Cart.SetFooterFont "Verdana,Arial,Helvetica", 3, "#000000"
+   Cart.SetPropertyFormat "NAMEEDITVALUE"
+   Cart.UpdateButtons "updateitems=/cartimages/updateitem.gif", "/cartimages/deleteitem.gif"
+   'Cart.adjustRate = "$1-100=-10%;$101-200=-20%;$201-=-30%;"
+   'Cart.Validate "Name , Company"
+   Cart.NameLink = "Items01.asp?NavID=moreinfo&SKU="
+   Cart.CurrencyFormat = "$,2"
+
+   ' --- Credit Card Processor
+   Cart.cc.Processor = "skipjack"
+   Cart.cc.Login = "000293293270"
+   
+   ' --- Taxes
+   Cart.StateTaxRate = "8.625%"
+   Cart.CountryTaxRate = "0%"
+
+   dim oProd1
+   set oProd1 = new bb_product
+
+   dim vSection, vItem, vDept, vSKU
+   dim vTMP1, vTMP2, vTMP3, vTMP4
+   dim vOUT1,vOUT2,vOUT3,vOUT4,vOUT5
+
+   dim vPageTitle
+
+   ' get the template engine ready
+   dim objTemplate
+
+   const TMPLDIR = "/templates/bb/tmpl/"
+   const IMGDIR = "/templates/bb/images/"
+
+   ' some working variables
+   dim oRS1, oRS2, vSQL, rs, rs1, rs2
+   Set RS1 = Server.CreateObject("ADODB.Recordset")
+   Set RS2 = Server.CreateObject("ADODB.Recordset")
+
+   ' open the primary connection to the db
+   Dim dsn, conn
+   dsn = Application("dsn")
+
+   Set conn = Server.CreateObject("ADODB.Connection")
+   conn.Open dsn
+
+   class bb_product
+      '---
+      'Declarations
+      '---
+   	public pfields
+      private oRS1, oRS2
+      private rsFields
+      private vSQL
+
+      private sub Class_Initialize
+		   set pfields = createobject("Scripting.Dictionary")
+         pfields.CompareMode = 1
+      end sub
+
+      private sub Class_Terminate
+      	set pfields = nothing
+      end sub
+
+      public sub getitemPID(vProdID)
+         dim vLoop
+
+         Set oRS1 = Server.CreateObject("ADODB.Recordset")
+
+         vSQL = "SELECT * " _
+              & "FROM products " _
+              & "WHERE ProdID=" & vProdID
+         ' response.write "<hr>" & vSQL & "<hr>"
+         oRS1.open vSQL, conn, 3
+         Set rsFields = oRS1.Fields
+
+         if NOT oRS1.EOF then
+            for vLoop = 0 to (rsFields.Count - 1)
+               ' response.write "<hr>" & rsFields.Item(vLoop).Name & "<br>" & rsFields.Item(vLoop).Value
+               pfields.Add rsFields.Item(vLoop).Name, rsFields.Item(vLoop).Value
+            next
+         end if
+         oRS1.close
+      end sub
+
+      public sub getitemSKU(vSKU)
+         dim vLoop
+
+         Set oRS1 = Server.CreateObject("ADODB.Recordset")
+
+         vSQL = "SELECT * " _
+              & "FROM products " _
+              & "WHERE SKU='" & vSKU & "'"
+         'response.write "<hr>" & vSQL & "<hr>"
+         oRS1.open vSQL, conn, 3
+         Set rsFields = oRS1.Fields
+
+         if NOT oRS1.EOF then
+            for vLoop = 0 to (rsFields.Count - 1)
+               ' response.write "<hr>" & rsFields.Item(vLoop).Name & "<br>" & rsFields.Item(vLoop).Value
+               pfields.Add rsFields.Item(vLoop).Name, rsFields.Item(vLoop).Value
+            next
+         end if
+         oRS1.close
+      end sub
+
+      public function val(vPField)
+         val = pfields.Item(vPField)
+      end function
+
+   end class
+
+
+   ' given a site department, get the actual departments
+   ' that should be displayed.
+   public function getcatlinks2(vSection)
+      dim rs1, rs2, rsFields, vSQL
+      dim vLoop, vSCA, vSC, vSCs, vSubCats
+
+      Set rs1 = Server.CreateObject("ADODB.Recordset")
+      Set rs2 = Server.CreateObject("ADODB.Recordset")
+
+      vSQL = "SELECT * " _
+           & "FROM NewWebNavTypes " _
+           & "WHERE WebNavID = " & vWebNavID
+      response.write "<hr>" & vSQL
+
+      rs1.open vSQL, conn, 3
+      if Not rs1.EOF Then
+         vSubCats = rs1("SubCats")
+         if Not IsEmpty(vSubCats) Then
+            vSCA = split(vSubCats, ",")
+            for each vSC in vSCA
+               if vSCs <> "" Then vSCs = vSCs & ","
+               vSCs = vSCs & "'" & vSC & "'"
+            next
+            vSQL = "SELECT * " _
+                 & "FROM SubCategory " _
+                 & "WHERE subcatid IN (" & vSCs & ")"
+            response.write "<hr>" & vsql
+            rs2.open vSQL, conn, 3
+            do while not rs2.eof
+
+               rs2.movenext
+            loop
+         end if
+      end if
+      rs1.Close
+      rs2.Close
+   end function
+
+   Public Function getwebtypeid (vWebType)
+      dim rs1
+      Set rs1 = Server.CreateObject("ADODB.Recordset")
+
+      vSQL = "SELECT webtypeid " _
+           & "FROM webtype " _
+           & "WHERE webtype = '" & vWebType & "'"
+      rs1.open vSQL, conn, 3
+      If Not rs1.EOF Then
+         getwebtypeid = rs1("webtypeid")
+      Else
+         getwebtypeid = -1
+      End If
+      rs1.close
+   End Function
+
+
+   ' pass this a primary nav name and it will return
+   ' out1 and out2, used for the two column category list
+   ' that is displayed when that nav is clicked
+   ' the HREF url is SEF - re-write enabled
+   public sub getcatlinks(vSection)
+      dim rs1, rs2, rsFields, vSQL1, vSQL2
+      dim vLoop, vDA, vD, vDs
+
+      Set rs1 = Server.CreateObject("ADODB.Recordset")
+      Set rs2 = Server.CreateObject("ADODB.Recordset")
+
+      ' set the title
+      vOUT3 = "Browse a Category Below:"
+
+      ' set the breadcrumb link
+      vTMP1 = UCase(Left(vSection,1)) & Right(vSection,Len(vSection)-1)
+      vOUT4 = vTMP1
+
+
+      ' we break up the sql for each section with the idea that
+      ' eventually we may need this as neil works out his
+      ' product categorization.   "WebDisplay" is common.
+      Select Case vSection
+         Case "bikes"
+            vSQL1 = "SELECT WebTypes, SubCats " _
+                  & "FROM NewWebNavTypes " _
+                  & "WHERE WebNavType = '" & vSection & "'"
+
+            vSQL2 = "SELECT WebTypeID, WebType, WebDisplay " _
+                 & "FROM webtype " _
+                 & "WHERE WebTypeID IN ( "
+
+         Case Else
+            vSQL1 = "SELECT WebTypes " _
+                  & "FROM NewWebNavTypes " _
+                  & "WHERE WebNavType = '" & Replace(vSection, "_", " ") & "'"
+
+            vSQL2 = "SELECT WebTypeID, WebType, WebDisplay " _
+                 & "FROM webtype " _
+                 & "WHERE WebTypeID IN ( "
+      end select
+      ' response.write vsection & "<br>" & vsql1 & "<br>" & vsql2 & "<hr>"
+
+      rs1.open vSQL1, conn, 3
+      if Not rs1.EOF Then
+         vTMP1 = rs1("WebTypes")
+         if Not IsEmpty(vTMP1) Then
+            vDA = split(vTMP1, ",")
+            for each vD in vDA
+               if vDs <> "" Then vDs = vDs & ","
+               vDs = vDs & "'" & vD & "'"
+            next
+
+            vSQL2 = vSQL2 & "SELECT DISTINCT WebTypeID " _
+                 & "FROM products " _
+                 & "WHERE webtypeid IN (" & vDs & ") " _
+                 & " AND WebTypeID IS NOT NULL " _
+                 & " AND WebTypeID != 0 " _
+                 & " AND webposted LIKE 'yes' " _
+                 & " AND (IsChildorParentorItem='1' or IsChildorParentorItem='0' or IsChildorParentorItem='' or IsNull(IsChildorParentorItem,'')='') " _
+                 & ") " _
+                 & " ORDER BY WebDisplay"
+            ' response.write "<hr>" & vsql2
+
+            rs2.open vSQL2, conn, 3
+            do while not rs2.eof
+               ' Remove spaces, replace with underscores
+               vTMP2 = Replace(rs2("webtype"), " ", "_")
+               vLoop = vLoop + 1
+
+               if vLoop / 2 <> Int(vLoop/2) Then
+                  vOUT1 = vOUT1 & "          <a href=""/" & vSection & "/" & vTMP2 & "/"">" & rs2("webdisplay") & "</a><BR>" & vbcrlf
+               else
+                  vOUT2 = vOUT2 & "          <a href=""/" & vSection & "/" & vTMP2 & "/"">" & rs2("webdisplay") & "</a><BR>" & vbcrlf
+               End If
+               rs2.movenext
+            loop
+
+            If vOUT2 = "" Then vOUT2 = "&nbsp;"
+
+         end if
+      end if
+      rs1.close
+   end sub
+
+'   <TR>
+'      <TD align="center" class="prodimage"><a href="template_product.html"><img src="images/thumbnail15.jpg" width="72" height="72" border="0" alt="product name"></a></TD>
+'      <TD class="prodlist"><a href="template_product.html">Product Name</a></TD>
+'      <TD class="prodlist"><span class="cost">$300.00</span><BR>
+'      $259.95</TD>
+'      <TD class="proddesc">iquip saluto. <a href="template_product.html">more</a></TD>
+'   </TR>
+'   <TR>
+'      <TD colspan="4"><img name="dotted" src="images/hordotted2.gif" width="740" height="1" border="0" alt=""></TD>
+'   </TR>
+
+   Sub getprodlinks (vDept, vSection)
+      dim rs1, vSP, vP
+      Set rs1 = Server.CreateObject("ADODB.Recordset")
+
+      ' set the breadcrumb link
+      vTMP1 = UCase(Left(vSection,1)) & Right(vSection,Len(vSection)-1)
+      vOUT4 = "<a href=""/" & vSection & "/"">" & vTMP1 & "</a> &gt; " & vDept
+
+      ' Now create a list of products
+      ' first we need the webtypeid
+      vTMP3 = getwebtypeid(vDept)
+
+      ' now we get the products out of the db
+      vSQL = "SELECT * " _
+           & "FROM products " _
+           & "WHERE webtypeid = " & vTMP3 _
+           & " AND webposted LIKE 'yes' " _
+           & " AND (IsChildorParentorItem='1' or IsChildorParentorItem='0' or IsChildorParentorItem='' or IsNull(IsChildorParentorItem,'')='') " _
+           & " ORDER BY VendID, description, retailwebprice"
+
+      rs1.open vSQL, conn, 3
+      do while not rs1.eof
+         vTMP1 = rs1("MSRP")
+         If IsNumeric(vTMP1) Then
+            vSP = "<span class=""cost"">" & formatcurrency(vTMP1,2,0,0) & "</span><BR>"
+         Else
+            vSP = "&nbsp;"
+         End If
+         vP = rs1("price")
+         vOUT1 = vOUT1 & "   <TR>" _
+               & "      <TD align=""center"" class=""prodimage""><a href=""/" & vSection & "/" & vDept & "/" & rs1("sku") & """><img src=""/ProductImages/" & rs1("picture") & """ width=""72"" height=""72"" border=""0"" alt=""" & rs1("description") & """></a></TD>" _
+               & "      <TD class=""prodlist""><a href=""/" & vSection & "/" & vDept & "/" & rs1("sku") & """>" & rs1("description") & "</a></TD>" _
+               & "      <TD class=""prodlist"" align=""right"">" & vSP _
+               & "      " & formatcurrency(vP,2,0,0) & "</TD>" _
+               & "      <TD class=""proddesc"">" & rs1("marketingdescription") & "...  <a href=""template_product.html"">more</a></TD>" _
+               & "   </TR>" _
+               & "   <TR>" _
+               & "      <TD colspan=""4""><img name=""dotted"" src=""images/hordotted2.gif"" width=""740"" height=""1"" border=""0"" alt=""""></TD>" _
+               & "   </TR>"
+         rs1.movenext
+      loop
+      rs1.close
+ End Sub
+
+Public  Sub getproductdetail (vSection, vDept, vItem )
+
+   oProd1.getitemSKU(vItem)
+
+End Sub
+   
+%>

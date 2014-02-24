@@ -1,0 +1,117 @@
+<object id="WebNavTypeLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="WebNavTypeIDLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="ColorListingLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="SizeListingLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="VendorListingLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="VendorSubCatsLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="SubcatWDLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="SubcatMFGLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="WebTypeListingLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="WebTypeListingAZLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="SpecialsTableLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="OverWeightTableLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="StateLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="ZonesLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<object id="WebNoteLU" PROGID="Passport.LookupTable" ID="oLookupTable" runat="Server" scope="Application"></object>
+<script language="VBScript" runat="Server"> 
+' *********************************
+' global.asa  
+' Purpose: security & site integrity  
+' This script executes when the first user comes to the site.
+' *********************************
+SUB Application_OnStart()
+
+' Set the main page we use to redirect people to if 
+' they jump into the middle of the site
+
+	SiteStart = "http://new.bicyclebuys.com/index.asp"
+	Application("SiteStart") = SiteStart
+
+	Dim dsn
+
+	dsn = "DSN=bicyclebuys;Password=bbcwebUserprod;User ID=webuserprod;"
+	Application("dsn") = dsn
+
+	FileDSN = "DSN=bicyclebuys;Password=bbcwebUserprod;User ID=webuserprod;"
+	Application("FileDSN") = FileDSN
+
+	Set Conn = Server.CreateObject("ADODB.Connection")
+	Conn.Open dsn
+
+	Set rs = Server.CreateObject("ADODB.Recordset")
+
+	Dim fso, vOldFile, vNewFile, vNewFile1
+	Set fso = CreateObject("Scripting.FileSystemObject")
+
+	'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	'% Create a new welcome text file for scrolling java app
+	'%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   Dim WriteRoot
+   WriteRoot = Server.MapPath("/") & "\writable\"
+	Set vOldFile = fso.GetFile(WriteRoot & "welcome.txt")
+	If (fso.FileExists(WriteRoot & "welcome.bak")) then fso.DeleteFile(WriteRoot & "welcome.bak")
+	vOldFile.Move(WriteRoot & "welcome.bak")
+
+	sql = "SELECT * " _
+	    & "FROM MainScroll " _
+	    & "WHERE Active = 1 " _
+	    & "AND (GETDATE() BETWEEN StartDate AND EndDate) " _
+	    & "ORDER BY Sequence"
+	
+	rs.open sql,Conn, 3
+
+	Set vNewFile = fso.OpenTextFile(WriteRoot & "welcome.txt", 2, True)
+	do while not rs.EOF
+		vNewfile.WriteLine(rs("Title") & "|" & rs("Text") & "|" & rs("Link") & "|" & rs("Target"))
+		rs.movenext
+	Loop
+	vNewFile.Close
+	rs.close
+
+END SUB
+
+' *********************************
+' This script executes when the server shuts down or when global.asa changes.
+' *********************************
+SUB Application_OnEnd()
+END SUB
+
+SUB Session_OnStart()
+
+	' Set the Session timeout
+	' 1440 = 24 hours
+	Session.Timeout=1440
+	Session("RunOnce") = 0
+
+	' Make sure that new users start on the correct
+	' page index.asp...Can't jump into middle of site
+	' Do a case insensitive compare, and if they
+	' don't match, send the user to the start page.
+	currentPage = Request.ServerVariables("SCRIPT_NAME")
+		
+'	If strcomp(currentPage,startPage,1) Then
+'		Response.Redirect(Application("SiteStart"))
+'	End If
+
+   ' track the user's referral site
+   vReferral = Request.ServerVariables("HTTP_REFERER")
+
+   if vReferral = "" Then
+      vQS = Request.ServerVariables("QUERY_STRING")
+      if vQS <> "" Then
+         vSID = Request.QueryString("SID")
+         if vSID <> "" Then
+            Session("ReferredBy") = "SALE: " & vSID & " (" & vQS & ")"
+         Else
+            Session("ReferredBy") = vQS
+         End If
+      End If
+   Else
+      Session("ReferredBy") = vReferral
+   End If
+
+END SUB
+
+SUB Session_OnEnd()	
+END SUB
+</script>

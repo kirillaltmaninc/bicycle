@@ -1,0 +1,90 @@
+[%header%]
+
+<script type="text/JavaScript">
+<!--
+function openpopwin(windowpage, popupwidth, popupheight) {
+	window.open(windowpage, '', 'width=' + popupwidth + ',height=' + popupheight +
+	',location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+}
+
+//-->
+</script>
+<!-- begin ###main_body_content### -->
+
+   <TABLE WIDTH=700 class=cartmain CELLPADDING=0 CELLSPACING=0>
+   
+   <TR>
+      
+      <TD colspan="6" align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="/checkout/"><img src="images/proceed-to-checkout.gif" alt="Proceed to Checkout" width="228" height="30" border=0></a></TD>
+            
+   </TR>
+   
+   
+   <TR>
+      <TD class="carthead"><B>Qty.</B></TD>
+      <TD class="carthead"><B>Item#</B></TD>
+      <TD class="carthead"><B>Description</B></TD>
+      <TD class="carthead"><B>Unit Price</B></TD>
+      <TD class="carthead"><B>Total Price</B></TD>
+      <TD class="carthead"><B>Action</B></TD>
+   </TR>
+   <TR>
+      <TD><img src="images/pixel.gif" width="50" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="100" height="2" border=0></TD>
+      <TD style="background-image: url('images/pixel.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><img src="images/pixel.gif" width="320" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+      <TD><img src="images/pixel.gif" width="75" height="2" border=0></TD>
+   </TR>
+
+
+   [%displaycart%]
+
+   <TR>
+      
+      <TD colspan="6" align="right"><TABLE WIDTH=100% class=noborder CELLPADDING=0 CELLSPACING=0 style="border-top: 1px solid #C4EAE6;"> 
+      
+         <TR>
+            
+            <TD colspan="2" class="space">-</TD>
+                  
+         </TR>
+         
+         <TR>
+            
+            <TD style="background-image: url('/images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="[%continueshopping%]"><img src="/images/continue-shopping.gif" alt="Continue Shopping" width="228" height="30" border=0></a></TD>
+            <TD align="right" style="background-image: url('images/cart_bkg.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><a href="https://www.bicyclebuys.com/checkout/"><img src="images/proceed-to-checkout.gif" alt="Proceed to Checkout" width="228" height="30" border=0></a></TD>
+
+         </TR></TABLE></TD>
+            
+   </TR>  
+  
+   </TABLE>
+     <div align="center"><a HREF="javascript:openpopwin('/includes/smallship.asp',400,400);">
+     <img SRC="/cartimages/viewmyshipcharges.gif" Width="150" Height="20" Border="0"></a>
+       </div>
+     <P>
+
+   
+   
+   <!-- end ###CART_TABLE### -->   
+<table width="500" class="border3" cellpadding="0" cellspacing="0" align="center">
+     <tr>
+       <td colspan="5"><div class="closeouts">Similar Products You Might Be Interested In...</div></td>
+     </tr>
+     <!-- begin ###most_popular_row 1### -->
+     <tr>
+       <td colspan="3" class="popular2" style="background: transparent;">[%similarproducts%] </td>
+     </tr>
+     
+     <tr>
+       <td colspan="5" style="background-image: url('images/hordotted.gif'); background-repeat: repeat-x; background-attachment: scroll; background-position: transparent"><img src="images/hordotted.gif" alt="" name="dotted" width="500" height="1" border="0" id="dotted" /></td>
+     </tr>
+</table>
+ <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications.">
+<tr>
+<td width="135" align="center" valign="top"><script src=https://seal.verisign.com/getseal?host_name=www.bicyclebuys.com&size=S&use_flash=NO&use_transparent=NO&lang=en></script><br />
+<a href="http://www.verisign.com/ssl/ssl-information-center/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a></td>
+</tr>
+</table>
+   <P>[%footer%]

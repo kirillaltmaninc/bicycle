@@ -1,0 +1,30 @@
+﻿<%
+    Dim dsn, conn, rs
+   dsn = Application("dsn")
+
+   Set conn = Server.CreateObject("ADODB.Connection")
+   conn.Open dsn
+  Set rs = Server.CreateObject("ADODB.Recordset")
+
+response.ContentType = "text/xml"
+ 
+set rs=Conn.Execute(sql)
+
+response.write("<?xml version='1.0' encoding='ISO-8859-1'?>")
+response.write("<guestbook>
+  ")
+  while (not rs.EOF)
+  response.write("<guest>
+    ")
+    response.write("<fname>" & rs("fname") & "</fname>")
+    response.write("<lname>" & rs("lname") & "</lname>")
+    response.write("
+  </guest>")
+  rs.MoveNext()
+  wend
+
+  rs.close()
+  conn.close()
+  response.write("
+</guestbook>")
+%>

@@ -1,0 +1,138 @@
+[%prodmeta%]
+[%header%]
+
+<script type="text/JavaScript">
+<!--
+//ProductListFeat_new.html
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  if (selObj.options[selObj.selectedIndex].value)
+  {
+	  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	  if (restore) selObj.selectedIndex=0;
+   }
+
+}
+//-->
+</script>
+
+[%search_section%]
+
+<!-- begin ###main_body_content### -->
+
+[%featured%]
+
+   <!-- begin ###right_column_main_content### -->
+
+   <TD class="bodycontent_right" align="center">
+   
+   <!-- begin ###MOST_POPULAR_TABLE### -->
+   <br>
+   <TABLE WIDTH="502" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+   <TR>
+      <TD width="25" style="background: URL(images/top_curve_middle.jpg) #fff repeat-x;" nowrap><img src="images/top_curve_left.jpg" width="25" height="9" border=0 alt="tcr"></TD>
+      <TD style="background: URL(images/top_curve_middle.jpg) #fff repeat-x;" nowrap><img src="images/top_curve_middle.jpg" width="25" height="9" border=0 alt="tcm"></TD>
+      <TD width="11"><img src="images/top_curve_right.jpg" width="11" height="9" border=0 alt="tcr"></TD>
+      <TD width="50" align="right"><img src="images/wpixel.jpg" width="50" height="1" border=0 alt="wp"></TD>
+   </TR>
+   
+   <TR>
+      <TD style="background: URL(images/middle_curve_left.jpg) #EBE4D1 repeat-y;"><img src="images/middle_curve_left.jpg" width="25" height="9" border=0 alt="mcl"></TD>
+      <TD width="100%" style="font-size: 11px; line-height: 12px; background: #EBE4D1;"><B>[%subcategory_name%] Product List</B></TD>
+      <TD style="background: URL(images/middle_curve_right.jpg) #EBE4D1 repeat-y;"><img src="images/middle_curve_right.jpg" width="11" height="9" border=0 alt="mcr"></TD>
+      <TD align="right"><img src="images/wpixel.jpg" width="50" height="1" border=0 alt="wp"></TD>
+   </TR>
+   
+   <TR>
+      <TD class="line"><img src="images/bottom_curve_left.jpg" width="25" height="9" border=0 alt="bcl"></TD>
+      <TD style="background: URL(images/bottom_curve_middle.jpg) #fff repeat-x;" nowrap><img src="images/bottom_curve_middle.jpg" width="25" height="9" border=0 alt="bcm"></TD>
+      <TD width="100%"><img src="images/bottom_curve_right.jpg" width="11" height="9" border=0 alt="bcr"></TD>
+      <TD class="line2" align="right"><img src="images/wpixel.jpg" width="50" height="1" border=0 alt="wp"></TD>
+   </TR>
+   </TABLE>
+   
+   <TABLE WIDTH=502 class=border3 CELLPADDING=0 CELLSPACING=0 ALIGN=CENTER style="border-top: 0px;">
+    <TR>
+      
+      <TD colspan="2" class="prodlistfields">
+      [%numperpage%]
+
+	  [%showonly%]
+
+		 </TD>
+            
+   </TR>     
+   <!--
+   <TR>
+      
+      <TD colspan="2" class="prodlistfields">Products per page:
+      
+         <SELECT size="1" name="num_per_page" onChange="javascript: document.pagingtop.submit();"> 
+   			<option value="5">5</option>
+   			<option value="10" selected>10</option>
+   			<option value="20">30</option>
+   			<option value="30">50</option>
+   			<option value="50">ALL</option>
+   		
+   			<option value="11" >All</option>
+		
+   		</SELECT>  
+   		<select name="squeryfilt" name="num_per_page" onChange="javascript: document.pagingtop.submit();">
+            <option value="" selected="selected">Show only...</option>
+            <option value=""></option>
+            <option value="">All Prices</option>
+            <option value="19"> $100 - $500 (19)</option>            
+            <option value=""></option>
+            <option value=""></option>
+            <option value="">All brands</option>
+            <option value="403">DK (8)</option><option value="58">GT (3)</option><option value="150">Mongoose (8)</option>            
+         </select></TD>
+            
+   </TR>
+   -->
+
+   [%productlist%]
+
+   
+   <!--
+   <TR>
+      
+      <TD colspan="3" class="pages" align="center">
+      <a href="#">Previous Page</a> 
+      | 
+      <a href="#">1</a> 
+      <a href="#">2</a> 
+      <a href="#">3</a> 
+      <a href="#">4</a> 
+      <a href="#">5</a> 
+      <a href="#">6</a> 
+      <a href="#">7</a> 
+      | 
+      <a href="#">Next Page</a></TD>
+            
+   </TR>
+   -->
+ 
+ [%pagenav%]   
+   </TABLE>
+   <P>
+   
+   <!-- end ###MOST_POPULAR_TABLE### -->
+   
+   
+   
+   <BR>&nbsp;
+   
+   
+   
+</TD>
+   
+   <!-- end ###right_column_main_content### -->
+   
+   
+   
+
+</TR>
+
+<!-- end ###main_body_content### -->
+
+[%footer%]

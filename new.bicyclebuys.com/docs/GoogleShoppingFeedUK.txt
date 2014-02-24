@@ -1,0 +1,2 @@
+prodid~description~id~link~price~title~brand~image link~product_type~payment notes~shipping~tax~size~color~gtin~mpn~google_product_category~availability~sale_price~item_group_id~sale_price_effective_date~gender~age_group~condition
+

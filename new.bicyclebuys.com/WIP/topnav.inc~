@@ -1,0 +1,75 @@
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">if(document.location .hostname=='newsite.bicyclebuys.com'){document.write('<font color="red">This is the testing region. Currently using the live data!!!!</font>');}</SCRIPT>
+
+<script language="JavaScript" src="scrolling.js"></script>
+
+
+<%
+
+vReferer = Request.QueryString("Referer")
+vScript = Left(vReferer, 11)
+vOK = "/Items01.asp"
+vTF = (vScript = vOK)
+
+if vReferer <> "" and NOT IsEmpty(vReferer) and NOT IsNULL(vReferer) and vTF then
+   Session("Referer") = vReferer
+else
+   vReferer = Request.ServerVariables("SCRIPT_NAME") & "?" & Request.ServerVariables("QUERY_STRING")
+   vScript = Left(vReferer, 11)
+   vOK = "/Items01.asp"
+   vTF = (vScript = vOK)
+   if vReferer <> "" and NOT IsEmpty(vReferer) and NOT IsNULL(vReferer) and vTF then Session("Referer") = Server.URLEncode(vReferer)
+End If
+
+'response.write "Referer: " & vReferer & "<BR>"
+'response.write "Session: " & Session("Referer")
+%>
+<BODY BGCOLOR="#E5E5F0" TEXT="#000000" LINK="#3770A8" VLINK="#3770A8" ALINK="#FFFFFF" TOPMARGIN="0" MARGINWIDTH="0" LEFTMARGIN="0" MARGINHEIGHT="0" onLoad="MM_timelinePlay('Timeline1')">
+<A NAME="top"></A><div align="center"><CENTER>
+
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
+
+<TR><TD width="144">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_01" src="/images/logo_01.gif" width="144" height="20" border="0" alt="BicycleBuys.com"></a><BR>
+
+</TD><TD width="148" background="/images/800no_bkg.gif">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_02" src="/images/logo_02.gif" width="148" height="20" border="0" alt="BicycleBuys.com"></a><BR>
+
+</TD><TD width="100%" align="right" background="/images/800no_bkg.gif">
+
+	<a href="contact.asp"><img name="N800number_01" src="/images/800number_01.gif" width="279" height="20" border="0" alt="Contact BicycleBuys.com"></a><BR>
+
+</TD><TD width="24">
+
+	<a href="contact.asp"><img name="N800number_02" src="/images/800number_02.gif" width="24" height="20" border="0" alt="Contact BicycleBuys.com"></a><BR>
+
+</TD></TR>
+
+<TR><TD width="144">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_03" src="/images/logo_03.gif" width="144" height="22" border="0" alt="BicycleBuys.com"></a><BR>
+
+</TD><TD width="148" background="/images/chrome_bkg.gif">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_04" src="/images/logo_04.gif" width="148" height="22" border="0" alt="BicycleBuys.com"></a><BR>
+
+</TD><TD align="right" background="/images/chrome_bkg.gif">
+
+	<img name="blank_chrome" src="/images/blank_chrome.gif" width="24" height="22" border="0"><a href="/displaycart.asp?Referer=<%=Session("Referer")%>" onMouseOut="di20('shopcart','/images/shopcart.gif');"  onMouseOver="di20('shopcart','/images/shopcart_F2.gif');" ><img name="shopcart" src="/images/shopcart.gif" width="127" height="22" border="0" alt="Shopping Cart"></a><a href="/storeinfo.asp" onMouseOut="di20('shopinfo','/images/shopinfo.gif');"  onMouseOver="di20('shopinfo','/images/shopinfo_F2.gif');" ><img name="shopinfo" src="/images/shopinfo.gif" width="128" height="22" border="0" alt="Shop Information"></a><BR>
+
+</TD><TD width="24">
+
+	<img name="right_top" src="/images/right_top.gif" width="24" height="22" border="0"><BR>
+
+</TD></TR>
+
+<TR><TD width="144">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_05" src="/images/logo_05.gif" width="144" height="84" border="0" alt="BicycleBuys.com"></a><BR>
+
+</TD><TD width="148" background="/images/sale_blank.gif">
+
+	<a href="/Items01.asp?NavID=main"><img name="logo_06" src="/images/logo_06.gif" width="148" height="49" border="0" alt="BicycleBuys.com"></a><BR>
+	
+	<a href="/Items01.asp?NavID=main" onMouseOut="di20('homelogo','/images/logo_07.gif');"  onMouseOver="di20('homelogo','/images/logo_07_F2.gif');" ><img name="homelogo" src="/images/logo_07.gif" width="115" height="35" border="0" alt="back home"></a><a href="/Items01.asp?NavID=main" onMouseOut="di20('home_button','/images/home_button.gif');"  onMouseOver="di20('home_button','/images/home_button_F2.gif');" ><img name="home_button" src="/images/home_button.gif" width="33" height="35" border="0" alt="back home"></a><BR>

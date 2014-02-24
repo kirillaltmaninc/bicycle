@@ -1,0 +1,1 @@
+code	name	description	price	product-url	merchant-site-category	image-url	manufacturer	classification	condition	size	color	SalePrice	MSRP	in-stock	availability	promo-text	shipping-price	upc

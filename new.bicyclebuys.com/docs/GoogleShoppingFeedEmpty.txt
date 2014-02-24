@@ -1,0 +1,1 @@
+"description"~"id"~"link"~"price"~"title"~"brand"~"image link"~"product_type"~"shipping"~"tax"~"size"~"color"~"gtin"~"mpn"~"condition"

@@ -1,0 +1,406 @@
+.bg
+{
+    background: url(images/bullet.gif);
+}
+.menu
+{     
+    
+    background-position: #fff url(images/button1a.gif) repeat-x;
+    padding: 0 0 1px 0px;
+    margin: 0;
+    list-style: none;
+    height: 19px;
+    background: #fff;  
+    position: relative;
+    font-family: Verdana, Bitstream Vera Sans, Helvetica; text-align: left; vertical-align: text-top;   
+    }
+
+.menu li.head
+{
+    padding: 5px 0 0 3px;
+    color: #000000;
+    background-color: #C0C0C0;
+    line-height: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    height: 22px;
+    border-bottom-color: #808080;
+}
+.menu li.top
+{
+    font-family: Verdana, Bitstream Vera Sans, Helvetica;
+    display: block;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 19px;
+}
+.menu li a.top_link
+{
+    display: block;
+    float: left;
+    height: 19px;
+    line-height: 18px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 9px; 
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.menu li a.top_Pop
+{
+    display: block;
+    float: left;
+    height: 19px;
+    line-height: 18px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 9px; 
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.menu li a.top_link span
+{
+    border-style: none none solid solid;
+    border-width: thin;
+    border-color: #808080;
+    float: left;
+    display: block;
+    padding: 0 4px 0 4px;
+    height: 19px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.menu li a.top_link span.down
+{
+    float: left;
+    display: block;
+    padding: 0 24px 0 12px;
+    height: 19px;
+    background:  url(images/down.gif) no-repeat right top;
+}
+.menu li a.top_link:hover
+{
+    background-position: url(images/bullet.gif) no-repeat;
+    color: #FFFFFF;
+    background: url(images/bullet.gif) no-repeat;
+    background-color: #FFA74F;
+}
+.menu li a.top_link:hover span
+{
+    background: url(images/bullet.gif) no-repeat right top;
+    color: #FFFFFF;
+}
+.menu li a.top_link:hover span.down
+{
+ 
+   background: url(images/bulleta.gif) no-repeat right top;
+}
+
+.menu li:hover > a.top_link {color:#000; background: url(images/bullet.gif) no-repeat;}
+.menu li:hover > a.top_link span
+{
+    background: #FFA74F url(images/bullet.gif) no-repeat right top;
+}
+.menu li:hover > a.top_link span.down {background:url(images/bulleta.gif) no-repeat right top;}
+
+.menu table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+
+.menu a:hover {visibility:visible;}
+.menu li:hover {position:relative; z-index:275;}
+
+.menu ul, .menu :hover ul ul, .menu :hover ul :hover ul ul, .menu :hover ul :hover ul :hover ul ul, .menu :hover ul :hover ul :hover ul :hover ul ul
+{
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu :hover ul.sub
+{
+    left: 2px;
+    top: 19px;
+    right: 2px;
+    background: #fff;
+    padding: 3px 0;
+    border: 1px solid #999999;
+    white-space: nowrap;
+    width: 275px;
+    height: auto;
+    
+}
+.menu :hover ul.sub li
+{
+    display: block;
+    height: 20px;
+    position: relative;
+    float: left;
+    width: 275px;
+}
+.menu :hover ul.sub li a
+{
+    border-style: solid;
+    border-color: #fff;
+    font-weight: normal;
+    display: block;
+    font-size: 11px;
+    height: 20px;
+    width: 274px;
+    line-height: 20px;
+    text-indent: 5px;
+    color: #000;
+    text-decoration: none;
+    border-width: 0 0 0 0px;
+}
+.menu :hover ul.sub li a.fly {background:#fff url(images/button.gif) 80px 7px no-repeat;}
+.menu :hover ul.sub li a:hover
+{
+    background-position: #999999;
+    background-color: #FFA74F;
+    color: #fff;
+}
+.menu :hover ul.sub li a.fly:hover
+{
+    background: #999999 url(images/button_over.gif) 80px 7px no-repeat;
+    color: #fff;
+}
+.menu :hover ul li:hover > a.fly
+{
+    background: #999999 url(images/button_over.gif) 80px 7px no-repeat;
+    color: #fff;
+} 
+
+.menu :hover ul :hover ul, .menu :hover ul :hover ul :hover ul, .menu :hover ul :hover ul :hover ul :hover ul, .menu :hover ul :hover ul :hover ul :hover ul :hover ul
+{
+    left: 90px;
+    top: -4px;
+    background: #fff;
+    padding: 3px 0;
+    
+    white-space: nowrap;
+    width: 93px;
+    z-index: 275;
+    height: auto;
+}
+
+
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn { position: relative; display: block; vertical-align: middle; float: right; padding: 0.438em 0.625em 0.438em 0.625em; line-height: 1.125em; cursor: pointer; }
+.slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
+.slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
+.slicknav_menu .slicknav_no-text { margin: 0 }
+.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
+.slicknav_nav { clear: both }
+.slicknav_nav ul,
+.slicknav_nav li { display: block }
+.slicknav_nav .slicknav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em; }
+.slicknav_nav .slicknav_item { display: block; cursor: pointer; }
+.slicknav_nav a { display: block }
+.slicknav_nav .slicknav_item a { display: inline }
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+/* 
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+	font-size:50px;
+}
+/* Button */
+.slicknav_btn {
+	margin: 5px 5px 6px;	
+	text-decoration:none;	
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;  
+	background-color: #222222;
+}
+/* Button Text */
+.slicknav_menu  .slicknav_menutxt {	
+	color: #FFF;
+	font-weight: bold;	
+	text-shadow: 0 1px 3px #000;	
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+  background-color: #f5f5f5;
+}
+.slicknav_menu {
+	background:#4c4c4c;
+	padding:5px;
+}
+.slicknav_nav {
+	color:#fff;
+	margin:0;	
+	padding:0;
+	font-size:0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+	list-style: none;
+	overflow:hidden;
+}
+.slicknav_nav ul {
+	padding:0;
+	margin:0 0 0 20px;
+}
+.slicknav_nav .slicknav_item {
+	padding:5px 10px;
+	margin:2px 5px;
+}
+.slicknav_nav a{
+	padding:5px 10px;
+	margin:2px 5px;
+	text-decoration:none;
+	color:#fff;
+	text-align:left;
+}
+.slicknav_nav .slicknav_item a {
+	padding:0;
+	margin:0;
+}
+.slicknav_nav .slicknav_item:hover {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background:#ccc;
+	color:#fff;	
+}
+.slicknav_nav a:hover{
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background:#ccc;
+	color:#222;
+}
+.slicknav_nav .slicknav_txtnode {
+     margin-left:15px;   
+}
+
+.slicknav_menu {
+	display:none;
+}
+
+@media only screen and (max-width: 980px) {
+	/* #menu is the original menu */
+	.js #menu {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+		position:absolute;
+		top:95px;
+		left:5px;
+		z-index:999;
+	}
+
+	.js #menuBot {
+		display:none;
+	}
+
+	.js #leftAdd {
+		display:none;
+	}
+
+	.js #topMenuImg {
+		display:none;
+	}
+	.js #LeftColumnNewArea {
+		display:none;
+	}
+
+	div.HPh1 h1 {
+		color: #9D8D80;
+		float: right;
+		font-size: 18px;
+		padding: 0;
+		text-align: center;
+		width: 395px;
+	}
+
+	.topnavitem2 {
+		font-family: Verdana,Bitstream Vera Sans,Helvetica;
+		font-size: 9px;
+		font-weight: bold;
+		height: 12px;
+		line-height: 12px;
+		margin: 0;
+		padding: 2px 8px 0px 2px;
+	}
+
+	.closeOutsTD {
+		font-family: Verdana,Bitstream Vera Sans,Helvetica;
+		font-size: 9px;
+		font-weight: bold;
+		height: 12px;
+		line-height: 12px;
+		margin: 0;
+	}
+	h1 {
+		display: block;
+		float: right;
+		font-family: Bitstream Vera Sans,Verdana;
+		font-size: 13px;
+		font-weight: bold;
+		margin: 0 0 7px;
+	}
+
+	.productimage {
+		border: 0 none;
+		margin: 60px 0 5px;
+	}
+	.cats {
+		font-size: 11px;
+		margin:0;
+		padding: 20px 0 0;
+	}
+
+
+	#topshoppingSearch {
+		float: right;
+		margin: 0 -15px 0 350px;
+	}
+
+	.LeftHomePromo{
+		display:none;
+	}
+	.productcontainer {
+		float: right;
+		font-size: 16px;
+		margin: 0;
+		text-align: left;
+		width: 260px;
+	}
+	
+	.mobPdpH1{
+		width: 500px; 
+		padding: 0px 0px 0px 140px;
+	}	
+	
+	.pdpTableWidth{
+		width: 607px; 
+	}
+	
+	.border3{
+		border-top: 0 none;
+		margin: 20px 0 0;
+	}
+}
