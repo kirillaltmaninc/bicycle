@@ -1,0 +1,38 @@
+
+
+Web Order Number: 011818
+Date: 8/5/2004
+Time: 4:41:02 AM
+Referred By: http://mountainbike.com/shop/hotlist/0,4841,,00.html
+
+Bill-To/Ship-To Address: 
+  Eric J Mendez
+  Llanos de Gurabo 118 Miramelinda
+  Gurabo, PR   00778
+  Ph: (787)598-4549
+  josua214@yahoo.com
+
+Payment: Visa
+  Card Number: 4118450011075973
+  Card Expiration: 3/2006
+  Card Holder: Eric J Mendez
+  Authorization Code: 000380
+  AVS Code: G
+  AVS Message: Card authorized, address verification result unknown.
+
+Item Details
+==========================================================
+  Name:                      Shimano  XT Cassette CS-M750 11-32T 9/speed  
+  Sku#:                      1010072
+  Size/Color:                11-32T 9/speed +
+  Quantity:                  2
+  Unit Price:                $49.99
+  Extended Price:            $99.98
+
+==========================================================
+Subtotal:                    $99.98
+Tax:                         $.00
+Shipping:                    $14.99 (US Mail)
+Total:                       $114.97
+
+

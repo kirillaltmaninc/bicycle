@@ -1,0 +1,339 @@
+
+<html>
+<head>
+	<title>BicycleBuys.Com</title>
+	<meta name="keywords" content="    ">
+	
+</head>
+
+<body bgcolor="#C0C0C0" text="#000000" leftmargin=0 topmargin=0 marginheight=0 marginwidth=0 link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<center> 
+<table border=0 cellpadding=0 cellspacing=0 width="725">
+  <tr> 
+      <td colspan=3 valign=TOP bgcolor="#000000" height="711"> 
+        <table border="0" width="100%" bgcolor="#000000">
+        <tr bgcolor="#808080"> 
+            <td bgcolor="#FFFF00" align="CENTER" valign="TOP" height="69"> 
+              <div align="LEFT">
+                <table border="0" width="100%">
+                  <tr>
+                    <td width="33%" bgcolor="#FFFF00" align="CENTER" valign="MIDDLE"> 
+                      <div align="CENTER">
+                        <img src="images/nav3.gif" width="198" height="21" usemap="#leftnav"> 
+                      </div>
+                  </td>
+                    <td width="33%" bgcolor="#FFFF00"> 
+                      <div align="CENTER">
+                      <img src="images/bblogo.JPG" width="225" height="63">
+                    </div>
+                  </td>
+                    <td width="34%" align="CENTER" valign="MIDDLE" bgcolor="#FFFF00"> 
+                      <div align="CENTER">
+                        <img src="images/nav4.gif" width="226" height="21" usemap="#rtnav"> 
+                      </div>
+                  </td>
+                </tr>
+              </table>
+              </div>
+          </td>
+        </tr>
+      </table>
+        <table border="0" width="100%" align="CENTER">
+          <tr>
+            <td height="815" width="15%" valign="TOP" bordercolor="#000000" bgcolor="#000000"> 
+              <table border="0" width="100%">
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000">&nbsp;</td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"> 
+                    <div align="CENTER"> <font color="#FFFFFF"><b><font size="2" face="Arial, Helvetica, sans-serif">Store 
+                      Departments</font></b> </font> </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000">&nbsp;</td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><i><b><font size="4" color="33ff00">For 
+                    the Bike...</font></b></i></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font face="Arial, Helvetica, sans-serif" color="33ccff"><a href="atb1.htm" target=""><b>Bicycles</b></a></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="shockmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Shocks</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="pedalmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Pedals</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="compmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Components</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="groupmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Groups/Kits</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="wheelmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Wheels</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="33ccff"><b><a href="tiremain.htm" target=""><font face="Arial, Helvetica, sans-serif">Tires 
+                    &amp; Tubes</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000">&nbsp;</td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><i><b><font size="4" color="33ff00">For 
+                    the Body...</font></b></i></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="shoemain.htm" target=""><font face="Arial, Helvetica, sans-serif">Shoes</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="helmetmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Helmets</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="clothesmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Clothes</font></a></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="12%" bgcolor="#000000" bordercolor="#000000">&nbsp;</td>
+                  <td width="88%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><i><b><font size="4" color="33ff00">For 
+                    the Fun...</font></b></i></font></td>
+                </tr>
+                <tr bordercolor="#000000" bgcolor="#FFFFFF"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><font color="#000000"><img src="images/rarrow.gif" width="10" height="11"></font></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="accessmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Accessories</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" height="20" bordercolor="#000000"><font color="#FFFFFF"><b><a href="babyseats_1.idc" target=""><font face="Arial, Helvetica, sans-serif">Baby 
+                    Seats</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="carriermain.htm" target=""><font face="Arial, Helvetica, sans-serif">Car 
+                    Carriers</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" height="20" bordercolor="#000000"><font color="#FFFFFF"><b><a href="computers_1.idc" target=""><font face="Arial, Helvetica, sans-serif">Computers</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" height="16" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" height="16" bordercolor="#000000"><font color="#FFFFFF"><b><a href="joggers_1.idc" target=""><font face="Arial, Helvetica, sans-serif">Joggers</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="lockmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Locks</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="lubemain.htm" target=""><font face="Arial, Helvetica, sans-serif">Lubricants</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="toolmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Tools</font></a></b></font></td>
+                </tr>
+                <tr bgcolor="#FFFFFF" bordercolor="#000000"> 
+                  <td width="8%" bgcolor="#000000" bordercolor="#000000"><img src="images/rarrow.gif" width="10" height="11"></td>
+                  <td width="92%" bgcolor="#000000" bordercolor="#000000"><font color="#FFFFFF"><b><a href="trainersmain.htm" target=""><font face="Arial, Helvetica, sans-serif">Trainers</font></a></b></font></td>
+                </tr>
+              </table>
+            </td>
+            <td height="578" width="56%" bgcolor="#FFFFFF" align="CENTER" valign="TOP"> 
+              <div align="CENTER"> </div>
+              <table border="0" width="100%" bgcolor="#CC3300">
+                <tr> 
+                  <td bgcolor="#CC3300"><font color="#99FF00"><b>Related Cycling 
+                    Items</b></font></td>
+                </tr>
+              </table>
+              <table border="0" width="100%">
+                <tr> 
+                  <td width="5%" height="21" valign="TOP"> 
+                    <center>
+                      <img src="images/rarrow.gif" width="10" height="11"> 
+                    </center>
+                  </td>
+                  <td width="95%" height="21" valign="TOP"><a
+                                href="producthtms/1428872.htm"><font color="0000cc" size="2" face="Arial, Helvetica, sans-serif">%%product(1428872).description%%</font></a><font color="#ff3300"> 
+                    <b><i>$%%product(1428872).price%%</i></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="5%" height="9" valign="TOP"> 
+                    <div align="CENTER"> <img src="images/rarrow.gif" width="10" height="11"> 
+                    </div>
+                  </td>
+                  <td width="95%" height="9" valign="TOP"><a
+                                href="producthtms/1601225.htm"><font color="0000cc" size="2" face="Arial, Helvetica, sans-serif">%%product(1601225).description%%</font></a><font color="#ff3300"> 
+                    <b><i>$%%product(1601225).price%%</i></b></font></td>
+                </tr>
+                <tr> 
+                  <td width="5%" height="5" valign="TOP"> 
+                    <div align="CENTER"> <img src="images/rarrow.gif" width="10" height="11"> 
+                    </div>
+                  </td>
+                  <td width="95%" height="5" valign="TOP"><a
+                                href="producthtms/1604386.htm"><font color="0000cc" size="2" face="Arial, Helvetica, sans-serif">%%product(1604386).description%%</font></a><font color="#ff3300"> 
+                    <b><i>$%%product(1604386).price%%</i></b></font></td>
+                </tr>
+              </table>
+              <table border=1 bgcolor=#ffffff cellspacing=0 width="100%" bordercolor="#FFFFFF">
+              </table>
+              <table border="0" width="100%">
+                <tr> 
+                  <td bgcolor="#FFFF00"><b><font color="#333399"><i><font color="#000000">Your 
+                    product search results are listed below:</font></i></font></b></td>
+                </tr>
+              </table>
+              <table border=1 bgcolor=#ffffff cellspacing=0 width="100%" bordercolor="#FFFFFF">
+                <thead> 
+                <tr bgcolor="#99FF00"> 
+                  <th bgcolor=#99FF00 bordercolor=#000000 align="LEFT" ><font size="2" face="Arial" color="#000000">SKU</font></th>
+                  <th bgcolor=#99FF00 bordercolor=#000000 align="LEFT" ><font size="2" face="Arial" color="#000000">Description</font></th>
+                  <th bgcolor=#99FF00 bordercolor=#000000 align="LEFT" ><font size="2" face="Arial" color="#000000">Price</font></th>
+                  <th bgcolor=#99FF00 bordercolor=#000000 align="CENTER" ><font size="2" face="Arial" color="#000000">View 
+                    Item </font></th>
+                </tr>
+                </thead> <tbody> <%BeginDetail%> 
+                <tr valign=TOP> 
+                  <td bordercolor=#c0c0c0 align="LEFT" ><font size="2" face="Arial" color="#000000"><%SKU%><br>
+                    </font></td>
+                  <td bordercolor=#c0c0c0 align="LEFT" ><font size="2" face="Arial" color="#000000"><%description%><br>
+                    </font></td>
+                  <td bordercolor=#c0c0c0  align=LEFT><font size="2" face="Arial" color="#000000"><%price%><br>
+                    </font></td>
+                  <td bordercolor=#c0c0c0 align="CENTER" ><font size="2" face="Arial" color="#000000"><%link%><br>
+                    </font></td>
+                </tr>
+                <%EndDetail%> </tbody> <tfoot></tfoot> 
+              </table>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </td>
+            <td height="578" width="22%" bgcolor="#000000" valign="TOP"> 
+              <div align="CENTER"> <font size="2" face="Arial, Helvetica, sans-serif"><b><font color="#CC3300">Shock 
+                Department </font></b></font> </div>
+              <table border="0" width="97%">
+                <tr> 
+                  <td valign="TOP" height="20"> 
+                    <table border="0" width="100%">
+                      <tr> 
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr> 
+                        <td><font color="#FFFF00"><b><font color="#99FF00" size="+1"><i><font size="4">Shocks 
+                          By Brand</font></i></font><font color="#99FF00"><i></i></font></b></font></td>
+                      </tr>
+                      <tr> 
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr> 
+                        <td><a href="manitou_1.idc"><font face="Arial, Helvetica, sans-serif"><b><i>Manitou</i></b></font></a></td>
+                      </tr>
+                      <tr> 
+                        <td height="19"><a href="marz_1.idc" target=""><i><b><font face="Arial, Helvetica, sans-serif">Marzocchi</font></b></i></a></td>
+                      </tr>
+                      <tr> 
+                        <td><font color="#FFFF66"><i><b><font face="Arial, Helvetica, sans-serif"><a href="rockshox_1.idc">Rock 
+                          Shox</a></font></b></i></font></td>
+                      </tr>
+                    </table>
+                    &nbsp; </td>
+                </tr>
+                <tr> 
+                  <td valign="TOP" height="20"><font color="#FF0080"
+                        size="2" face="Tahoma"><em><b>Search</b></em></font><font
+                        color="#66FF00" size="2" face="Tahoma"><b> our inventory 
+                    database online by clicking on the brand names above.</b></font><font color="#CCFF00"> 
+                    </font></td>
+                </tr>
+                <tr> 
+                  <td valign="TOP">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td valign="TOP"> 
+                    <div align="CENTER"> <img src="images/rockshox.gif" width="105" height="121"> 
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td valign="TOP">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td valign="TOP"> 
+                    <div align="CENTER"> <img src="images/marzlogo.gif" width="121" height="15">&nbsp; 
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td valign="TOP">&nbsp; </td>
+                </tr>
+                <tr> 
+                  <td valign="TOP"><img src="images/manitoulogo.gif" width="150" height="93"></td>
+                </tr>
+                <tr> 
+                  <td valign="TOP">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td valign="TOP">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      <table border=0 bgcolor=#ffffff cellspacing=0 width="400">
+      </table>
+        <div align="CENTER">
+        </div>
+        <table border="0" width="100%" align="CENTER">
+          <tr>
+            <td bgcolor="#66FF00" height="2"> 
+              <div align="CENTER">
+                <font size="2">Hours of operation : 24 hrs.for online ordering, 
+                Customer service: M-F 10am - 8pm EST, Sat 10am - 6pm, Sun 11am 
+                - 4pm </font> 
+              </div>
+          </td>
+        </tr>
+      </table>
+      <div align="CENTER">
+      </div>
+      <div align="CENTER">
+      </div>
+      <div align="RIGHT">
+      </div>
+    </td>
+    <!--end NAVBAR--> </tr>
+  <tr> 
+      <td colspan=3 valign=TOP bgcolor="#ffffff" height="2"></td>
+  </tr>
+</table>
+  
+<map name="topnav">
+  <area shape="rect" coords="357,1,449,42" href="GEOGRAPHY#https://24.128.81.54/bikebuy/online.htm">
+  <area shape="rect" coords="345,0,359,-2">
+  <area shape="rect" coords="254,1,352,42" href="modcart.htm">
+  <area shape="rect" coords="160,0,248,41" href="showcart.htm">
+  <area shape="rect" coords="74,0,157,42" href="contact.htm">
+  <area shape="rect" coords="0,7,73,42" href="support.htm">  
+</map>
+
+</center>
+<map name="rtnav">
+  <area shape="rect" coords="1,0,68,19" href="showcart.htm">
+  <area shape="rect" coords="71,0,154,20" href="modcart.htm">
+  <area shape="rect" coords="161,0,225,20" href="GEOGRAPHY#onoff.htm">  
+
+
+</map> <map name="leftnav">
+  <area shape="rect" coords="137,0,197,20" href="contact.htm">
+  <area shape="rect" coords="68,1,131,20" href="register.htm">
+  <area shape="rect" coords="0,0,63,20" href="main.htm">  
+</map>
+</body></html>

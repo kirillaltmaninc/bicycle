@@ -1,0 +1,51 @@
+
+
+Web Order Number: 006961
+Date: 11/28/2003
+Time: 1:38:58 PM
+Referred By: http://www.blackburndesign.com/WEBREADY/03buynow.html
+
+Bill-To Address: 
+  mitch mumma
+  55 wheatridge ln
+  etna, WY   83112
+  Ph: 3607085021
+  none
+  Comments: have ups leave on back porch
+
+Payment: Visa
+  Card Number: 4426594125022616
+  Card Expiration: 1/2005
+  Card Holder: mitchell d mumma
+  Authorization Code: 003476
+  AVS Code: N
+  AVS Message: Card authorized, no address or zip code match.
+
+Ship-To Address:
+  mitch mumma
+  55 wheatridge ln
+  etna, WY   83112
+  Ph: 3607085021
+  Comments: have ups leave on back porch
+
+Item Details
+==========================================================
+  Name:                      Blackburn Track Block 2 
+  Sku#:                      0100194
+  Quantity:                  1
+  Unit Price:                $14.99
+  Extended Price:            $14.99
+
+  Name:                      Blackburn Trackstand Basic Trainer '04 
+  Sku#:                      0100196
+  Quantity:                  1
+  Unit Price:                $139.95
+  Extended Price:            $139.95
+
+==========================================================
+Subtotal:                    $154.94
+Tax:                         $.00
+Shipping:                    $6.90 (UPS Ground)
+Total:                       $161.84
+
+
